@@ -1,0 +1,2 @@
+# Smart-Career-Recommendation-And-Online-Assessment-System
+Smart Career Recommendation and Online Assessment System is a Spring Boot web application that helps students assess their skills through online tests and provides career recommendations based on their performance. The project is developed using Spring Boot, JDBC, JSP, MySQL, HTML, CSS, JavaScript, and Bootstrap following the MVC architecture.
