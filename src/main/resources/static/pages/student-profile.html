@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<title>Student Profile | Giris Tech Hub</title>
+
+
+<!-- =================================================
+         COMMON DASHBOARD CSS
+    ================================================== -->
+
+<link rel="stylesheet" href="../css/student-dashboard.css">
+
+
+<!-- =================================================
+         PROFILE PAGE CSS
+    ================================================== -->
+
+<link rel="stylesheet" href="../css/student-profile.css">
+
+
+<!-- =================================================
+         FONT AWESOME
+    ================================================== -->
+
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+
+</head>
+
+
+<body>
+
+
+	<div class="dashboard-container">
+
+
+		<!-- COMMON SIDEBAR -->
+		<div id="studentSidebar"></div>
+
+
+		<!-- =================================================
+                         MAIN CONTENT
+    ================================================== -->
+
+		<main class="main-content">
+
+
+			<!-- =================================================
+                             PAGE HEADER
+        ================================================== -->
+
+			<section class="page-header">
+
+
+				<h1>
+
+					<i class="fa-solid fa-user"></i> Student Profile
+
+				</h1>
+
+
+				<p>Manage your personal and academic information.</p>
+
+
+			</section>
+
+
+
+			<!-- =================================================
+                       PERSONAL INFORMATION
+        ================================================== -->
+
+			<section class="card">
+
+
+				<h2>
+
+					<i class="fa-solid fa-id-card"></i> Personal Information
+
+				</h2>
+
+
+
+				<div class="form-grid">
+
+
+					<!-- FULL NAME -->
+
+					<div class="form-group">
+
+						<label> Full Name </label> <input id="name" readonly>
+
+					</div>
+
+
+
+					<!-- EMAIL -->
+
+					<div class="form-group">
+
+						<label> Email </label> <input id="email" readonly>
+
+					</div>
+
+
+
+					<!-- MOBILE -->
+
+					<div class="form-group">
+
+						<label> Mobile Number </label> <input id="mobile" readonly>
+
+					</div>
+
+
+				</div>
+
+
+			</section>
+
+
+
+			<!-- =================================================
+                       ACADEMIC INFORMATION
+        ================================================== -->
+
+			<section class="card">
+
+
+				<h2>
+
+					<i class="fa-solid fa-graduation-cap"></i> Academic Information
+
+				</h2>
+
+
+
+				<div class="form-grid">
+
+
+					<!-- COLLEGE -->
+
+					<div class="form-group">
+
+						<label> College </label> <input id="college" readonly>
+
+					</div>
+
+
+
+					<!-- BRANCH -->
+
+					<div class="form-group">
+
+						<label> Branch </label> <input id="branch" readonly>
+
+					</div>
+
+
+
+					<!-- SEMESTER -->
+
+					<div class="form-group">
+
+						<label> Semester </label> <input id="semester" readonly>
+
+					</div>
+
+
+
+					<!-- CURRENT STATUS -->
+
+					<div class="form-group">
+
+						<label> Current Status </label> <input id="status" readonly>
+
+					</div>
+
+
+				</div>
+
+
+			</section>
+
+
+
+			<!-- =================================================
+                         CAREER INFORMATION
+        ================================================== -->
+
+			<section class="card">
+
+
+				<h2>
+
+					<i class="fa-solid fa-bullseye"></i> Career Information
+
+				</h2>
+
+
+
+				<div class="form-grid">
+
+
+
+					<!-- =================================================
+                 CAREER GOAL
+================================================== -->
+
+					<div class="form-group">
+
+    <label>
+        Career Goal
+        <i class="fa-solid fa-lock goal-lock-icon"></i>
+    </label>
+
+    <input
+        type="text"
+        id="goal"
+        readonly
+        class="protected-goal"
+        title="Career goal can only be changed by administrator"
+    >
+
+</div>
+
+				</div>
+
+
+			</section>
+
+
+
+			<!-- =================================================
+                           EDIT BUTTON
+        ================================================== -->
+
+			<div class="button-group">
+
+
+				<button class="edit-btn" id="openEdit" type="button">
+
+					<i class="fa-solid fa-pen"></i> Edit Profile
+
+				</button>
+
+
+			</div>
+
+
+		</main>
+
+
+	</div>
+
+
+
+	<!-- =========================================================
+                     EDIT PROFILE MODAL
+========================================================= -->
+
+	<div class="modal-overlay" id="editModal">
+
+
+		<div class="edit-modal">
+
+
+			<!-- =================================================
+                         MODAL HEADER
+        ================================================== -->
+
+			<div class="modal-header">
+
+
+				<div>
+
+					<span class="modal-label"> PROFILE SETTINGS </span>
+
+					<h2>
+
+						<i class="fa-solid fa-user-pen"></i> Edit Profile
+
+					</h2>
+
+				</div>
+
+
+				<button type="button" class="modal-close" id="closeEdit"
+					aria-label="Close">
+
+					<i class="fa-solid fa-xmark"></i>
+
+				</button>
+
+
+			</div>
+
+
+
+			<!-- =================================================
+                         EDIT FORM
+        ================================================== -->
+
+			<div class="form-grid">
+
+
+				<!-- NAME -->
+
+				<div class="form-group">
+
+					<label> Name </label> <input id="editName">
+
+				</div>
+
+
+
+				<!-- EMAIL -->
+
+				<div class="form-group">
+
+					<label> Email </label> <input id="editEmail" readonly>
+
+				</div>
+
+
+
+				<!-- MOBILE -->
+
+				<div class="form-group">
+
+					<label> Mobile </label> <input id="editMobile">
+
+				</div>
+
+
+
+				<!-- COLLEGE -->
+
+				<div class="form-group">
+
+					<label> College </label> <input id="editCollege">
+
+				</div>
+
+
+
+				<!-- BRANCH -->
+
+				<div class="form-group">
+
+					<label> Branch </label> <input id="editBranch">
+
+				</div>
+
+
+
+				<!-- SEMESTER -->
+
+				<div class="form-group">
+
+					<label> Semester </label> <input id="editSemester">
+
+				</div>
+
+
+
+				<!-- CURRENT STATUS -->
+
+				<div class="form-group">
+
+					<label> Current Status </label> <input id="editStatus">
+
+				</div>
+
+
+
+				<!-- GRADUATION YEAR -->
+
+				<div class="form-group">
+
+					<label> Graduation Year </label> <input id="editGraduationYear">
+
+				</div>
+
+
+
+				<!-- CAREER GOAL -->
+
+				<div class="form-group">
+
+    <label>
+        Career Goal
+        <i class="fa-solid fa-lock goal-lock-icon"></i>
+    </label>
+
+    <input
+        type="text"
+        id="editGoal"
+        readonly
+        class="protected-goal"
+        title="Career goal can only be changed by administrator"
+    >
+
+</div>
+
+
+			</div>
+
+
+
+			<!-- =================================================
+                 MODAL BUTTONS
+================================================== -->
+
+			<div class="modal-buttons">
+
+				<button class="cancel-btn" id="cancelEdit" type="button">
+
+					Cancel</button>
+
+				<button class="save-btn" id="saveProfile" type="button">
+
+					<i class="fa-solid fa-floppy-disk"></i> Save Changes
+
+				</button>
+
+			</div>
+
+
+		</div>
+
+
+	</div>
+	
+	<!-- =========================================================
+              CAREER GOAL WARNING MODAL
+========================================================= -->
+
+<div
+    class="warning-overlay"
+    id="goalWarningModal"
+>
+
+    <div class="warning-modal">
+
+        <div class="warning-icon">
+
+            <i class="fa-solid fa-lock"></i>
+
+        </div>
+
+        <h2>
+            Career Goal Update Restricted
+        </h2>
+
+        <p>
+            Your career goal cannot be changed directly
+            by the student.
+        </p>
+
+        <p class="warning-subtext">
+            Please contact the administrator if you want
+            to update your career goal.
+        </p>
+
+        <button
+            type="button"
+            id="closeGoalWarning"
+            class="warning-ok-btn"
+        >
+            OK
+        </button>
+
+    </div>
+
+</div>
+
+
+
+	<!-- =========================================================
+                  COMMON STUDENT JAVASCRIPT
+========================================================= -->
+
+	<script src="../js/student-common.js"></script>
+
+
+
+	<!-- =========================================================
+                    PROFILE PAGE JAVASCRIPT
+========================================================= -->
+
+	<script src="../js/student-profile.js"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,1129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Student Dashboard | Girl's Tech Hub</title>
+
+    <link rel="stylesheet"
+          href="../css/student-dashboard.css">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+
+<body>
+
+	<!-- COMMON SIDEBAR -->
+	<div id="studentSidebar"></div>
+
+	<!-- =====================================================
+                         MAIN CONTENT
+    ====================================================== -->
+
+    <main class="main-content">
+
+
+        <!-- =================================================
+                 PAGE HEADER
+================================================== -->
+
+<section class="dashboard-page-header">
+
+    <div class="dashboard-page-title">
+
+        <div class="dashboard-page-icon">
+
+            <i class="fa-solid fa-house-user"></i>
+
+        </div>
+
+        <div>
+
+            <h1>
+                Student Dashboard
+            </h1>
+
+            <p>
+                Your personalized career journey and progress.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+        <!-- =================================================
+                           HERO
+        ================================================== -->
+
+        <section class="dashboard-hero">
+
+
+            <div class="hero-content">
+
+                <span class="hero-greeting">
+                    Welcome back 👋
+                </span>
+
+
+                <h1 id="welcomeName">
+                    Student Name
+                </h1>
+
+
+                <p>
+                    Continue your career journey,
+                    improve your skills and discover
+                    opportunities that match your potential.
+                </p>
+
+
+                <div class="hero-actions">
+
+                    <button class="primary-action"
+                            onclick="goTo('student-assessment.html')">
+
+                        <i class="fa-solid fa-play"></i>
+
+                        Explore Assessments
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="hero-visual">
+
+                <div class="hero-circle circle-one"></div>
+
+                <div class="hero-circle circle-two"></div>
+
+
+                <div class="hero-icon">
+
+                    <i class="fa-solid fa-graduation-cap"></i>
+
+                </div>
+
+
+                <div class="floating-card floating-card-one">
+
+                    <i class="fa-solid fa-chart-line"></i>
+
+                    <span>
+                        Track Progress
+                    </span>
+
+                </div>
+
+
+                <div class="floating-card floating-card-two">
+
+                    <i class="fa-solid fa-briefcase"></i>
+
+                    <span>
+                        Find Your Career
+                    </span>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+                       QUICK OVERVIEW
+        ================================================== -->
+
+        <section class="overview-grid">
+
+
+            <!-- AVAILABLE -->
+
+            <div class="stat-card">
+
+                <div class="stat-icon orange-icon">
+
+                    <i class="fa-solid fa-file-circle-check"></i>
+
+                </div>
+
+
+                <div class="stat-content">
+
+                    <span>
+                        Available
+                    </span>
+
+                    <strong id="assessmentCount">
+                        0
+                    </strong>
+
+                    <small>
+                        Assessments to explore
+                    </small>
+
+                </div>
+
+
+                <div class="stat-arrow"
+                     onclick="goTo('student-assessment.html')">
+
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- COMPLETED -->
+
+            <div class="stat-card">
+
+                <div class="stat-icon blue-icon">
+
+                    <i class="fa-solid fa-circle-check"></i>
+
+                </div>
+
+
+                <div class="stat-content">
+
+                    <span>
+                        Completed
+                    </span>
+
+                    <strong id="completedCount">
+                        0
+                    </strong>
+
+                    <small>
+                        Assessments completed
+                    </small>
+
+                </div>
+
+
+                <div class="stat-arrow"
+                     onclick="goTo('student-results.html')">
+
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- LATEST SCORE -->
+
+            <div class="stat-card">
+
+                <div class="stat-icon purple-icon">
+
+                    <i class="fa-solid fa-chart-simple"></i>
+
+                </div>
+
+
+                <div class="stat-content">
+
+                    <span>
+                        Latest Score
+                    </span>
+
+                    <strong id="dashboardPercentage">
+                        --
+                    </strong>
+
+                    <small>
+                        Latest assessment performance
+                    </small>
+
+                </div>
+
+
+                <div class="stat-arrow"
+                     onclick="goTo('student-results.html')">
+
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- CAREER MATCH -->
+
+            <div class="stat-card">
+
+                <div class="stat-icon green-icon">
+
+                    <i class="fa-solid fa-bullseye"></i>
+
+                </div>
+
+
+                <div class="stat-content">
+
+                    <span>
+                        Career Match
+                    </span>
+
+                    <strong id="dashboardCareerMatch">
+                        --
+                    </strong>
+
+                    <small>
+                        Recommended career alignment
+                    </small>
+
+                </div>
+
+
+                <div class="stat-arrow"
+                     onclick="goTo('student-career.html')">
+
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+                       PROFILE + GOAL
+        ================================================== -->
+
+        <section class="dashboard-grid">
+
+
+            <!-- PROFILE -->
+
+            <div class="dashboard-card profile-card">
+
+
+                <div class="card-heading">
+
+                    <div class="heading-icon">
+
+                        <i class="fa-solid fa-user-graduate"></i>
+
+                    </div>
+
+                    <div>
+
+                        <span>
+                            YOUR PROFILE
+                        </span>
+
+                        <h2>
+                            Profile Overview
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="profile-details">
+
+
+                    <div class="profile-detail">
+
+                        <div class="detail-icon">
+
+                            <i class="fa-solid fa-building-columns"></i>
+
+                        </div>
+
+                        <div>
+
+                            <span>
+                                College
+                            </span>
+
+                            <strong id="college">
+                                -
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="profile-detail">
+
+                        <div class="detail-icon">
+
+                            <i class="fa-solid fa-layer-group"></i>
+
+                        </div>
+
+                        <div>
+
+                            <span>
+                                Semester
+                            </span>
+
+                            <strong id="semester">
+                                -
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="profile-detail">
+
+                        <div class="detail-icon">
+
+                            <i class="fa-solid fa-user-check"></i>
+
+                        </div>
+
+                        <div>
+
+                            <span>
+                                Current Status
+                            </span>
+
+                            <strong id="status">
+                                -
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+                <button class="outline-action"
+                        onclick="goTo('student-profile.html')">
+
+                    View Profile
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </button>
+
+
+            </div>
+
+
+
+            <!-- GOAL -->
+
+            <div class="dashboard-card goal-card">
+
+
+                <div class="card-heading">
+
+                    <div class="heading-icon orange-heading">
+
+                        <i class="fa-solid fa-bullseye"></i>
+
+                    </div>
+
+                    <div>
+
+                        <span>
+                            YOUR CAREER GOAL
+                        </span>
+
+                        <h2>
+                            Where You Want To Go
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="goal-content">
+
+
+                    <div class="goal-target-icon">
+
+                        <i class="fa-solid fa-rocket"></i>
+
+                    </div>
+
+
+                    <div class="goal-text">
+
+                        <span>
+                            TARGET CAREER
+                        </span>
+
+                        <h3 id="career">
+                            Not Selected
+                        </h3>
+
+                        <p id="goalMessage">
+
+                            Your career goal will appear here.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="goal-footer">
+
+                    <span>
+                        <i class="fa-solid fa-lightbulb"></i>
+                        Your assessments help refine this goal.
+                    </span>
+
+                    <button onclick="goTo('student-career.html')">
+
+                        Explore
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </button>
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+                    AVAILABLE ASSESSMENTS
+        ================================================== -->
+
+        <section class="dashboard-card assessment-card">
+
+
+            <div class="section-heading">
+
+                <div class="section-heading-left">
+
+                    <div class="heading-icon orange-heading">
+
+                        <i class="fa-solid fa-file-lines"></i>
+
+                    </div>
+
+                    <div>
+
+                        <span>
+                            BUILD YOUR PROFILE
+                        </span>
+
+                        <h2>
+                            Available Assessments
+                        </h2>
+
+                        <p>
+                            Discover your strengths and improve
+                            your career alignment.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <button class="text-action"
+                        onclick="goTo('student-assessment.html')">
+
+                    View All
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </button>
+
+            </div>
+
+
+            <div class="assessment-content">
+
+
+                <div class="assessment-visual">
+
+                    <div class="assessment-visual-circle">
+
+                        <i class="fa-solid fa-clipboard-question"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <strong id="assessmentCountLarge">
+                            0
+                        </strong>
+
+                        <span>
+                            assessments available
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="assessment-message">
+
+                    <h3>
+                        Understand where you stand
+                    </h3>
+
+                    <p>
+                        Take assessments to evaluate your
+                        technical skills, aptitude, logical
+                        reasoning and other career-relevant
+                        abilities.
+                    </p>
+
+
+                    <button class="primary-small"
+                            id="assessmentBtn"
+                            style="display:none;">
+
+                        <i class="fa-solid fa-play"></i>
+
+                        Start Assessment
+
+                    </button>
+
+
+                    <div id="assessmentEmpty"
+                         class="assessment-empty">
+
+                        <i class="fa-solid fa-circle-check"></i>
+
+                        <span>
+                            You have completed all currently
+                            available assessments.
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+                       RESULT + CAREER
+        ================================================== -->
+
+        <section class="dashboard-grid result-career-grid">
+
+
+            <!-- LATEST RESULT -->
+
+            <div class="dashboard-card result-card"
+                 id="latestResultCard">
+
+
+                <div class="section-heading compact">
+
+                    <div class="section-heading-left">
+
+                        <div class="heading-icon blue-heading">
+
+                            <i class="fa-solid fa-chart-column"></i>
+
+                        </div>
+
+                        <div>
+
+                            <span>
+                                PERFORMANCE
+                            </span>
+
+                            <h2>
+                                Latest Result
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+                    <button class="mini-link"
+                            onclick="goTo('student-results.html')">
+
+                        View All
+
+                    </button>
+
+                </div>
+
+
+                <div class="latest-result-content">
+
+
+                    <div class="result-main">
+
+
+                        <div class="result-icon">
+
+                            <i class="fa-solid fa-file-circle-check"></i>
+
+                        </div>
+
+
+                        <div>
+
+                            <span class="result-label">
+                                Latest Assessment
+                            </span>
+
+                            <h3 id="resultCareer">
+                                No Result Available
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="result-metrics">
+
+
+                        <div>
+
+                            <span>
+                                Score
+                            </span>
+
+                            <strong id="resultScore">
+                                -
+                            </strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                Percentage
+                            </span>
+
+                            <strong id="resultPercentage">
+                                -
+                            </strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                Status
+                            </span>
+
+                            <strong id="resultStatus"
+                                    class="result-status">
+                                -
+                            </strong>
+
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="result-progress">
+
+                        <div class="progress-label">
+
+                            <span>
+                                Assessment Performance
+                            </span>
+
+                            <strong id="resultProgressPercent">
+                                0%
+                            </strong>
+
+                        </div>
+
+
+                        <div class="progress-track">
+
+                            <span id="resultProgressBar">
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <button class="primary-small"
+                            id="viewResultBtn">
+
+                        View Full Result
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </button>
+
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- CAREER -->
+
+            <div class="dashboard-card career-card"
+                 id="careerSection">
+
+
+                <div class="section-heading compact">
+
+                    <div class="section-heading-left">
+
+                        <div class="heading-icon orange-heading">
+
+                            <i class="fa-solid fa-lightbulb"></i>
+
+                        </div>
+
+                        <div>
+
+                            <span>
+                                CAREER INSIGHT
+                            </span>
+
+                            <h2>
+                                Career Recommendation
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+                    <button class="mini-link"
+                            onclick="goTo('student-career.html')">
+
+                        Explore
+
+                    </button>
+
+                </div>
+
+
+                <div class="career-recommendation-content">
+
+
+                    <div class="career-target">
+
+                        <div class="career-target-icon">
+
+                            <i class="fa-solid fa-briefcase"></i>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                BEST CAREER MATCH
+                            </span>
+
+                            <h3 id="recommendedCareer">
+                                Not Generated
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="career-match-row">
+
+
+                        <div class="match-ring"
+                             id="dashboardMatchRing">
+
+                            <strong id="matchPercentage">
+                                --
+                            </strong>
+
+                            <span>
+                                Match
+                            </span>
+
+                        </div>
+
+
+                        <div class="career-summary">
+
+                            <h4>
+                                Personalized for you
+                            </h4>
+
+                            <p id="careerSummary">
+
+                                Complete an assessment to
+                                receive your personalized
+                                career recommendation.
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <button class="primary-small orange-button"
+                            id="viewCareerBtn">
+
+                        View Career Details
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </button>
+
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+                         QUICK ACTIONS
+        ================================================== -->
+
+        <section class="quick-actions-section">
+
+
+            <div class="quick-actions-header">
+
+                <div>
+
+                    <span>
+                        KEEP MOVING FORWARD
+                    </span>
+
+                    <h2>
+                        Quick Actions
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="quick-actions-grid">
+
+
+                <div class="quick-action"
+                     onclick="goTo('student-assessment.html')">
+
+                    <div class="quick-action-icon">
+
+                        <i class="fa-solid fa-clipboard-check"></i>
+
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Take Assessment
+                        </h3>
+
+                        <p>
+                            Evaluate your skills
+                        </p>
+
+                    </div>
+
+                    <i class="fa-solid fa-arrow-right action-arrow"></i>
+
+                </div>
+
+
+                <div class="quick-action"
+                     onclick="goTo('student-career.html')">
+
+                    <div class="quick-action-icon">
+
+                        <i class="fa-solid fa-compass"></i>
+
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Explore Careers
+                        </h3>
+
+                        <p>
+                            Find your best match
+                        </p>
+
+                    </div>
+
+                    <i class="fa-solid fa-arrow-right action-arrow"></i>
+
+                </div>
+
+
+                <div class="quick-action"
+                     onclick="goTo('student-courses.html')">
+
+                    <div class="quick-action-icon">
+
+                        <i class="fa-solid fa-graduation-cap"></i>
+
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Learn & Grow
+                        </h3>
+
+                        <p>
+                            Build career-ready skills
+                        </p>
+
+                    </div>
+
+                    <i class="fa-solid fa-arrow-right action-arrow"></i>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- FOOTER -->
+
+        <footer class="dashboard-footer">
+
+            <p>
+                Girl's Tech Hub
+                <span>•</span>
+                Smart Career Recommendation & Online Assessment System
+            </p>
+
+        </footer>
+
+
+    </main>
+
+
+</div>
+
+<!-- =================================================
+                 CUSTOM CONFIRM MODAL
+================================================== -->
+
+<div id="appModal"
+     class="app-modal">
+
+    <div class="app-modal-overlay"></div>
+
+
+    <div class="app-modal-box">
+
+        <button class="app-modal-close"
+                id="modalCloseBtn">
+
+            <i class="fa-solid fa-xmark"></i>
+
+        </button>
+
+
+        <div class="app-modal-icon">
+
+            <i class="fa-solid fa-right-from-bracket"></i>
+
+        </div>
+
+
+        <h2 id="modalTitle">
+            Logout Confirmation
+        </h2>
+
+
+        <p id="modalMessage">
+
+            Are you sure you want to logout?
+
+        </p>
+
+
+        <div class="app-modal-actions">
+
+            <button class="modal-cancel"
+                    id="modalCancelBtn">
+
+                Cancel
+
+            </button>
+
+
+            <button class="modal-confirm"
+                    id="modalConfirmBtn">
+
+                <i class="fa-solid fa-right-from-bracket"></i>
+
+                Logout
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="../js/student-common.js"></script>
+<script src="../js/student-dashboard.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,158 @@
+/* ==========================================
+                GLOBAL
+========================================== */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+}
+
+body {
+	background: #f4f7fc;
+}
+
+/* ==========================================
+            MAIN CONTAINER
+========================================== */
+.submitted-container {
+	width: 850px;
+	margin: 50px auto;
+	background: #ffffff;
+	border-radius: 20px;
+	padding: 45px;
+	box-shadow: 0 12px 30px rgba(0, 0, 0, .08);
+}
+
+/* ==========================================
+            SUCCESS SECTION
+========================================== */
+.success-section {
+	text-align: center;
+	margin-bottom: 40px;
+}
+
+.success-icon {
+	width: 120px;
+	height: 120px;
+	margin: auto;
+	border-radius: 50%;
+	border: 6px solid #27AE60;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.success-icon i {
+	font-size: 60px;
+	color: #27AE60;
+}
+
+.success-section h1 {
+	margin-top: 25px;
+	color: #233b8f;
+	font-size: 36px;
+}
+
+.success-section p {
+	margin-top: 12px;
+	color: #666;
+	font-size: 17px;
+}
+
+/* ==========================================
+            SUMMARY CARD
+========================================== */
+.summary-card {
+	background: #f8fbff;
+	border-radius: 18px;
+	padding: 30px;
+	margin-top: 20px;
+}
+
+.summary-card h2 {
+	text-align: center;
+	color: #233b8f;
+	margin-bottom: 25px;
+}
+
+/* ==========================================
+            SUMMARY ROW
+========================================== */
+.summary-row {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 15px 0;
+	border-bottom: 1px solid #e5e5e5;
+}
+
+.summary-row:last-child {
+	border-bottom: none;
+}
+
+.summary-row span {
+	color: #666;
+	font-size: 16px;
+}
+
+.summary-row strong {
+	color: #233b8f;
+	font-size: 17px;
+}
+
+.status {
+	color: #27AE60 !important;
+}
+
+/* ==========================================
+                BUTTONS
+========================================== */
+.button-group {
+	margin-top: 40px;
+	display: flex;
+	justify-content: center;
+	gap: 20px;
+}
+
+.button-group button {
+	border: none;
+	cursor: pointer;
+	padding: 15px 35px;
+	border-radius: 12px;
+	font-size: 16px;
+	transition: .3s;
+}
+
+.result-btn {
+	background: #233b8f;
+	color: white;
+}
+
+.result-btn:hover {
+	background: #ff7a00;
+}
+
+.dashboard-btn {
+	background: #eeeeee;
+	color: #333;
+}
+
+.dashboard-btn:hover {
+	background: #dddddd;
+}
+
+/* ==========================================
+                RESPONSIVE
+========================================== */
+@media ( max-width :900px) {
+	.submitted-container {
+		width: 95%;
+	}
+	.button-group {
+		flex-direction: column;
+	}
+	.button-group button {
+		width: 100%;
+	}
+}

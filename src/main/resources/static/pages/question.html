@@ -1,0 +1,1141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<title>Question Management | Giris Tech Hub</title>
+
+<link rel="stylesheet" href="../css/admin-common.css">
+
+<link rel="stylesheet" href="../css/admin-dashboard.css">
+
+
+<link rel="stylesheet" href="../css/question.css">
+
+
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+
+</head>
+
+
+<body>
+
+
+	<div class="dashboard">
+
+
+
+		<!-- ================= SIDEBAR ================= -->
+
+
+		<aside class="sidebar">
+
+
+			<div>
+
+
+				<div class="sidebar-header">
+
+
+					<img src="../images/GthTransparent.png" class="logo">
+
+
+					<p>
+
+						Smart Career Recommendation <br> & Online Assessment System
+
+					</p>
+
+
+				</div>
+
+
+
+
+				<ul class="sidebar-menu">
+
+
+
+					<li onclick="location.href='admin-dashboard.html'"><i
+						class="fa-solid fa-house"></i> <span> Dashboard </span></li>
+
+
+
+
+					<li onclick="location.href='student.html'"><i
+						class="fa-solid fa-user-graduate"></i> <span> Students </span></li>
+
+
+
+
+
+					<li onclick="location.href='assessment.html'"><i
+						class="fa-solid fa-file-lines"></i> <span> Assessments </span></li>
+
+
+
+
+
+					<li class="active"><i class="fa-solid fa-circle-question"></i>
+
+						<span> Questions </span></li>
+
+					<li onclick="window.location.href='career-management.html'"><i
+						class="fa-solid fa-briefcase"></i> <span>Career</span></li>
+
+					<li onclick="window.location.href='course.html'"><i
+						class="fa-solid fa-book-open"></i> <span>Courses</span></li>
+
+					<li onclick="window.location.href='result.html'"><i
+						class="fa-solid fa-chart-column"></i> <span>Results</span></li>
+
+				</ul>
+
+
+
+			</div>
+
+
+
+
+			<div class="logout-btn">
+    <i class="fa-solid fa-right-from-bracket"></i>
+    <span>Logout</span>
+</div>
+
+
+		</aside>
+
+
+
+
+
+		<!-- ================= MAIN CONTENT ================= -->
+
+
+		<main class="main-content">
+
+
+
+			<header class="header">
+
+
+
+				<div>
+
+
+					<h1>Question Management</h1>
+
+
+					<p>Manage questions and subjects for assessments</p>
+
+
+				</div>
+
+
+
+
+
+				<div class="header-actions">
+
+
+					<button class="subject-btn" id="addSubjectBtn">
+
+
+						<i class="fa-solid fa-layer-group"></i> Add Subject
+
+
+					</button>
+
+
+
+
+					<button class="add-btn" id="addQuestionBtn">
+
+
+						<i class="fa-solid fa-plus"></i> Add Question
+
+
+					</button>
+
+
+				</div>
+
+
+			</header>
+
+			<!-- ================= TOP BAR ================= -->
+
+
+			<div class="top-bar">
+
+
+
+				<div class="search-box">
+					<i class="fa-solid fa-magnifying-glass"></i> <input type="text"
+						id="searchQuestion"
+						placeholder="Search Question or Subject or Difficulty">
+				</div>
+
+
+
+
+				<button class="refresh-btn" id="refreshBtn">
+
+
+					<i class="fa-solid fa-rotate-right"></i> Refresh
+
+
+				</button>
+
+
+
+			</div>
+
+
+
+
+
+			<!-- ================= VIEW SELECTOR ================= -->
+
+
+			<div class="view-selector">
+
+
+				<button class="view-tab active" id="showQuestionBtn">
+
+
+					<i class="fa-solid fa-circle-question"></i> Show All Questions
+
+
+				</button>
+
+
+
+
+				<button class="view-tab" id="showSubjectBtn">
+
+
+					<i class="fa-solid fa-layer-group"></i> Show All Subjects
+
+
+				</button>
+
+
+
+			</div>
+
+
+
+
+
+			<!-- =================================================
+                QUESTION SECTION
+================================================== -->
+
+
+			<section class="table-section" id="questionSection">
+
+
+
+				<div class="table-header">
+
+
+					<h2>Question List</h2>
+
+
+				</div>
+
+
+
+
+
+				<div class="table-container">
+
+
+					<table>
+
+
+
+						<thead>
+
+
+							<tr>
+
+
+								<th>Question</th>
+
+
+								<th>Subject</th>
+
+
+								<th>Difficulty</th>
+
+
+								<th>Marks</th>
+
+
+								<th>Status</th>
+
+
+								<th>Created On</th>
+
+
+								<th>Actions</th>
+
+
+							</tr>
+
+
+						</thead>
+
+
+
+
+
+						<tbody id="questionTableBody">
+
+						</tbody>
+
+					</table>
+
+
+					<div class="empty-state" id="noQuestionData">
+
+
+						<i class="fa-solid fa-circle-question"></i>
+
+
+						<h3>No Questions Found</h3>
+
+
+						<p>No questions are available in the system.</p>
+
+
+					</div>
+
+					<!-- ==================================================
+                QUESTION PAGINATION
+================================================== -->
+
+					<div class="pagination-container" id="questionPagination">
+
+						<div class="pagination-info" id="questionPaginationInfo">
+							Showing 0 - 0 of 0 questions</div>
+
+						<div class="pagination-buttons" id="questionPaginationButtons">
+							<!-- Generated dynamically -->
+						</div>
+
+					</div>
+			</section>
+
+
+			<!-- =================================================
+                SUBJECT SECTION
+================================================== -->
+
+
+			<section class="table-section" id="subjectSection"
+				style="display: none;">
+
+
+
+
+
+				<div class="table-header">
+
+
+					<h2>Subject Management</h2>
+
+
+
+				</div>
+
+
+
+
+
+				<div class="table-container">
+
+
+					<table>
+
+
+						<thead>
+
+
+							<tr>
+
+
+								<th>Subject Name</th>
+
+
+
+								<th>Type</th>
+
+
+
+								<th>Description</th>
+
+
+
+								<th>Status</th>
+
+
+
+								<th>Actions</th>
+
+
+
+							</tr>
+
+
+
+						</thead>
+
+
+
+
+						<tbody id="subjectTableBody">
+
+
+
+						</tbody>
+
+
+
+					</table>
+
+
+
+				</div>
+
+
+
+
+
+
+				<div class="empty-state" id="noSubjectData">
+
+
+					<i class="fa-solid fa-layer-group"></i>
+
+
+					<h3>No Subjects Found</h3>
+
+
+					<p>No subjects are available in the system.</p>
+
+
+				</div>
+
+				<!-- ==================================================
+                SUBJECT PAGINATION
+================================================== -->
+
+				<div class="pagination-container" id="subjectPagination">
+
+					<div class="pagination-info" id="subjectPaginationInfo">
+						Showing 0 - 0 of 0 subjects</div>
+
+					<div class="pagination-buttons" id="subjectPaginationButtons">
+						<!-- Generated dynamically -->
+					</div>
+
+				</div>
+			</section>
+
+			<!-- =====================================================
+            ADD / EDIT QUESTION MODAL
+===================================================== -->
+
+
+			<div class="modal" id="questionModal">
+
+
+				<div class="large-modal">
+
+
+
+					<div class="modal-header">
+
+
+						<h2 id="questionModalTitle">Add Question</h2>
+
+
+
+						<span class="close" id="closeQuestionModal"> &times; </span>
+
+
+
+					</div>
+
+
+
+
+
+
+					<form id="questionForm">
+
+
+
+						<input type="hidden" id="questionId">
+
+
+
+
+
+						<div class="form-grid">
+
+
+
+							<!-- LEFT COLUMN -->
+
+
+							<div class="form-group">
+
+
+								<label> Question Title </label>
+
+
+								<textarea id="questionTitle" placeholder="Enter question">
+
+</textarea>
+
+
+
+							</div>
+
+
+
+
+
+
+							<div class="form-group">
+
+
+								<label> Option A </label> <input type="text" id="optionA">
+
+
+							</div>
+
+
+
+
+
+							<div class="form-group">
+
+
+								<label> Option B </label> <input type="text" id="optionB">
+
+
+							</div>
+
+
+
+
+
+
+							<div class="form-group">
+
+
+								<label> Option C </label> <input type="text" id="optionC">
+
+
+							</div>
+
+
+
+
+
+
+
+							<div class="form-group">
+
+
+								<label> Option D </label> <input type="text" id="optionD">
+
+
+							</div>
+
+
+
+
+
+
+
+
+							<!-- RIGHT COLUMN -->
+
+
+
+							<div class="form-group">
+
+
+								<label> Correct Answer </label> <select id="correctAnswer">
+
+
+									<option value="A">Option A</option>
+
+
+									<option value="B">Option B</option>
+
+
+									<option value="C">Option C</option>
+
+
+									<option value="D">Option D</option>
+
+
+								</select>
+
+
+
+							</div>
+
+
+
+
+
+
+							<div class="form-group">
+
+
+								<label> Subject </label> <select id="questionCategory">
+
+
+								</select>
+
+
+							</div>
+
+
+
+
+
+
+							<div class="form-group">
+
+
+								<label> Difficulty </label> <select id="difficulty">
+
+
+									<option value="Easy">Easy</option>
+
+
+									<option value="Medium">Medium</option>
+
+
+									<option value="Hard">Hard</option>
+
+
+
+								</select>
+
+
+							</div>
+
+
+
+
+
+
+
+							<div class="form-group">
+
+
+								<label> Marks </label> <input type="number" id="questionMarks"
+									value="1">
+
+
+
+							</div>
+
+
+
+
+
+
+							<div class="form-group">
+
+
+								<label> Status </label> <select id="questionStatus">
+
+
+									<option value="ACTIVE">Active</option>
+
+
+
+									<option value="INACTIVE">Inactive</option>
+
+
+
+								</select>
+
+
+							</div>
+
+
+
+						</div>
+
+
+
+
+
+
+
+
+						<div class="modal-buttons">
+
+
+							<button type="button" class="cancel-btn" id="cancelQuestion">
+
+
+								Cancel</button>
+
+
+
+
+
+							<button type="submit" class="save-btn">Save Question</button>
+
+
+
+
+						</div>
+
+
+
+
+
+					</form>
+
+
+
+
+
+				</div>
+
+
+			</div>
+
+
+
+
+
+
+
+
+			<!-- =====================================================
+            ADD / EDIT SUBJECT MODAL
+===================================================== -->
+
+
+
+			<div class="modal" id="subjectModal">
+
+
+
+				<div class="large-modal">
+
+
+
+
+
+					<div class="modal-header">
+
+
+						<h2 id="subjectModalTitle">Add Subject</h2>
+
+
+
+
+						<span class="close" id="closeSubjectModal"> &times; </span>
+
+
+
+
+					</div>
+
+
+
+
+
+
+					<form id="subjectForm">
+
+
+
+						<input type="hidden" id="subjectId">
+
+
+
+
+
+						<div class="form-grid">
+
+
+
+
+
+							<div class="form-group">
+
+
+								<label> Subject Name </label> <input type="text"
+									id="subjectName" required>
+
+
+							</div>
+
+
+
+
+
+
+							<div class="form-group">
+
+
+								<label> Subject Type </label> <select id="subjectType">
+
+
+									<option value="TECHNICAL">Technical</option>
+									<option value="CAREER_DISCOVERY">Career</option>
+
+
+								</select>
+
+
+
+							</div>
+
+
+
+
+
+
+
+
+							<div class="form-group">
+
+
+								<label> Description </label>
+
+
+								<textarea id="subjectDescription">
+
+</textarea>
+
+
+
+							</div>
+
+
+
+
+
+
+
+
+							<div class="form-group">
+
+
+								<label> Status </label> <select id="subjectStatus">
+
+
+									<option value="ACTIVE">Active</option>
+
+
+									<option value="INACTIVE">Inactive</option>
+
+
+								</select>
+
+
+
+							</div>
+
+
+
+
+
+
+						</div>
+
+
+
+
+
+
+
+
+						<div class="modal-buttons">
+
+
+
+							<button type="button" class="cancel-btn" id="cancelSubject">
+
+
+								Cancel</button>
+
+
+
+
+
+							<button type="submit" class="save-btn">Save Subject</button>
+
+
+
+						</div>
+
+
+
+
+
+					</form>
+
+
+
+
+				</div>
+
+
+
+			</div>
+
+
+
+
+
+
+			<!-- =====================================================
+                VIEW QUESTION MODAL
+===================================================== -->
+
+
+			<div class="modal" id="viewQuestionModal">
+
+
+
+				<div class="large-modal">
+
+
+
+
+
+					<div class="modal-header">
+
+
+						<h2>Question Details</h2>
+
+
+
+
+						<span class="close" id="closeViewQuestion"> &times; </span>
+
+
+
+					</div>
+
+
+
+
+
+
+
+					<div class="assessment-details">
+
+
+
+						<div class="detail-item">
+
+
+							<label> Question </label> <span id="viewQuestionTitle"> </span>
+
+
+						</div>
+
+
+
+
+
+
+						<div class="detail-item">
+
+
+							<label> Option A </label> <span id="viewOptionA"> </span>
+
+
+						</div>
+
+
+
+
+
+						<div class="detail-item">
+
+
+							<label> Option B </label> <span id="viewOptionB"> </span>
+
+
+						</div>
+
+
+
+
+
+
+						<div class="detail-item">
+
+
+							<label> Option C </label> <span id="viewOptionC"> </span>
+
+
+						</div>
+
+
+
+
+
+
+						<div class="detail-item">
+
+
+							<label> Option D </label> <span id="viewOptionD"> </span>
+
+
+						</div>
+
+
+
+
+
+
+						<div class="detail-item">
+
+
+							<label> Correct Answer </label> <span id="viewCorrectAnswer">
+
+							</span>
+
+
+						</div>
+
+
+
+
+
+						<div class="detail-item">
+
+
+							<label> Difficulty </label> <span id="viewDifficulty"> </span>
+
+
+						</div>
+
+
+
+
+
+						<div class="detail-item">
+
+
+							<label> Marks </label> <span id="viewQuestionMarks"> </span>
+
+
+						</div>
+
+
+
+
+					</div>
+
+
+
+				</div>
+
+
+			</div>
+
+			<!-- =====================================================
+                DELETE QUESTION/SUBJECT MODAL
+===================================================== -->
+
+
+			<div class="modal" id="deleteModal">
+
+
+
+				<div class="delete-modal">
+
+
+
+					<i class="fa-solid fa-trash-can"></i>
+
+
+
+
+					<h2>Delete Record</h2>
+
+
+
+
+					<p id="deleteMessage">Are you sure you want to delete this
+						record?</p>
+
+
+
+
+
+					<div class="modal-buttons">
+
+
+
+						<button class="cancel-btn" id="cancelDelete">Cancel</button>
+
+
+
+
+
+						<button class="delete-btn" id="confirmDelete">Delete</button>
+
+
+
+					</div>
+
+
+
+
+
+				</div>
+
+
+
+			</div>
+
+
+
+
+
+
+
+
+
+			<!-- =====================================================
+                JAVASCRIPT
+===================================================== -->
+
+
+			<script src="../js/question.js"></script>
+</body>
+
+
+</html>

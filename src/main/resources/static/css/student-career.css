@@ -1,0 +1,1784 @@
+/* =========================================================
+   GIRIS TECH HUB
+   STUDENT CAREER RECOMMENDATION
+   PREMIUM UI
+========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   PAGE HEADER
+========================================================= */
+
+.career-header {
+    margin-bottom: 28px;
+}
+
+.career-header h1 {
+    margin: 0 0 8px;
+    color: #233b8f;
+    font-size: 38px;
+    font-weight: 700;
+}
+
+.career-header h1 i {
+    color: #ff7900;
+    margin-right: 14px;
+}
+
+.career-header p {
+    margin: 0;
+    color: #666;
+    font-size: 17px;
+}
+
+
+/* =========================================================
+   SEARCH
+========================================================= */
+
+.career-search {
+    width: 100%;
+    height: 62px;
+
+    background: #ffffff;
+
+    border-radius: 18px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 26px;
+
+    gap: 15px;
+
+    margin-bottom: 32px;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.08);
+
+    border: 1px solid #eef0f6;
+
+    transition: 0.25s;
+}
+
+.career-search:focus-within {
+
+    border-color: #233b8f;
+
+    box-shadow:
+        0 10px 30px rgba(35, 59, 143, 0.12);
+}
+
+.career-search i {
+
+    color: #233b8f;
+
+    font-size: 21px;
+}
+
+.career-search input {
+
+    width: 100%;
+
+    border: none;
+    outline: none;
+
+    font-size: 16px;
+
+    color: #333;
+
+    background: transparent;
+}
+
+
+/* =========================================================
+   OVERVIEW
+========================================================= */
+
+.career-overview {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1.35fr;
+
+    gap: 28px;
+
+    margin-bottom: 32px;
+}
+
+.overview-card {
+
+    background: #ffffff;
+
+    border-radius: 22px;
+
+    padding: 30px;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.07);
+
+    border: 1px solid #eef0f6;
+
+    min-height: 300px;
+}
+
+
+/* =========================================================
+   CARD HEADING
+========================================================= */
+
+.card-heading {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-start;
+
+    margin-bottom: 25px;
+}
+
+.card-heading h2 {
+
+    margin: 4px 0 0;
+
+    color: #233b8f;
+
+    font-size: 25px;
+}
+
+.section-mini-label {
+
+    color: #ff7900;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.2px;
+}
+
+.heading-icon {
+
+    width: 46px;
+
+    height: 46px;
+
+    border-radius: 14px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    color: #233b8f;
+
+    background: #eef2ff;
+
+    font-size: 18px;
+}
+
+
+/* =========================================================
+   OVERALL MATCH
+========================================================= */
+
+.overall-content {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 28px;
+}
+
+.career-circle {
+
+    width: 178px;
+
+    height: 178px;
+
+    border-radius: 50%;
+
+    background:
+        conic-gradient(
+            #7142f4 0deg,
+            #7142f4 0deg,
+            #e5e8f1 0deg,
+            #e5e8f1 360deg
+        );
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    position: relative;
+}
+
+.career-circle > div {
+
+    width: 136px;
+
+    height: 136px;
+
+    border-radius: 50%;
+
+    background: white;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+}
+
+.career-circle strong {
+
+    font-size: 35px;
+
+    color: #7142f4;
+}
+
+.career-circle span {
+
+    font-size: 12px;
+
+    color: #777;
+
+    margin-top: 5px;
+}
+
+.overall-description {
+
+    flex: 1;
+}
+
+.recommendation-label {
+
+    display: inline-block;
+
+    padding: 6px 10px;
+
+    border-radius: 20px;
+
+    background: #fff1e7;
+
+    color: #ff7900;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.8px;
+
+    margin-bottom: 10px;
+}
+
+.overall-description h3 {
+
+    color: #233b8f;
+
+    font-size: 23px;
+
+    line-height: 1.2;
+
+    margin: 0 0 10px;
+}
+
+.overall-description p {
+
+    color: #555;
+
+    line-height: 1.65;
+
+    font-size: 14px;
+
+    margin: 0;
+}
+
+
+/* =========================================================
+   TOP CAREERS
+========================================================= */
+
+.top-career-list {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+.top-career-item {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 11px 13px;
+
+    border-radius: 13px;
+
+    background: #f7f9ff;
+
+    cursor: pointer;
+
+    transition: 0.25s;
+
+    border: 1px solid transparent;
+}
+
+.top-career-item:hover {
+
+    background: #ffffff;
+
+    border-color: #dfe4f5;
+
+    transform: translateX(4px);
+
+    box-shadow:
+        0 5px 15px rgba(35, 59, 143, 0.08);
+}
+
+.rank {
+
+    width: 32px;
+
+    height: 32px;
+
+    border-radius: 50%;
+
+    background: #233b8f;
+
+    color: white;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    flex-shrink: 0;
+}
+
+.top-career-name {
+
+    flex: 1;
+
+    font-weight: 600;
+
+    color: #233b8f;
+
+    font-size: 14px;
+}
+
+.top-progress {
+
+    width: 90px;
+
+    height: 7px;
+
+    border-radius: 10px;
+
+    background: #e1e5ef;
+
+    overflow: hidden;
+}
+
+.top-progress span {
+
+    display: block;
+
+    height: 100%;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #233b8f,
+            #7142f4
+        );
+}
+
+.top-career-score {
+
+    min-width: 58px;
+
+    text-align: right;
+
+    font-weight: 700;
+
+    color: #ff7900;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   ASSESSMENT SECTION
+========================================================= */
+
+.assessment-career-section {
+
+    background: white;
+
+    border-radius: 22px;
+
+    padding: 30px;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.07);
+
+    border: 1px solid #eef0f6;
+}
+
+.section-title {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 28px;
+}
+
+.section-title h2 {
+
+    margin: 5px 0 8px;
+
+    color: #233b8f;
+
+    font-size: 27px;
+}
+
+.section-title p {
+
+    margin: 0;
+
+    color: #666;
+
+    font-size: 14px;
+}
+
+.assessment-count-badge {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 10px 14px;
+
+    border-radius: 20px;
+
+    background: #eef2ff;
+
+    color: #233b8f;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   ASSESSMENT CARDS
+========================================================= */
+
+.assessment-career-container {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 22px;
+}
+
+.assessment-career-card {
+
+    border: 1px solid #e7eaf2;
+
+    border-radius: 18px;
+
+    padding: 22px;
+
+    background: #ffffff;
+
+    transition: 0.25s;
+
+    display: flex;
+
+    flex-direction: column;
+
+    min-height: 280px;
+}
+
+.assessment-career-card:hover {
+
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 12px 30px rgba(35, 59, 143, 0.12);
+
+    border-color: #d9def0;
+}
+
+
+/* =========================================================
+   ASSESSMENT TITLE
+========================================================= */
+
+.assessment-title {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 13px;
+
+    margin-bottom: 18px;
+}
+
+.assessment-icon {
+
+    width: 45px;
+
+    height: 45px;
+
+    border-radius: 12px;
+
+    background: #fff0e4;
+
+    color: #ff7900;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-shrink: 0;
+}
+
+.assessment-title h3 {
+
+    color: #233b8f;
+
+    font-size: 18px;
+
+    line-height: 1.3;
+
+    margin: 0;
+}
+
+.assessment-subtitle {
+
+    color: #888;
+
+    font-size: 12px;
+
+    margin-top: 5px;
+}
+
+
+/* =========================================================
+   SCORE
+========================================================= */
+
+.assessment-score {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 10px;
+
+    margin-bottom: 14px;
+}
+
+.score-box {
+
+    background: #f4f6fb;
+
+    padding: 13px;
+
+    border-radius: 12px;
+}
+
+.score-box span {
+
+    display: block;
+
+    color: #777;
+
+    font-size: 11px;
+
+    margin-bottom: 5px;
+}
+
+.score-box strong {
+
+    color: #233b8f;
+
+    font-size: 18px;
+}
+
+
+/* =========================================================
+   RESULT BADGE
+========================================================= */
+
+.result-badge {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    width: max-content;
+
+    padding: 7px 13px;
+
+    border-radius: 20px;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    margin-bottom: 18px;
+}
+
+.result-pass {
+
+    background: #dff8ec;
+
+    color: #079455;
+}
+
+.result-fail {
+
+    background: #ffe2e2;
+
+    color: #e02b2b;
+}
+
+
+/* =========================================================
+   VIEW FULL DETAIL BUTTON
+========================================================= */
+
+.assessment-detail-button {
+
+    width: 100%;
+
+    border: none;
+
+    border-radius: 12px;
+
+    padding: 13px 15px;
+
+    background: #ff7900;
+
+    color: white;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    transition: 0.25s;
+
+    margin-top: auto;
+}
+
+.assessment-detail-button:hover {
+
+    background: #e96c00;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 7px 18px rgba(255, 121, 0, 0.25);
+}
+
+
+/* =========================================================
+   CAREER DETAIL OVERLAY
+========================================================= */
+
+.career-detail-overlay {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 10000;
+
+    display: none;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 25px;
+
+    background:
+        rgba(13, 24, 58, 0.62);
+
+    backdrop-filter: blur(6px);
+
+    -webkit-backdrop-filter: blur(6px);
+}
+
+.career-detail-overlay.show {
+
+    display: flex;
+
+    animation:
+        overlayFadeIn 0.22s ease;
+}
+
+@keyframes overlayFadeIn {
+
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+
+}
+
+
+/* =========================================================
+   DETAIL MODAL
+========================================================= */
+
+.career-detail-modal {
+
+    width: min(1080px, 100%);
+
+    max-height: calc(100vh - 50px);
+
+    overflow-y: auto;
+
+    background: #ffffff;
+
+    border-radius: 24px;
+
+    box-shadow:
+        0 25px 70px rgba(0, 0, 0, 0.25);
+
+    padding: 26px 30px 30px;
+
+    position: relative;
+
+    border-top: 4px solid #ff7900;
+
+    animation:
+        modalSlideIn 0.28s ease;
+}
+
+@keyframes modalSlideIn {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(18px)
+            scale(0.985);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+    }
+
+}
+
+
+/* =========================================================
+   DETAIL TOP BAR
+========================================================= */
+
+.detail-top-bar {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 22px;
+}
+
+.detail-back-button {
+
+    border: none;
+
+    background: #f5f7fc;
+
+    color: #233b8f;
+
+    padding: 10px 16px;
+
+    border-radius: 11px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.detail-back-button:hover {
+
+    background: #e9edfa;
+
+    transform: translateX(-2px);
+}
+
+.detail-cancel-button {
+
+    width: 42px;
+
+    height: 42px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #f0f2f7;
+
+    color: #233b8f;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    cursor: pointer;
+
+    font-size: 17px;
+
+    transition: 0.2s;
+}
+
+.detail-cancel-button:hover {
+
+    background: #233b8f;
+
+    color: white;
+
+    transform: rotate(90deg);
+}
+
+
+/* =========================================================
+   DETAIL HEADER
+========================================================= */
+
+.detail-header {
+
+    margin-bottom: 24px;
+}
+
+.detail-title-area {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 16px;
+}
+
+.detail-assessment-icon {
+
+    width: 58px;
+
+    height: 58px;
+
+    flex-shrink: 0;
+
+    border-radius: 16px;
+
+    background: #fff0e4;
+
+    color: #ff7900;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 23px;
+}
+
+.detail-label {
+
+    display: block;
+
+    color: #ff7900;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.2px;
+
+    margin-bottom: 4px;
+}
+
+.detail-header h2 {
+
+    margin: 0 0 4px;
+
+    color: #233b8f;
+
+    font-size: 30px;
+
+    line-height: 1.2;
+}
+
+.detail-header p {
+
+    margin: 0;
+
+    color: #777;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   DETAIL SUMMARY
+========================================================= */
+
+.detail-summary-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 15px;
+
+    margin-bottom: 26px;
+}
+
+.detail-summary-card {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    padding: 17px;
+
+    border-radius: 15px;
+
+    background: #f7f9ff;
+
+    border: 1px solid #e7eaf2;
+}
+
+.summary-icon {
+
+    width: 44px;
+
+    height: 44px;
+
+    border-radius: 12px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-shrink: 0;
+}
+
+.summary-icon.blue {
+
+    background: #e9edff;
+
+    color: #233b8f;
+}
+
+.summary-icon.orange {
+
+    background: #fff0e4;
+
+    color: #ff7900;
+}
+
+.summary-icon.green {
+
+    background: #e5f8ee;
+
+    color: #079455;
+}
+
+.detail-summary-card span {
+
+    display: block;
+
+    color: #777;
+
+    font-size: 11px;
+
+    margin-bottom: 4px;
+}
+
+.detail-summary-card strong {
+
+    color: #233b8f;
+
+    font-size: 19px;
+}
+
+
+/* =========================================================
+   CAREER ANALYSIS
+========================================================= */
+
+.detail-career-area {
+
+    border-top: 1px solid #edf0f6;
+
+    padding-top: 23px;
+}
+
+.detail-section-heading {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 18px;
+}
+
+.detail-section-heading span {
+
+    color: #ff7900;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+}
+
+.detail-section-heading h3 {
+
+    margin: 4px 0 4px;
+
+    color: #233b8f;
+
+    font-size: 21px;
+}
+
+.detail-section-heading p {
+
+    margin: 0;
+
+    color: #777;
+
+    font-size: 12px;
+}
+
+.detail-heading-icon {
+
+    width: 44px;
+
+    height: 44px;
+
+    border-radius: 12px;
+
+    background: #eef2ff;
+
+    color: #233b8f;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+
+/* =========================================================
+   CAREER MATCH ROWS
+========================================================= */
+
+.detail-career-matches {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 9px;
+}
+
+.detail-career-row {
+
+    display: grid;
+
+    grid-template-columns:
+        38px
+        minmax(220px, 1fr)
+        minmax(150px, 2fr)
+        70px;
+
+    align-items: center;
+
+    gap: 14px;
+
+    padding: 12px 15px;
+
+    border-radius: 13px;
+
+    background: #f8f9fd;
+
+    border: 1px solid transparent;
+
+    cursor: pointer;
+
+    transition: 0.22s;
+}
+
+.detail-career-row:hover {
+
+    background: #ffffff;
+
+    border-color: #dce2f1;
+
+    box-shadow:
+        0 5px 15px rgba(35, 59, 143, 0.08);
+
+    transform: translateX(3px);
+}
+
+.detail-career-rank {
+
+    width: 32px;
+
+    height: 32px;
+
+    border-radius: 50%;
+
+    background: #233b8f;
+
+    color: white;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 12px;
+
+    font-weight: 700;
+}
+
+.detail-career-name {
+
+    color: #233b8f;
+
+    font-weight: 650;
+
+    font-size: 14px;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+}
+
+.detail-career-progress {
+
+    height: 8px;
+
+    background: #e3e7f0;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+}
+
+.detail-career-progress span {
+
+    display: block;
+
+    height: 100%;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #233b8f,
+            #7142f4
+        );
+}
+
+.detail-career-value {
+
+    text-align: right;
+
+    color: #ff7900;
+
+    font-size: 13px;
+
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   SELECTED CAREER EXPLANATION
+========================================================= */
+
+.selected-career-explanation {
+
+    display: none;
+
+    margin-top: 20px;
+
+    padding: 20px;
+
+    border-radius: 16px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f8f9ff,
+            #ffffff
+        );
+
+    border: 1px solid #dfe4f1;
+
+    animation:
+        careerInsightAppear 0.25s ease;
+}
+
+.selected-career-explanation.show {
+
+    display: block;
+}
+
+@keyframes careerInsightAppear {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(8px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+
+    }
+
+}
+
+
+/* =========================================================
+   SELECTED CAREER HEADER
+========================================================= */
+
+.selected-career-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin-bottom: 17px;
+}
+
+.selected-career-header span {
+
+    color: #ff7900;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+}
+
+.selected-career-header h3 {
+
+    margin: 4px 0 0;
+
+    color: #233b8f;
+
+    font-size: 20px;
+}
+
+.selected-career-percentage {
+
+    padding: 9px 15px;
+
+    border-radius: 20px;
+
+    background: #233b8f;
+
+    color: white;
+
+    font-weight: 800;
+
+    font-size: 14px;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   EXPLANATION GRID
+========================================================= */
+
+.career-explanation-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 12px;
+}
+
+.explanation-card {
+
+    display: flex;
+
+    gap: 11px;
+
+    padding: 14px;
+
+    border-radius: 12px;
+
+    background: white;
+
+    border: 1px solid #e8ebf3;
+}
+
+.explanation-icon {
+
+    width: 37px;
+
+    height: 37px;
+
+    border-radius: 10px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-shrink: 0;
+}
+
+.explanation-icon.why {
+
+    background: #fff0e4;
+
+    color: #ff7900;
+}
+
+.strength-icon {
+
+    background: #e7f8ef;
+
+    color: #079455;
+}
+
+.improvement-icon {
+
+    background: #eef2ff;
+
+    color: #233b8f;
+}
+
+.explanation-card h4 {
+
+    margin: 0 0 5px;
+
+    color: #233b8f;
+
+    font-size: 13px;
+}
+
+.explanation-card p {
+
+    margin: 0;
+
+    color: #666;
+
+    font-size: 11px;
+
+    line-height: 1.55;
+}
+
+
+/* =========================================================
+   EMPTY / MESSAGE
+========================================================= */
+
+.career-message {
+
+    background: white;
+
+    border-radius: 20px;
+
+    padding: 50px 20px;
+
+    text-align: center;
+
+    margin-top: 25px;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.06);
+}
+
+.career-message i {
+
+    font-size: 45px;
+
+    color: #233b8f;
+
+    margin-bottom: 15px;
+}
+
+.career-message h3 {
+
+    color: #233b8f;
+
+    margin-bottom: 8px;
+}
+
+.career-message p {
+
+    color: #777;
+}
+
+
+/* =========================================================
+   LOADING
+========================================================= */
+
+.career-loading {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    color: #777;
+
+    padding: 30px;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   PAGE LOADER
+========================================================= */
+
+.career-loader {
+
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(255, 255, 255, 0.88);
+
+    z-index: 9999;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    color: #233b8f;
+
+    font-weight: 600;
+}
+
+.loader-spinner {
+
+    width: 48px;
+
+    height: 48px;
+
+    border: 5px solid #e2e5ee;
+
+    border-top-color: #233b8f;
+
+    border-radius: 50%;
+
+    animation:
+        careerSpin 1s linear infinite;
+
+    margin-bottom: 15px;
+}
+
+@keyframes careerSpin {
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:1200px) {
+
+    .career-overview {
+
+        grid-template-columns: 1fr;
+    }
+
+    .assessment-career-container {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+
+@media(max-width:900px) {
+
+    .career-explanation-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+    .detail-summary-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+    .detail-career-row {
+
+        grid-template-columns:
+            38px
+            1fr
+            65px;
+    }
+
+    .detail-career-progress {
+
+        grid-column: 2 / 3;
+    }
+
+    .detail-career-value {
+
+        grid-column: 3 / 4;
+
+        grid-row: 1;
+    }
+
+}
+
+
+@media(max-width:850px) {
+
+    .assessment-career-container {
+
+        grid-template-columns: 1fr;
+    }
+
+    .overall-content {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    .section-title {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 15px;
+    }
+
+}
+
+
+@media(max-width:650px) {
+
+    .career-header h1 {
+
+        font-size: 28px;
+    }
+
+    .overview-card,
+    .assessment-career-section {
+
+        padding: 20px;
+    }
+
+    .career-detail-overlay {
+
+        padding: 10px;
+    }
+
+    .career-detail-modal {
+
+        max-height: calc(100vh - 20px);
+
+        border-radius: 18px;
+
+        padding: 18px;
+    }
+
+    .detail-title-area {
+
+        align-items: flex-start;
+    }
+
+    .detail-assessment-icon {
+
+        width: 48px;
+
+        height: 48px;
+
+        font-size: 19px;
+    }
+
+    .detail-header h2 {
+
+        font-size: 23px;
+    }
+
+    .detail-back-button span {
+
+        display: none;
+    }
+
+    .detail-back-button {
+
+        width: 40px;
+
+        height: 40px;
+
+        justify-content: center;
+
+        padding: 0;
+    }
+
+    .detail-career-row {
+
+        grid-template-columns:
+            34px
+            1fr
+            60px;
+
+        gap: 10px;
+    }
+
+    .detail-career-progress {
+
+        grid-column: 2 / 3;
+    }
+
+    .detail-career-name {
+
+        font-size: 13px;
+    }
+
+    .career-explanation-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+    .top-progress {
+
+        display: none;
+    }
+
+}

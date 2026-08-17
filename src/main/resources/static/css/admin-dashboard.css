@@ -1,0 +1,1676 @@
+/*==========================================================
+                GIRIS TECH HUB
+    ADMIN DASHBOARD STYLESHEET
+==========================================================*/
+
+
+/*==========================================================
+                    GOOGLE FONT
+==========================================================*/
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+
+/*==========================================================
+                    ROOT VARIABLES
+==========================================================*/
+
+/* ==========================================================
+ROOT VARIABLES
+========================================================== */
+
+:root{
+
+    --primary:#1E3A8A;
+
+    --primary-dark:#172554;
+
+    --secondary:#FF7A00;
+
+    --secondary-dark:#EA580C;
+
+    --white:#ffffff;
+
+    --background:#F5F7FB;
+
+    --text:#475569;
+
+    --text-light:#64748B;
+
+    --border:#E5E7EB;
+
+    --shadow:0 10px 30px rgba(0,0,0,.08);
+
+}
+
+
+/*==========================================================
+                    RESET
+==========================================================*/
+
+*{
+
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
+}
+
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:var(--background);
+
+    overflow:hidden;
+
+}
+
+
+/*==========================================================
+                MAIN LAYOUT
+==========================================================*/
+
+.dashboard{
+
+    display:flex;
+
+    height:100vh;
+
+    overflow:hidden;
+
+}
+
+
+/*==========================================================
+                    SIDEBAR
+==========================================================*/
+
+.sidebar{
+
+    width:260px;
+
+    height:100vh;
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    background:linear-gradient(
+            180deg,
+            var(--primary),
+            var(--primary-dark));
+
+    display:flex;
+
+    flex-direction:column;
+
+    padding:20px 18px;
+
+    overflow:hidden;
+
+}
+
+
+/*==========================================================
+                SIDEBAR HEADER
+==========================================================*/
+.sidebar-header{
+
+    text-align:center;
+
+    margin-bottom:18px;
+
+}
+
+
+.logo{
+
+    width:145px;
+
+    display:block;
+
+    margin:0 auto 10px;
+
+}
+
+
+.sidebar-header h2{
+
+    color:white;
+
+    
+    font-size:22px;
+
+    margin-bottom:4px;
+    font-weight:700;
+
+
+
+}
+
+
+.sidebar-header p{
+
+    color:rgba(255,255,255,.80);
+
+     margin-top:2px;
+
+    line-height:19px;
+
+    font-size:12px;
+
+}
+
+
+/*==========================================================
+                SIDEBAR MENU
+==========================================================*/
+
+.sidebar-menu{
+
+    
+    list-style:none;
+
+    margin-top:18px;
+
+    flex:1;
+}
+
+
+.sidebar-menu li{
+
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    padding:11px 14px;
+
+    margin-bottom:8px;
+
+    border-radius:14px;
+
+    cursor:pointer;
+
+    transition:.30s ease;
+
+    color:white;
+
+    font-size:15px;
+
+    font-weight:500;
+
+    text-decoration:none;
+
+}
+
+
+/* ICON */
+
+.sidebar-menu li i{
+
+
+    width:38px;
+
+    height:38px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.12);
+
+    color:white;
+
+    font-size:15px;
+
+    transition:.30s ease;
+
+}
+
+
+
+/* TEXT */
+
+.sidebar-menu li span{
+
+    transition:.30s ease;
+
+}
+
+
+
+/* HOVER */
+
+.sidebar-menu li:hover{
+
+
+    background:rgba(255,255,255,.10);
+
+    transform:translateX(5px);
+
+
+}
+
+
+.sidebar-menu li:hover i{
+
+
+    background:white;
+
+    color:var(--primary);
+
+    transform:rotate(8deg);
+
+
+}
+
+
+
+/* ACTIVE */
+
+.sidebar-menu li.active{
+
+
+    background:var(--secondary);
+
+    transform:translateX(0);
+
+
+}
+
+
+
+.sidebar-menu li.active i{
+
+
+    background:white;
+
+    color:var(--secondary);
+
+
+}
+
+
+
+/* ACTIVE HOVER */
+
+.sidebar-menu li.active:hover{
+
+
+    background:var(--secondary-dark);
+
+
+}
+
+
+.sidebar-menu li.active:hover i{
+
+
+    transform:rotate(0deg);
+
+
+}
+
+
+/*==========================================================
+                    LOGOUT
+==========================================================*/
+
+.logout-btn{
+
+     margin-top:auto;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:10px;
+
+    padding:12px;
+
+    border-radius:14px;
+
+    background:rgba(255,255,255,.12);
+
+    color:white;
+
+    cursor:pointer;
+
+    transition:.30s;
+
+}
+
+
+
+.logout-btn:hover{
+
+    background:rgba(255,255,255,.25);
+
+    transform:translateY(-3px);
+
+}
+
+
+/*==========================================================
+                MAIN CONTENT
+==========================================================*/
+
+.main-content{
+
+    margin-left:260px;
+
+    width:calc(100% - 260px);
+
+    height:100vh;
+
+    overflow-y:auto;
+
+    overflow-x:hidden;
+
+    padding:28px;
+
+}
+
+
+/*==========================================================
+                    HEADER
+==========================================================*/
+
+.header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:30px;
+
+}
+
+
+.header h1{
+
+    font-size:42px;
+
+    color:var(--primary);
+
+    font-weight:700;
+
+}
+
+
+.header p{
+
+    color:var(--text-light);
+
+    margin-top:6px;
+
+}
+
+
+
+/*==========================================================
+                DASHBOARD CARDS
+==========================================================*/
+
+.dashboard-cards{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:22px;
+
+    margin-bottom:30px;
+
+}
+
+
+/*==========================================================
+                    CARD
+==========================================================*/
+
+.card{
+
+    background:var(--white);
+
+    border-radius:18px;
+
+    padding:22px;
+
+    border:1px solid transparent;
+
+    box-shadow:var(--shadow);
+
+    position:relative;
+
+    overflow:hidden;
+
+    transition:all .30s ease;
+
+}
+
+
+.card:hover{
+
+    transform:translateY(-6px);
+
+    border-color:var(--secondary);
+
+    box-shadow:0 18px 38px rgba(0,0,0,.10);
+
+}
+
+
+/*==========================================================
+                TOP BORDER
+==========================================================*/
+
+.card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    height:5px;
+
+    background:linear-gradient(
+            90deg,
+            var(--primary),
+            var(--secondary));
+
+}
+
+
+/*==========================================================
+                CARD TOP
+==========================================================*/
+
+.card-top{
+
+    display:flex;
+
+    justify-content:flex-end;
+
+    margin-bottom:18px;
+
+}
+
+
+/*==========================================================
+                ICON BOX
+==========================================================*/
+
+.card-icon{
+
+    width:56px;
+
+    height:56px;
+
+    border-radius:16px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    color:white;
+
+    transition:.35s;
+
+}
+
+
+.card:hover .card-icon{
+
+    transform:rotate(8deg) scale(1.08);
+
+}
+
+
+/*==========================================================
+                ICONS
+==========================================================*/
+
+.card-icon i{
+
+    font-size:22px;
+
+}
+
+
+/*==========================================================
+                ICON COLORS
+==========================================================*/
+
+.students{
+
+    background:#1E40AF;
+
+}
+
+.admins{
+
+    background:#7C3AED;
+
+}
+
+.assessment{
+
+    background:#F97316;
+
+}
+
+.question{
+
+    background:#0EA5E9;
+
+}
+
+.career{
+
+    background:#14B8A6;
+
+}
+
+.course{
+
+    background:#10B981;
+
+}
+
+.attempts{
+
+    background:#EF4444;
+
+}
+
+.recommendation{
+
+    background:#F59E0B;
+
+}
+
+
+/*==========================================================
+                COUNTER
+==========================================================*/
+
+.counter{
+
+    font-size:38px;
+
+    font-weight:700;
+
+    color:var(--primary);
+
+    margin-bottom:8px;
+
+}
+
+
+/*==========================================================
+                CARD LABEL
+==========================================================*/
+
+.card p{
+
+    color:var(--text-light);
+
+    font-size:15px;
+
+    font-weight:500;
+
+}
+
+
+/*==========================================================
+                CARD ANIMATION
+==========================================================*/
+
+.card{
+
+    animation:fadeUp .5s ease;
+
+}
+
+
+.card:nth-child(2){
+
+    animation-delay:.08s;
+
+}
+
+.card:nth-child(3){
+
+    animation-delay:.16s;
+
+}
+
+.card:nth-child(4){
+
+    animation-delay:.24s;
+
+}
+
+.card:nth-child(5){
+
+    animation-delay:.32s;
+
+}
+
+.card:nth-child(6){
+
+    animation-delay:.40s;
+
+}
+
+.card:nth-child(7){
+
+    animation-delay:.48s;
+
+}
+
+.card:nth-child(8){
+
+    animation-delay:.56s;
+
+}
+
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+/*==========================================================
+                CARD NUMBER COLOR
+==========================================================*/
+
+#totalStudents,
+#totalAdmins,
+#totalAssessments,
+#totalQuestions,
+#totalCareers,
+#totalCourses,
+#totalAttempts,
+#totalRecommendations{
+
+    color:var(--primary);
+
+}
+
+
+/*==========================================================
+                TABLE SECTION
+==========================================================*/
+
+.table-section{
+
+    background:var(--white);
+
+    border-radius:18px;
+
+    padding:25px;
+
+    box-shadow:var(--shadow);
+
+    margin-bottom:25px;
+
+}
+
+
+/*==========================================================
+                TABLE HEADER
+==========================================================*/
+
+.table-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:22px;
+
+}
+
+
+.table-header h2{
+
+    font-size:28px;
+
+    color:var(--primary);
+
+    font-weight:700;
+
+}
+
+
+/*==========================================================
+                VIEW ALL BUTTON
+==========================================================*/
+
+.view-all-btn{
+
+    background:var(--primary);
+
+    color:white;
+
+    border:none;
+
+    border-radius:12px;
+
+    padding:11px 22px;
+
+    cursor:pointer;
+
+    font-size:14px;
+
+    transition:.30s;
+
+}
+
+
+.view-all-btn:hover{
+
+    background:var(--secondary);
+
+}
+
+/*==========================================================
+                TABLE CONTAINER
+==========================================================*/
+
+.table-container{
+
+    width:100%;
+
+    overflow-x:auto;
+
+}
+
+
+/*==========================================================
+                    TABLE
+==========================================================*/
+
+table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+}
+
+
+thead{
+
+    background:#F8FAFC;
+
+}
+
+
+thead th{
+
+    padding:18px;
+
+    text-align:left;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    color:var(--primary);
+
+    border-bottom:2px solid var(--border);
+
+}
+
+
+tbody td{
+
+    padding:18px;
+
+    border-bottom:1px solid var(--border);
+
+    color:var(--text);
+
+    font-size:15px;
+
+}
+
+
+tbody tr{
+
+    transition:.30s;
+
+}
+
+
+tbody tr:hover{
+
+    background:#F8FAFC;
+
+}
+
+
+/*==========================================================
+                STATUS BADGE
+==========================================================*/
+
+.status{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    min-width:95px;
+
+    padding:7px 16px;
+
+    border-radius:25px;
+
+    font-size:13px;
+
+    font-weight:600;
+
+}
+
+
+.status.student{
+
+    background:#DBEAFE;
+
+    color:#1D4ED8;
+
+}
+
+
+.status.graduate{
+
+    background:#DCFCE7;
+
+    color:#15803D;
+
+}
+
+
+.status.working{
+
+    background:#FEF3C7;
+
+    color:#B45309;
+
+}
+
+
+/*==========================================================
+                EMPTY MESSAGE
+==========================================================*/
+
+.no-data{
+
+    display:none;
+
+    text-align:center;
+
+    padding:55px 20px;
+
+    color:var(--text-light);
+
+}
+
+
+.no-data i{
+
+    font-size:52px;
+
+    color:var(--secondary);
+
+    margin-bottom:15px;
+
+}
+
+
+.no-data p{
+
+    font-size:16px;
+
+}
+
+
+/*==========================================================
+                SCROLLBAR
+==========================================================*/
+
+::-webkit-scrollbar{
+
+    width:8px;
+
+    height:8px;
+
+}
+
+
+::-webkit-scrollbar-track{
+
+    background:#EEF2F7;
+
+}
+
+
+::-webkit-scrollbar-thumb{
+
+    background:var(--primary);
+
+    border-radius:20px;
+
+}
+
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:var(--secondary);
+
+}
+
+
+/*==========================================================
+            MAIN CONTENT SCROLLBAR
+==========================================================*/
+
+.main-content::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+
+.main-content::-webkit-scrollbar-thumb{
+
+    background:var(--primary);
+
+}
+
+
+/*==========================================================
+                RESPONSIVE
+==========================================================*/
+
+@media(max-width:1300px){
+
+    .dashboard-cards{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+
+@media(max-width:992px){
+
+    .sidebar{
+
+        width:90px;
+
+        padding:20px 10px;
+
+    }
+
+    .main-content{
+
+        margin-left:90px;
+
+        width:calc(100% - 90px);
+
+    }
+
+    .sidebar-header h2,
+
+    .sidebar-header p,
+
+    .sidebar-menu span,
+
+    .logout-btn span{
+
+        display:none;
+
+    }
+
+    .logo{
+
+        width:55px;
+
+    }
+
+    .sidebar-menu li{
+
+        justify-content:center;
+
+        padding:12px;
+
+    }
+
+    .logout-btn{
+
+        justify-content:center;
+
+    }
+
+}
+
+
+@media(max-width:768px){
+
+    .header{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:20px;
+
+    }
+
+    .search-box{
+
+        width:100%;
+
+    }
+
+    .dashboard-cards{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .main-content{
+
+        padding:20px;
+
+    }
+
+}
+
+
+@media(max-width:576px){
+
+    .table-header{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:15px;
+
+    }
+
+    .header h1{
+
+        font-size:30px;
+
+    }
+
+}
+
+
+/*==========================================================
+                FOCUS EFFECT
+==========================================================*/
+
+input:focus{
+
+    outline:none;
+
+}
+
+
+button{
+
+    font-family:'Poppins',sans-serif;
+
+}
+
+
+/*==========================================================
+                SELECTION
+==========================================================*/
+
+::selection{
+
+    background:var(--secondary);
+
+    color:white;
+
+}
+
+
+/*=========================================================
+            STUDENT PAGINATION
+=========================================================*/
+
+.pagination-info {
+
+    margin-top: 18px;
+
+    color: var(--text-light);
+
+    font-size: 14px;
+
+    font-weight: 500;
+
+}
+
+
+/* ============================================================
+   ADMIN DASHBOARD PAGINATION
+   SAME STYLE AS QUESTION MANAGEMENT
+============================================================ */
+
+.pagination-container {
+
+    width: 100%;
+
+    margin-top: 16px;
+
+    padding: 14px 5px 5px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    border-top: 1px solid #E8EDF4;
+
+    box-sizing: border-box;
+}
+
+
+/* ============================================================
+   PAGINATION INFORMATION
+============================================================ */
+
+.pagination-info {
+
+    margin: 0;
+
+    padding: 0;
+
+    color: #64748B;
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 13px;
+
+    font-weight: 500;
+
+    line-height: 34px;
+
+    white-space: nowrap;
+}
+
+
+/* ============================================================
+   PAGINATION BUTTON GROUP
+============================================================ */
+
+.pagination-buttons {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: flex-end;
+
+    gap: 5px;
+
+    width: auto;
+
+    margin: 0;
+
+    padding: 0;
+
+    flex-shrink: 0;
+}
+
+
+/* ============================================================
+   ALL PAGINATION BUTTONS
+============================================================ */
+
+.pagination-buttons button {
+
+    height: 34px;
+
+    min-width: 34px;
+
+    padding: 0 9px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border: 1px solid #E1E7F0;
+
+    border-radius: 8px;
+
+    background: #FFFFFF;
+
+    color: #1E3A8A;
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    line-height: 1;
+
+    cursor: pointer;
+
+    box-sizing: border-box;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+/* ============================================================
+   PAGE NUMBER
+   SMALL SQUARE
+============================================================ */
+
+.pagination-buttons .pagination-number,
+.pagination-buttons .pagination-page {
+
+    width: 34px !important;
+
+    height: 34px !important;
+
+    min-width: 34px !important;
+
+    max-width: 34px !important;
+
+    min-height: 34px !important;
+
+    max-height: 34px !important;
+
+    padding: 0 !important;
+
+    flex: 0 0 34px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 8px;
+
+    border: 1px solid #DCE3EF;
+
+    background: #FFFFFF;
+
+    color: #1E3A8A;
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    line-height: 1;
+
+    box-sizing: border-box;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+/* ============================================================
+   ACTIVE PAGE
+============================================================ */
+
+.pagination-buttons .pagination-number.active,
+.pagination-buttons .pagination-page.active {
+
+    width: 34px !important;
+
+    height: 34px !important;
+
+    min-width: 34px !important;
+
+    max-width: 34px !important;
+
+    padding: 0 !important;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #1E3A8A;
+
+    color: #FFFFFF;
+
+    border-color: #1E3A8A;
+
+    border-radius: 8px;
+
+    box-shadow:
+        0 4px 10px rgba(30, 58, 138, 0.18);
+}
+
+
+/* ============================================================
+   PAGE NUMBER HOVER
+============================================================ */
+
+.pagination-buttons .pagination-number:hover,
+.pagination-buttons .pagination-page:hover {
+
+    background: #F1F5FF;
+
+    color: #1E3A8A;
+
+    border-color: #1E3A8A;
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 4px 10px rgba(30, 58, 138, 0.10);
+}
+
+
+/* ============================================================
+   ACTIVE PAGE HOVER
+============================================================ */
+
+.pagination-buttons .pagination-number.active:hover,
+.pagination-buttons .pagination-page.active:hover {
+
+    background: #1E3A8A;
+
+    color: #FFFFFF;
+
+    border-color: #1E3A8A;
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 5px 12px rgba(30, 58, 138, 0.22);
+}
+
+
+/* ============================================================
+   PREVIOUS / NEXT
+============================================================ */
+
+.pagination-buttons .pagination-prev,
+.pagination-buttons .pagination-next {
+
+    height: 34px;
+
+    min-width: 80px;
+
+    padding: 0 10px;
+
+    border-radius: 8px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 6px;
+
+    background: #FFFFFF;
+
+    color: #1E3A8A;
+
+    border: 1px solid #DCE3EF;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+}
+
+
+/* ============================================================
+   PREVIOUS / NEXT HOVER
+============================================================ */
+
+.pagination-buttons .pagination-prev:hover:not(:disabled),
+.pagination-buttons .pagination-next:hover:not(:disabled) {
+
+    background: #F1F5FF;
+
+    color: #1E3A8A;
+
+    border-color: #1E3A8A;
+
+    transform: translateY(-1px);
+
+}
+
+
+/* ============================================================
+   DISABLED
+============================================================ */
+
+.pagination-buttons button:disabled {
+
+    background: #F8FAFC;
+
+    color: #A8B3C4;
+
+    border-color: #E5EAF1;
+
+    cursor: not-allowed;
+
+    opacity: 1;
+
+    transform: none;
+
+    box-shadow: none;
+}
+
+
+/* ============================================================
+   ELLIPSIS
+============================================================ */
+
+.pagination-ellipsis {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 30px;
+
+    min-width: 30px;
+
+    height: 34px;
+
+    color: #64748B;
+
+    font-size: 13px;
+
+    font-weight: 600;
+}
+
+
+/* ============================================================
+   SINGLE PAGE
+============================================================ */
+
+.pagination-buttons.single-page {
+
+    justify-content: flex-end;
+}
+
+
+/* ============================================================
+   TABLE
+============================================================ */
+
+.table-section {
+
+    overflow: hidden;
+}
+
+
+/* ============================================================
+   RESPONSIVE
+============================================================ */
+
+@media (max-width: 650px) {
+
+    .pagination-container {
+
+        flex-direction: column;
+
+        align-items: center;
+
+        justify-content: center;
+
+        gap: 10px;
+
+    }
+
+    .pagination-info {
+
+        line-height: 1.5;
+
+        text-align: center;
+
+        white-space: normal;
+
+    }
+
+    .pagination-buttons {
+
+        justify-content: center;
+
+        width: 100%;
+
+        flex-wrap: wrap;
+
+    }
+
+}
+
+
+/* ============================================================
+   VERY SMALL SCREEN
+============================================================ */
+
+@media (max-width: 400px) {
+
+    .pagination-buttons {
+
+        gap: 4px;
+
+    }
+
+    .pagination-buttons .pagination-prev,
+    .pagination-buttons .pagination-next {
+
+        min-width: 68px;
+
+        padding: 0 7px;
+
+        font-size: 11px;
+
+    }
+
+    .pagination-buttons .pagination-number,
+    .pagination-buttons .pagination-page {
+
+        width: 32px !important;
+
+        min-width: 32px !important;
+
+        max-width: 32px !important;
+
+        height: 32px !important;
+
+        min-height: 32px !important;
+
+        max-height: 32px !important;
+
+        flex-basis: 32px;
+
+    }
+
+}

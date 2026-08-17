@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Student Registration | Giri's Tech Hub</title>
+
+<link rel="stylesheet" href="../css/register.css">
+
+<link
+	href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+	rel="stylesheet">
+
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+<body>
+
+	<div class="container">
+
+		<!---------------- LEFT PANEL ---------------->
+
+		<div class="left-panel">
+
+			<img src="../images/GthTransparent.png" class="logo">
+
+			<h1>Create Your Account</h1>
+
+			<p>Register to access career recommendations, online assessments
+				and placement preparation.</p>
+
+			<div class="login-tag">
+				<span>CREATE ACCOUNT</span>
+			</div>
+
+			<div class="features">
+
+				<div class="feature">
+					<i class="fa-solid fa-user-graduate"></i> <span>Career
+						Recommendation</span>
+				</div>
+
+				<div class="feature">
+					<i class="fa-solid fa-file-lines"></i> <span>Online
+						Assessments</span>
+				</div>
+
+				<div class="feature">
+					<i class="fa-solid fa-briefcase"></i> <span>Placement
+						Preparation</span>
+				</div>
+
+			</div>
+
+		</div>
+
+		<!---------------- RIGHT PANEL ---------------->
+
+		<div class="right-panel">
+
+			<div class="form-card">
+
+				<h2>Create Your Account</h2>
+
+				<p>Join India's next generation Career Recommendation Platform.
+
+				</p>
+
+				<form id="registerForm">
+
+					<div class="form-grid">
+
+						<!------------ Name ------------>
+
+						<div class="input-box">
+
+							<i class="fa-solid fa-user"></i> <input type="text" id="name"
+								placeholder="Full Name" required>
+
+						</div>
+
+						<!------------ Email ------------>
+
+						<div class="input-box">
+
+							<i class="fa-solid fa-envelope"></i> <input type="email"
+								id="email" placeholder="Email Address" required>
+
+						</div>
+
+						<!------------ Mobile ------------>
+
+						<div class="input-box">
+
+							<i class="fa-solid fa-phone"></i> <input type="text" id="mobile"
+								maxlength="10" placeholder="Mobile Number" required>
+
+						</div>
+
+						<!------------ Password ------------>
+
+						<div class="input-box password-box">
+
+							<i class="fa-solid fa-lock"></i> <input type="password"
+								id="password" placeholder="Password" required> <i
+								class="fa-solid fa-eye toggle-password"></i>
+
+						</div>
+
+						<!------------ Confirm Password ------------>
+
+						<div class="input-box password-box">
+
+							<i class="fa-solid fa-lock"></i> <input type="password"
+								id="confirmPassword" placeholder="Confirm Password" required>
+
+							<i class="fa-solid fa-eye toggle-confirm"></i>
+
+						</div>
+
+						<!------------ College ------------>
+
+						<div class="input-box">
+
+							<i class="fa-solid fa-building-columns"></i> <input type="text"
+								id="college" placeholder="College Name" required>
+
+						</div>
+
+						<!------------ Branch ------------>
+
+						<div class="input-box">
+
+							<i class="fa-solid fa-graduation-cap"></i> <select id="branch">
+
+								<option value="">Select Branch</option>
+
+								<option value="Computer Science">Computer Science</option>
+
+								<option value="Information Technology">Information
+									Technology</option>
+
+								<option value="Artificial Intelligence">Artificial
+									Intelligence</option>
+
+								<option value="Data Science">Data Science</option>
+
+								<option value="Electronics">Electronics</option>
+
+								<option value="Electrical">Electrical</option>
+
+								<option value="Mechanical">Mechanical</option>
+
+								<option value="Civil">Civil</option>
+
+							</select>
+
+						</div>
+
+						<!------------ Current Status ------------>
+
+						<div class="input-box">
+
+							<i class="fa-solid fa-user-graduate"></i> <select
+								id="currentStatus">
+
+								<option value="">Current Status</option>
+
+								<option value="Student">Student</option>
+
+								<option value="Graduate">Graduate</option>
+
+								<option value="Working Professional">Working
+									Professional</option>
+
+							</select>
+
+						</div>
+
+						<!------------ Semester ------------>
+
+						<div class="input-box" id="semesterBox" style="display: none;">
+
+							<i class="fa-solid fa-book-open"></i> <select id="semester">
+
+								<option value="">Select Semester</option>
+
+								<option value="1">Semester I</option>
+
+								<option value="2">Semester II</option>
+
+								<option value="3">Semester III</option>
+
+								<option value="4">Semester IV</option>
+
+								<option value="5">Semester V</option>
+
+								<option value="6">Semester VI</option>
+
+								<option value="7">Semester VII</option>
+
+								<option value="8">Semester VIII</option>
+
+							</select>
+
+						</div>
+
+						<!------------ Graduation Year ------------>
+
+						<div class="input-box">
+
+							<i class="fa-solid fa-calendar-days"></i> <select
+								id="graduationYear" required>
+
+								<option value="">Graduation Year</option>
+
+								<option value="2025">2025</option>
+
+								<option value="2026">2026</option>
+
+								<option value="2027">2027</option>
+
+								<option value="2028">2028</option>
+
+								<option value="2029">2029</option>
+
+								<option value="2030">2030</option>
+
+							</select>
+
+						</div>
+
+						<!------------ Career Goal ------------>
+
+						
+					</div>
+
+					<!------------ Terms ------------>
+
+					<div class="terms">
+
+						<label> <input type="checkbox" id="terms" required>
+
+							I agree to the <a href="#"> Terms & Conditions </a>
+
+						</label>
+
+					</div>
+
+					<!------------ Button ------------>
+
+					<button type="submit" class="register-btn" id="registerBtn">
+
+						<span id="btnText"> Create Account </span>
+
+					</button>
+
+				</form>
+
+				<!------------ Login ------------>
+
+				<div class="login-link">
+
+					Already have an account? <a href="student-login.html"> Login
+						Here </a>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+
+	<script src="../js/register.js"></script>
+
+</body>
+
+</html>

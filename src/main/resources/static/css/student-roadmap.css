@@ -1,0 +1,785 @@
+/* ==========================================
+                GLOBAL
+========================================== */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	background: #f4f7fc;
+	color: #333;
+}
+
+/* ==========================================
+            MAIN CONTAINER
+========================================== */
+.roadmap-container {
+	width: 100%;
+	max-width: 1450px;
+	margin: auto;
+	padding: 35px;
+}
+
+/* ==========================================
+            PAGE HEADER
+========================================== */
+.page-header {
+	display: flex;
+	align-items: center;
+	gap: 25px;
+	margin-bottom: 35px;
+}
+
+.back-btn {
+	border: none;
+	background: #233b8f;
+	color: white;
+	padding: 14px 26px;
+	border-radius: 10px;
+	cursor: pointer;
+	font-size: 15px;
+	font-weight: 500;
+	transition: .3s;
+}
+
+.back-btn:hover {
+	background: #ff7a00;
+	transform: translateY(-2px);
+}
+
+.back-btn i {
+	margin-right: 8px;
+}
+
+.page-header h1 {
+	font-size: 36px;
+	color: #233b8f;
+	margin-bottom: 8px;
+}
+
+.page-header h1 i {
+	color: #ff7a00;
+	margin-right: 10px;
+}
+
+.page-header p {
+	color: #666;
+	font-size: 16px;
+}
+
+/* ==========================================
+            HERO SECTION
+========================================== */
+.roadmap-banner {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background: linear-gradient(135deg, #233b8f, #325cc9);
+	color: white;
+	padding: 45px;
+	border-radius: 22px;
+	margin-bottom: 35px;
+	box-shadow: 0 15px 35px rgba(35, 59, 143, .18);
+}
+
+.banner-left {
+	width: 70%;
+}
+
+.career-badge {
+	display: inline-block;
+	background: #ff7a00;
+	padding: 10px 24px;
+	border-radius: 30px;
+	font-weight: 600;
+	font-size: 15px;
+	margin-bottom: 20px;
+}
+
+.banner-left h2 {
+	font-size: 42px;
+	margin-bottom: 15px;
+}
+
+.banner-left p {
+	font-size: 17px;
+	line-height: 30px;
+}
+
+.banner-right {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.banner-icon {
+	width: 170px;
+	height: 170px;
+	border-radius: 50%;
+	background: rgba(255, 255, 255, .15);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.banner-icon i {
+	font-size: 75px;
+	color: white;
+}
+
+/* ==========================================
+            PROGRESS SECTION
+========================================== */
+.progress-section {
+	margin-bottom: 35px;
+}
+
+.progress-card {
+	background: #ffffff;
+	padding: 30px;
+	border-radius: 20px;
+	box-shadow: 0 10px 25px rgba(0, 0, 0, .08);
+}
+
+.progress-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 20px;
+}
+
+.progress-header h2 {
+	font-size: 26px;
+	color: #233b8f;
+}
+
+.progress-header h2 i {
+	color: #ff7a00;
+	margin-right: 10px;
+}
+
+#progressPercentage {
+	font-size: 26px;
+	font-weight: 700;
+	color: #ff7a00;
+}
+
+.progress-bar {
+	width: 100%;
+	height: 16px;
+	background: #e9eef8;
+	border-radius: 30px;
+	overflow: hidden;
+	margin-bottom: 18px;
+}
+
+.progress-fill {
+	height: 100%;
+	width: 0;
+	background: linear-gradient(90deg, #233b8f, #4169e1, #ff7a00);
+	border-radius: 30px;
+	transition: width 1.2s ease;
+}
+
+.progress-footer {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	font-size: 15px;
+	color: #555;
+}
+
+.progress-footer strong {
+	color: #233b8f;
+}
+
+/* ==========================================
+            SUMMARY SECTION
+========================================== */
+.summary-section {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 25px;
+	margin-bottom: 35px;
+}
+
+.summary-card {
+	background: #ffffff;
+	border-radius: 18px;
+	padding: 28px 22px;
+	display: flex;
+	align-items: center;
+	gap: 18px;
+	box-shadow: 0 10px 25px rgba(0, 0, 0, .08);
+	transition: .35s;
+}
+
+.summary-card:hover {
+	transform: translateY(-6px);
+}
+
+.summary-card i {
+	width: 65px;
+	height: 65px;
+	border-radius: 50%;
+	background: #eef3ff;
+	color: #233b8f;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 28px;
+}
+
+.summary-card h3 {
+	color: #233b8f;
+	font-size: 24px;
+	margin-bottom: 6px;
+}
+
+.summary-card p {
+	color: #666;
+	font-size: 15px;
+}
+
+/* ==========================================
+            OVERVIEW CARD
+========================================== */
+.overview-card {
+	background: #ffffff;
+	padding: 35px;
+	border-radius: 20px;
+	display: flex;
+	align-items: center;
+	gap: 25px;
+	box-shadow: 0 10px 25px rgba(0, 0, 0, .08);
+	margin-bottom: 40px;
+}
+
+.overview-icon {
+	width: 90px;
+	height: 90px;
+	border-radius: 50%;
+	background: #eef3ff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.overview-icon i {
+	font-size: 40px;
+	color: #233b8f;
+}
+
+.overview-content {
+	flex: 1;
+}
+
+.overview-content h2 {
+	font-size: 28px;
+	color: #233b8f;
+	margin-bottom: 12px;
+}
+
+.overview-content p {
+	color: #666;
+	font-size: 16px;
+	line-height: 30px;
+}
+
+/* ==========================================
+            SECTION TITLE
+========================================== */
+.section-title {
+	margin-bottom: 30px;
+}
+
+.section-title h2 {
+	font-size: 30px;
+	color: #233b8f;
+	margin-bottom: 10px;
+}
+
+.section-title h2 i {
+	color: #ff7a00;
+	margin-right: 10px;
+}
+
+.section-title p {
+	color: #666;
+	font-size: 16px;
+	line-height: 28px;
+}
+
+/* ==========================================
+            ROADMAP SECTION
+========================================== */
+.roadmap-section {
+	margin-bottom: 45px;
+}
+
+/* ==========================================
+            ROADMAP CONTAINER
+========================================== */
+#roadmapContainer {
+	display: flex;
+	flex-direction: column;
+	gap: 25px;
+}
+
+/* ==========================================
+            ROADMAP CARD
+========================================== */
+.roadmap-card {
+	background: #ffffff;
+	border-radius: 20px;
+	padding: 30px;
+	box-shadow: 0 10px 25px rgba(0, 0, 0, .08);
+	border-left: 6px solid #233b8f;
+	transition: .35s;
+}
+
+.roadmap-card:hover {
+	transform: translateY(-6px);
+	box-shadow: 0 15px 35px rgba(0, 0, 0, .12);
+}
+
+/* ==========================================
+            PHASE HEADER
+========================================== */
+.phase-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 22px;
+}
+
+.phase-number {
+	display: inline-block;
+	background: #eef3ff;
+	color: #233b8f;
+	padding: 8px 18px;
+	border-radius: 30px;
+	font-size: 14px;
+	font-weight: 600;
+	margin-bottom: 12px;
+}
+
+.phase-header h3 {
+	font-size: 26px;
+	color: #233b8f;
+}
+
+/* ==========================================
+            STATUS BADGES
+========================================== */
+.status {
+	padding: 8px 18px;
+	border-radius: 30px;
+	font-size: 14px;
+	font-weight: 600;
+	color: white;
+}
+
+.status.completed {
+	background: #28a745;
+}
+
+.status.progress {
+	background: #ff9800;
+}
+
+.status.locked {
+	background: #6c757d;
+}
+
+/* ==========================================
+            TOPIC LIST
+========================================== */
+.roadmap-card ul {
+	list-style: none;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 15px;
+}
+
+.roadmap-card ul li {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	padding: 14px 18px;
+	background: #f8f9fc;
+	border-radius: 10px;
+	transition: .3s;
+	font-size: 15px;
+	color: #444;
+}
+
+.roadmap-card ul li:hover {
+	background: #eef3ff;
+	transform: translateX(5px);
+}
+
+.roadmap-card ul li i {
+	color: #28a745;
+	font-size: 18px;
+}
+
+/* ==========================================
+            ROADMAP CARD HOVER
+========================================== */
+.roadmap-card:hover .phase-number {
+	background: #233b8f;
+	color: white;
+}
+
+.roadmap-card:hover h3 {
+	color: #ff7a00;
+}
+
+/* ==========================================
+            AI LEARNING TIPS
+========================================== */
+.tips-section {
+	margin-bottom: 45px;
+}
+
+.tips-grid {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 25px;
+}
+
+/* ==========================================
+            TIP CARD
+========================================== */
+.tip-card {
+	background: #ffffff;
+	padding: 30px;
+	border-radius: 20px;
+	text-align: center;
+	box-shadow: 0 10px 25px rgba(0, 0, 0, .08);
+	transition: .35s;
+	border-top: 5px solid transparent;
+}
+
+.tip-card:hover {
+	transform: translateY(-8px);
+	border-top: 5px solid #ff7a00;
+	box-shadow: 0 18px 35px rgba(0, 0, 0, .12);
+}
+
+/* ==========================================
+            TIP ICON
+========================================== */
+.tip-card i {
+	width: 80px;
+	height: 80px;
+	margin: auto;
+	margin-bottom: 20px;
+	border-radius: 50%;
+	background: #eef3ff;
+	color: #233b8f;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 34px;
+	transition: .35s;
+}
+
+.tip-card:hover i {
+	background: #233b8f;
+	color: white;
+	transform: rotate(10deg);
+}
+
+/* ==========================================
+            TIP TITLE
+========================================== */
+.tip-card h3 {
+	color: #233b8f;
+	font-size: 22px;
+	margin-bottom: 15px;
+	transition: .3s;
+}
+
+.tip-card:hover h3 {
+	color: #ff7a00;
+}
+
+/* ==========================================
+            TIP DESCRIPTION
+========================================== */
+.tip-card p {
+	color: #666;
+	font-size: 15px;
+	line-height: 28px;
+}
+
+/* ==========================================
+            TIP ANIMATION
+========================================== */
+.tip-card {
+	animation: fadeUp .8s ease;
+}
+
+@keyframes fadeUp {from { opacity:0;
+	transform: translateY(30px);
+}
+
+to {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+}
+
+/* ==========================================
+            SKILLS SECTION
+========================================== */
+.skills-section {
+	margin-bottom: 45px;
+}
+
+.skills-container {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 18px;
+}
+
+/* ==========================================
+            SKILL TAG
+========================================== */
+.skill-tag {
+	background: #ffffff;
+	color: #233b8f;
+	padding: 14px 24px;
+	border-radius: 30px;
+	font-size: 15px;
+	font-weight: 600;
+	border: 2px solid #dbe7ff;
+	box-shadow: 0 8px 18px rgba(0, 0, 0, .06);
+	transition: .35s;
+	cursor: pointer;
+}
+
+.skill-tag:hover {
+	background: #233b8f;
+	color: white;
+	border-color: #233b8f;
+	transform: translateY(-4px);
+}
+
+/* ==========================================
+            LEARNING OUTCOME
+========================================== */
+.outcome-section {
+	margin-bottom: 45px;
+}
+
+.outcome-card {
+	background: #ffffff;
+	padding: 35px;
+	border-radius: 20px;
+	box-shadow: 0 10px 25px rgba(0, 0, 0, .08);
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 20px;
+}
+
+/* ==========================================
+            OUTCOME ITEM
+========================================== */
+.outcome-item {
+	display: flex;
+	align-items: center;
+	gap: 15px;
+	padding: 18px;
+	background: #f8f9fc;
+	border-radius: 12px;
+	transition: .35s;
+}
+
+.outcome-item:hover {
+	background: #eef3ff;
+	transform: translateX(8px);
+}
+
+.outcome-item i {
+	font-size: 22px;
+	color: #28a745;
+}
+
+.outcome-item span {
+	font-size: 16px;
+	font-weight: 500;
+	color: #333;
+}
+
+/* ==========================================
+            NEXT STEP SECTION
+========================================== */
+.next-step {
+	background: linear-gradient(135deg, #233b8f, #325cc9);
+	color: #ffffff;
+	padding: 40px;
+	border-radius: 22px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 40px;
+	box-shadow: 0 12px 30px rgba(35, 59, 143, .20);
+}
+
+.next-step h2 {
+	font-size: 30px;
+	margin-bottom: 12px;
+}
+
+.next-step p {
+	font-size: 16px;
+	line-height: 30px;
+	max-width: 650px;
+}
+
+/* ==========================================
+            PREMIUM BUTTON
+========================================== */
+.premium-btn {
+	background: #ff7a00;
+	color: #ffffff;
+	border: none;
+	padding: 18px 34px;
+	border-radius: 12px;
+	font-size: 16px;
+	font-weight: 600;
+	cursor: pointer;
+	transition: .35s;
+	box-shadow: 0 10px 20px rgba(255, 122, 0, .30);
+}
+
+.premium-btn i {
+	margin-right: 10px;
+}
+
+.premium-btn:hover {
+	background: #ff9100;
+	transform: translateY(-4px);
+}
+
+/* ==========================================
+                FOOTER
+========================================== */
+.page-footer {
+	margin-top: 30px;
+	text-align: center;
+	padding: 25px;
+	color: #666;
+	font-size: 15px;
+	border-top: 1px solid #d9e1f2;
+}
+
+/* ==========================================
+            RESPONSIVE DESIGN
+========================================== */
+@media ( max-width :1200px) {
+	.summary-section {
+		grid-template-columns: repeat(2, 1fr);
+	}
+	.outcome-card {
+		grid-template-columns: 1fr;
+	}
+}
+
+@media ( max-width :992px) {
+	.page-header {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+	.roadmap-banner {
+		flex-direction: column;
+		text-align: center;
+	}
+	.banner-left {
+		width: 100%;
+		margin-bottom: 30px;
+	}
+	.banner-right {
+		width: 100%;
+	}
+	.tips-grid {
+		grid-template-columns: 1fr;
+	}
+	.roadmap-card ul {
+		grid-template-columns: 1fr;
+	}
+	.next-step {
+		flex-direction: column;
+		text-align: center;
+		gap: 30px;
+	}
+}
+
+@media ( max-width :768px) {
+	.roadmap-container {
+		padding: 20px;
+	}
+	.summary-section {
+		grid-template-columns: 1fr;
+	}
+	.progress-footer {
+		flex-direction: column;
+		gap: 10px;
+		text-align: center;
+	}
+	.banner-left h2 {
+		font-size: 32px;
+	}
+	.page-header h1 {
+		font-size: 30px;
+	}
+	.section-title h2 {
+		font-size: 26px;
+	}
+	.phase-header {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 15px;
+	}
+}
+
+@media ( max-width :576px) {
+	.banner-icon {
+		width: 120px;
+		height: 120px;
+	}
+	.banner-icon i {
+		font-size: 50px;
+	}
+	.summary-card {
+		flex-direction: column;
+		text-align: center;
+	}
+	.overview-card {
+		flex-direction: column;
+		text-align: center;
+	}
+	.tip-card {
+		padding: 25px;
+	}
+	.outcome-card {
+		padding: 25px;
+	}
+	.next-step {
+		padding: 30px;
+	}
+	.premium-btn {
+		width: 100%;
+	}
+}

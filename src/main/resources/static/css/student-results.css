@@ -1,0 +1,1118 @@
+/* =========================================================
+   STUDENT RESULTS PAGE
+   GIRIS TECH HUB
+========================================================= */
+
+
+/* =========================================================
+   PAGE HEADER
+========================================================= */
+
+.page-header {
+
+    margin-bottom: 30px;
+
+}
+
+
+.page-header h1 {
+
+    color: #233b8f;
+
+    font-size: 36px;
+
+    margin-bottom: 10px;
+
+}
+
+
+.page-header h1 i {
+
+    color: #ff7a00;
+
+    margin-right: 12px;
+
+}
+
+
+.page-header p {
+
+    color: #666;
+
+    font-size: 16px;
+
+}
+
+
+
+/* =========================================================
+   SEARCH
+========================================================= */
+
+.result-search {
+
+    width: 100%;
+
+    height: 60px;
+
+    background: white;
+
+    border-radius: 18px;
+
+    display: flex;
+
+    align-items: center;
+
+    padding: 0 25px;
+
+    gap: 15px;
+
+    margin-bottom: 35px;
+
+    box-shadow:
+        0 10px 25px rgba(0,0,0,.08);
+
+}
+
+
+.result-search i {
+
+    color: #233b8f;
+
+    font-size: 21px;
+
+}
+
+
+.result-search input {
+
+    width: 100%;
+
+    border: none;
+
+    outline: none;
+
+    font-size: 16px;
+
+    color: #333;
+
+}
+
+
+
+/* =========================================================
+   RESULT CONTAINER
+========================================================= */
+
+.result-container {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 30px;
+
+}
+
+
+
+/* =========================================================
+   RESULT CARD
+========================================================= */
+
+.result-card {
+
+    background: white;
+
+    border-radius: 22px;
+
+    padding: 25px;
+
+    min-height: 270px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    box-shadow:
+        0 10px 25px rgba(0,0,0,.08);
+
+    transition: .3s;
+
+}
+
+
+.result-card:hover {
+
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 15px 35px rgba(0,0,0,.14);
+
+}
+
+
+
+/* =========================================================
+   RESULT CARD HEADER
+========================================================= */
+
+.result-card-header {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 15px;
+
+}
+
+
+.result-card-icon {
+
+    min-width: 55px;
+
+    height: 55px;
+
+    border-radius: 15px;
+
+    background: #fff1e4;
+
+    color: #ff7a00;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 22px;
+
+}
+
+
+.result-card-title {
+
+    flex: 1;
+
+}
+
+
+.result-card-title h2 {
+
+    color: #233b8f;
+
+    font-size: 22px;
+
+    line-height: 1.25;
+
+    margin-bottom: 7px;
+
+}
+
+
+.result-card-title p {
+
+    color: #777;
+
+    font-size: 14px;
+
+}
+
+
+
+/* =========================================================
+   RESULT VALUES
+========================================================= */
+
+.result-values {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 15px;
+
+    margin-top: 25px;
+
+}
+
+
+.result-value-box {
+
+    background: #f1f5ff;
+
+    border-radius: 13px;
+
+    padding: 15px;
+
+}
+
+
+.result-value-box span {
+
+    display: block;
+
+    color: #777;
+
+    font-size: 13px;
+
+    margin-bottom: 5px;
+
+}
+
+
+.result-value-box strong {
+
+    color: #233b8f;
+
+    font-size: 20px;
+
+}
+
+
+
+/* =========================================================
+   RESULT STATUS
+========================================================= */
+
+.result-status {
+
+    width: max-content;
+
+    padding: 8px 18px;
+
+    border-radius: 20px;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    margin-top: 18px;
+
+}
+
+
+.result-status.pass {
+
+    background: #233b8f;
+
+    color: white;
+
+}
+
+
+.result-status.fail {
+
+    background: #ffe5e5;
+
+    color: #d62828;
+
+}
+
+
+.result-status.submitted {
+
+    background: #e7f7ef;
+
+    color: #00a95c;
+
+}
+
+
+
+/* =========================================================
+   VIEW RESULT BUTTON
+========================================================= */
+
+.result-card-actions {
+
+    margin-top: auto;
+
+    padding-top: 25px;
+
+}
+
+
+.view-full-result-btn {
+
+    width: 100%;
+
+    padding: 14px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background: #ff7a00;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: .3s;
+
+}
+
+
+.view-full-result-btn:hover {
+
+    background: #e86e00;
+
+    transform: translateY(-1px);
+
+}
+
+
+
+/* =========================================================
+   EMPTY RESULT
+========================================================= */
+
+.empty-result {
+
+    grid-column: 1 / -1;
+
+    background: white;
+
+    border-radius: 20px;
+
+    padding: 55px 30px;
+
+    text-align: center;
+
+    color: #666;
+
+    box-shadow:
+        0 10px 25px rgba(0,0,0,.07);
+
+}
+
+
+.empty-result i {
+
+    font-size: 50px;
+
+    color: #233b8f;
+
+    margin-bottom: 15px;
+
+}
+
+
+.empty-result h2 {
+
+    color: #233b8f;
+
+    margin-bottom: 8px;
+
+}
+
+
+
+/* =========================================================
+   FULL RESULT
+========================================================= */
+
+.full-result-section {
+
+    animation: fadeIn .3s ease;
+
+}
+
+
+@keyframes fadeIn {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(10px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+
+    }
+
+}
+
+
+
+/* =========================================================
+   BACK BUTTON
+========================================================= */
+
+.back-result-btn {
+
+    border: none;
+
+    background: white;
+
+    color: #233b8f;
+
+    padding: 12px 18px;
+
+    border-radius: 10px;
+
+    font-size: 15px;
+
+    cursor: pointer;
+
+    margin-bottom: 20px;
+
+    box-shadow:
+        0 5px 15px rgba(0,0,0,.07);
+
+}
+
+
+.back-result-btn:hover {
+
+    background: #233b8f;
+
+    color: white;
+
+}
+
+
+
+/* =========================================================
+   FULL RESULT HEADER
+========================================================= */
+
+.full-result-header {
+
+    background: white;
+
+    border-radius: 22px;
+
+    padding: 25px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    margin-bottom: 25px;
+
+    box-shadow:
+        0 10px 25px rgba(0,0,0,.07);
+
+}
+
+
+.full-result-icon {
+
+    width: 65px;
+
+    height: 65px;
+
+    border-radius: 18px;
+
+    background: #fff1e4;
+
+    color: #ff7a00;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 27px;
+
+}
+
+
+.full-result-header h1 {
+
+    color: #233b8f;
+
+    font-size: 29px;
+
+    margin-bottom: 5px;
+
+}
+
+
+.full-result-header p {
+
+    color: #666;
+
+}
+
+
+
+/* =========================================================
+   SUMMARY GRID
+========================================================= */
+
+.result-summary-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+
+    margin-bottom: 25px;
+
+}
+
+
+.detail-stat-card {
+
+    background: white;
+
+    border-radius: 18px;
+
+    padding: 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    box-shadow:
+        0 8px 22px rgba(0,0,0,.07);
+
+}
+
+
+.detail-stat-icon {
+
+    width: 48px;
+
+    height: 48px;
+
+    border-radius: 13px;
+
+    background: #eef3ff;
+
+    color: #233b8f;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 18px;
+
+}
+
+
+.correct-icon {
+
+    background: #e8f8ef;
+
+    color: #00a95c;
+
+}
+
+
+.incorrect-icon {
+
+    background: #ffecec;
+
+    color: #d62828;
+
+}
+
+
+.skipped-icon {
+
+    background: #fff4e8;
+
+    color: #ff7a00;
+
+}
+
+
+.detail-stat-card span {
+
+    display: block;
+
+    color: #777;
+
+    font-size: 13px;
+
+    margin-bottom: 4px;
+
+}
+
+
+.detail-stat-card strong {
+
+    display: block;
+
+    color: #233b8f;
+
+    font-size: 20px;
+
+}
+
+
+
+/* =========================================================
+   RESULT INFORMATION
+========================================================= */
+
+.result-information {
+
+    background: white;
+
+    border-radius: 18px;
+
+    padding: 22px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+
+    margin-bottom: 25px;
+
+    box-shadow:
+        0 8px 22px rgba(0,0,0,.07);
+
+}
+
+
+.result-information div {
+
+    border-right:
+        1px solid #e5e5e5;
+
+    padding-right: 20px;
+
+}
+
+
+.result-information div:last-child {
+
+    border-right: none;
+
+}
+
+
+.result-information span {
+
+    display: block;
+
+    color: #777;
+
+    font-size: 13px;
+
+    margin-bottom: 7px;
+
+}
+
+
+.result-information strong {
+
+    color: #233b8f;
+
+    font-size: 16px;
+
+}
+
+
+
+/* =========================================================
+   QUESTION REVIEW
+========================================================= */
+
+.question-review-section {
+
+    background: white;
+
+    border-radius: 20px;
+
+    padding: 25px;
+
+    box-shadow:
+        0 8px 22px rgba(0,0,0,.07);
+
+}
+
+
+.section-title {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 20px;
+
+}
+
+
+.section-title div {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+}
+
+
+.section-title i {
+
+    color: #ff7a00;
+
+    font-size: 20px;
+
+}
+
+
+.section-title h2 {
+
+    color: #233b8f;
+
+    font-size: 22px;
+
+}
+
+
+.section-title > span {
+
+    background: #eef3ff;
+
+    color: #233b8f;
+
+    padding: 7px 14px;
+
+    border-radius: 20px;
+
+    font-size: 13px;
+
+}
+
+
+
+/* =========================================================
+   QUESTION CARD
+========================================================= */
+
+.question-review-card {
+
+    border: 1px solid #e8e8e8;
+
+    border-radius: 15px;
+
+    padding: 20px;
+
+    margin-bottom: 15px;
+
+}
+
+
+.question-review-card:last-child {
+
+    margin-bottom: 0;
+
+}
+
+
+.question-number {
+
+    color: #ff7a00;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    margin-bottom: 7px;
+
+}
+
+
+.question-title {
+
+    color: #233b8f;
+
+    font-size: 17px;
+
+    font-weight: 600;
+
+    margin-bottom: 15px;
+
+}
+
+
+.answer-information {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 12px;
+
+}
+
+
+.answer-box {
+
+    padding: 12px;
+
+    border-radius: 10px;
+
+    background: #f7f8fb;
+
+}
+
+
+.answer-box span {
+
+    display: block;
+
+    color: #777;
+
+    font-size: 12px;
+
+    margin-bottom: 5px;
+
+}
+
+
+.answer-box strong {
+
+    color: #333;
+
+    font-size: 14px;
+
+}
+
+
+.question-result {
+
+    margin-top: 15px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    padding: 7px 13px;
+
+    border-radius: 20px;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+}
+
+
+.question-result.correct {
+
+    background: #e7f7ef;
+
+    color: #00a95c;
+
+}
+
+
+.question-result.incorrect {
+
+    background: #ffeaea;
+
+    color: #d62828;
+
+}
+
+
+.question-result.skipped {
+
+    background: #fff1df;
+
+    color: #e97800;
+
+}
+
+
+
+/* =========================================================
+   LOADER
+========================================================= */
+
+.page-loader {
+
+    display: none;
+
+    position: fixed;
+
+    top: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    background:
+        rgba(255,255,255,.88);
+
+    z-index: 9999;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-direction: column;
+
+    color: #233b8f;
+
+    font-weight: 600;
+
+}
+
+
+.loader-circle {
+
+    width: 45px;
+
+    height: 45px;
+
+    border-radius: 50%;
+
+    border: 5px solid #ddd;
+
+    border-top: 5px solid #233b8f;
+
+    animation:
+        resultSpin 1s linear infinite;
+
+    margin-bottom: 15px;
+
+}
+
+
+@keyframes resultSpin {
+
+    from {
+
+        transform: rotate(0deg);
+
+    }
+
+    to {
+
+        transform: rotate(360deg);
+
+    }
+
+}
+
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:1100px) {
+
+    .result-container {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+
+    .result-summary-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+}
+
+
+@media(max-width:800px) {
+
+    .result-container {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .result-summary-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .result-information {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .result-information div {
+
+        border-right: none;
+
+        border-bottom:
+            1px solid #e5e5e5;
+
+        padding-bottom: 15px;
+
+    }
+
+
+    .result-information div:last-child {
+
+        border-bottom: none;
+
+    }
+
+
+    .answer-information {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .full-result-header {
+
+        align-items: flex-start;
+
+    }
+
+
+    .full-result-header h1 {
+
+        font-size: 23px;
+
+    }
+
+}

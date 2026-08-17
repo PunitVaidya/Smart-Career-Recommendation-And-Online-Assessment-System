@@ -1,0 +1,470 @@
+/*=========================================
+        GOOGLE FONT
+=========================================*/
+@import
+	url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap')
+	;
+
+/*=========================================
+            RESET
+=========================================*/
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+}
+
+body {
+	background: linear-gradient(135deg, #F5F9FF, #EEF6FF);
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 18px;
+	overflow: hidden;
+}
+
+/*=========================================
+        MAIN CONTAINER
+=========================================*/
+.container {
+	width: 95%;
+	max-width: 1350px;
+	height: 95vh;
+	background: #fff;
+	display: grid;
+	grid-template-columns: 40% 60%;
+	border-radius: 22px;
+	overflow: hidden;
+	box-shadow: 0 20px 60px rgba(0, 0, 0, .12);
+}
+
+/*=========================================
+        LEFT PANEL
+=========================================*/
+.left-panel {
+	background: linear-gradient(135deg, #0066CC, #0B4EA2);
+	color: #fff;
+	padding: 35px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+}
+
+/*=========================================
+            LOGO
+=========================================*/
+.logo {
+	width: 240px;
+	height: auto;
+	margin-bottom: 25px;
+}
+
+/*=========================================
+            HEADING
+=========================================*/
+.left-panel h1 {
+	font-size: 38px;
+	font-weight: 700;
+	line-height: 1.2;
+	margin-bottom: 15px;
+}
+
+/*=========================================
+        DESCRIPTION
+=========================================*/
+.left-panel p {
+	font-size: 16px;
+	line-height: 28px;
+	margin-bottom: 22px;
+	opacity: .95;
+}
+
+/*=========================================
+            LOGIN TAG
+=========================================*/
+.login-tag {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	margin: 10px 0 28px;
+}
+
+.login-tag span {
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	background: linear-gradient(135deg, #FF9800, #F57C00);
+	color: #fff;
+	height: 46px;
+	padding: 0 24px;
+	border-radius: 50px;
+	font-size: 16px;
+	font-weight: 700;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	box-shadow: 0 8px 20px rgba(245, 124, 0, .30);
+	transition: .3s;
+}
+
+.login-tag span:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 12px 24px rgba(245, 124, 0, .40);
+}
+
+/*=========================================
+            FEATURES
+=========================================*/
+.features {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+}
+
+/*=========================================
+            FEATURE CARD
+=========================================*/
+.feature {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	gap: 16px;
+	background: rgba(255, 255, 255, .12);
+	border: 1px solid rgba(255, 255, 255, .08);
+	padding: 14px 18px;
+	border-radius: 15px;
+	backdrop-filter: blur(8px);
+	transition: .3s;
+}
+
+.feature:hover {
+	background: rgba(255, 255, 255, .20);
+	transform: translateX(5px);
+}
+
+/*=========================================
+            FEATURE ICON
+=========================================*/
+.feature i {
+	width: 42px;
+	height: 42px;
+	border-radius: 50%;
+	background: rgba(255, 255, 255, .18);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 17px;
+	color: #fff;
+}
+
+/*=========================================
+            FEATURE TEXT
+=========================================*/
+.feature span {
+	font-size: 17px;
+	font-weight: 600;
+	color: #fff;
+}
+
+/*=========================================
+            RIGHT PANEL
+=========================================*/
+.right-panel {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 35px 45px;
+	background: #ffffff;
+}
+
+/*=========================================
+            FORM CARD
+=========================================*/
+.form-card {
+	width: 100%;
+	max-width: 430px;
+	animation: fadeIn .6s ease;
+}
+
+.form-card h2 {
+	font-size: 38px;
+	color: #1E293B;
+	font-weight: 700;
+	margin-bottom: 8px;
+}
+
+.form-card p {
+	font-size: 15px;
+	color: #64748B;
+	margin-bottom: 25px;
+}
+
+/*=========================================
+            FORM
+=========================================*/
+#loginForm {
+	width: 100%;
+}
+
+/*=========================================
+            INPUT BOX
+=========================================*/
+.input-box {
+	position: relative;
+	margin-bottom: 18px;
+}
+
+.input-box i:first-child {
+	position: absolute;
+	left: 18px;
+	top: 50%;
+	transform: translateY(-50%);
+	color: #0066CC;
+	font-size: 16px;
+}
+
+.input-box input {
+	width: 100%;
+	height: 50px;
+	border: 1px solid #D9E2F2;
+	border-radius: 12px;
+	outline: none;
+	padding-left: 50px;
+	padding-right: 48px;
+	font-size: 15px;
+	transition: .3s;
+	background: #fff;
+}
+
+.input-box input::placeholder {
+	color: #94A3B8;
+}
+
+.input-box input:focus {
+	border-color: #0066CC;
+	box-shadow: 0 0 0 4px rgba(0, 102, 204, .12);
+}
+
+/*=========================================
+        PASSWORD ICON
+=========================================*/
+.toggle-password {
+	position: absolute;
+	right: 18px;
+	top: 50%;
+	transform: translateY(-50%);
+	cursor: pointer;
+	color: #64748B;
+	transition: .3s;
+}
+
+.toggle-password:hover {
+	color: #0066CC;
+}
+
+/*=========================================
+            OPTIONS
+=========================================*/
+.options {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 8px 0 25px;
+	font-size: 14px;
+}
+
+.options label {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	color: #475569;
+	cursor: pointer;
+}
+
+.options input[type="checkbox"] {
+	accent-color: #0066CC;
+}
+
+.options a {
+	text-decoration: none;
+	color: #0066CC;
+	font-weight: 500;
+	transition: .3s;
+}
+
+.options a:hover {
+	color: #F57C00;
+}
+
+/*=========================================
+            LOGIN BUTTON
+=========================================*/
+.login-btn {
+	width: 100%;
+	height: 50px;
+	border: none;
+	border-radius: 50px;
+	background: linear-gradient(135deg, #F57C00, #FF9800);
+	color: #fff;
+	font-size: 16px;
+	font-weight: 600;
+	cursor: pointer;
+	transition: .35s;
+	box-shadow: 0 10px 25px rgba(245, 124, 0, .28);
+}
+
+.login-btn:hover {
+	background: linear-gradient(135deg, #0066CC, #0B4EA2);
+	transform: translateY(-3px);
+	box-shadow: 0 15px 30px rgba(0, 102, 204, .25);
+}
+
+/*=========================================
+        REGISTER LINK
+=========================================*/
+.register-link {
+	margin-top: 22px;
+	text-align: center;
+	font-size: 15px;
+	color: #64748B;
+}
+
+.register-link a {
+	color: #0066CC;
+	text-decoration: none;
+	font-weight: 600;
+}
+
+.register-link a:hover {
+	color: #F57C00;
+}
+
+/*=========================================
+        ANIMATION
+=========================================*/
+
+keyframes fadeIn {from { opacity:0;
+	transform: translateY(20px);
+}
+
+to {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+}
+
+/*=========================================
+        RESPONSIVE
+=========================================*/
+@media ( max-width :1100px) {
+	.container {
+		grid-template-columns: 1fr;
+		height: auto;
+	}
+	.left-panel {
+		padding: 30px;
+	}
+	.right-panel {
+		padding: 35px;
+	}
+	.logo {
+		width: 190px;
+	}
+	.left-panel h1 {
+		font-size: 30px;
+	}
+	.left-panel p {
+		font-size: 15px;
+		line-height: 25px;
+	}
+	.features {
+		width: 100%;
+	}
+}
+
+@media ( max-width :768px) {
+	body {
+		padding: 10px;
+		overflow: auto;
+	}
+	.container {
+		width: 100%;
+		border-radius: 15px;
+	}
+	.left-panel {
+		padding: 25px;
+	}
+	.logo {
+		width: 160px;
+	}
+	.left-panel h1 {
+		font-size: 26px;
+	}
+	.left-panel p {
+		font-size: 14px;
+		line-height: 23px;
+	}
+	.login-tag span {
+		height: 42px;
+		font-size: 14px;
+		padding: 0 20px;
+	}
+	.feature {
+		padding: 12px 14px;
+	}
+	.feature i {
+		width: 38px;
+		height: 38px;
+		font-size: 15px;
+	}
+	.feature span {
+		font-size: 15px;
+	}
+	.right-panel {
+		padding: 25px;
+	}
+	.form-card {
+		max-width: 100%;
+	}
+	.form-card h2 {
+		font-size: 30px;
+	}
+	.form-card p {
+		font-size: 14px;
+	}
+	.input-box {
+		margin-bottom: 14px;
+	}
+	.input-box input {
+		height: 46px;
+		font-size: 14px;
+	}
+	.options {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 10px;
+	}
+	.login-btn {
+		height: 46px;
+	}
+}
+
+/*=========================================
+        SCROLLBAR
+=========================================*/
+::-webkit-scrollbar {
+	width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+	background: #0066CC;
+	border-radius: 20px;
+}
+
+::-webkit-scrollbar-track {
+	background: #EEF5FF;
+}

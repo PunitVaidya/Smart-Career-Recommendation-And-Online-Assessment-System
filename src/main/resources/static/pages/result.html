@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<title>Result Management | Giris Tech Hub</title>
+<link rel="stylesheet" href="../css/admin-common.css">
+
+
+<link rel="stylesheet" href="../css/admin-dashboard.css">
+
+
+<link rel="stylesheet" href="../css/result.css">
+
+
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+
+</head>
+
+
+
+<body>
+
+
+
+	<div class="dashboard">
+
+
+
+		<!-- =======================================================
+SIDEBAR
+======================================================= -->
+
+
+		<aside class="sidebar">
+
+
+			<div>
+
+
+				<div class="sidebar-header">
+
+
+					<img src="../images/GthTransparent.png" class="logo">
+
+
+					<p>
+
+						Smart Career Recommendation <br> & Online Assessment System
+
+					</p>
+
+
+				</div>
+
+
+
+
+
+				<ul class="sidebar-menu">
+
+
+
+					<li onclick="location.href='admin-dashboard.html'"><i
+						class="fa-solid fa-house"></i> <span> Dashboard </span></li>
+
+
+
+
+
+					<li onclick="location.href='student.html'"><i
+						class="fa-solid fa-user-graduate"></i> <span> Students </span></li>
+
+
+
+
+
+					<li onclick="location.href='assessment.html'"><i
+						class="fa-solid fa-file-lines"></i> <span> Assessments </span></li>
+
+
+
+
+
+					<li onclick="location.href='question.html'"><i
+						class="fa-solid fa-circle-question"></i> <span> Questions </span>
+
+					</li>
+
+
+
+
+
+					<li onclick="location.href='career-management.html'"><i
+						class="fa-solid fa-briefcase"></i> <span> Career </span></li>
+
+
+
+
+
+					<li onclick="location.href='course.html'"><i
+						class="fa-solid fa-book-open"></i> <span> Courses </span></li>
+
+
+
+
+
+					<li class="active"><i class="fa-solid fa-chart-column"></i> <span>
+							Results </span></li>
+
+
+
+				</ul>
+
+
+			</div>
+
+
+
+
+
+
+			<div class="logout-btn">
+    <i class="fa-solid fa-right-from-bracket"></i>
+    <span>Logout</span>
+</div>
+
+
+		</aside>
+
+
+
+
+
+
+
+
+
+		<!-- =======================================================
+MAIN CONTENT
+======================================================= -->
+
+
+		<main class="main-content">
+
+
+
+
+
+
+			<!-- HEADER -->
+
+
+			<header class="header">
+
+
+				<div>
+
+
+					<h1>Result Management</h1>
+
+
+					<p>Manage assessment results and recommendations</p>
+
+
+				</div>
+
+
+
+
+
+				<button class="add-btn" id="exportBtn">
+
+					<i class="fa-solid fa-file-export"></i> Export Results
+
+				</button>
+
+
+
+			</header>
+
+
+
+
+
+
+
+
+
+			<!-- SEARCH BAR -->
+
+
+			<div class="top-bar">
+
+
+
+				<div class="search-box">
+
+
+					<i class="fa-solid fa-magnifying-glass"></i> <input type="text"
+						id="searchResult"
+						placeholder="Search by Student, Assessment or Career">
+
+
+				</div>
+
+
+
+
+
+				<button class="refresh-btn" id="refreshBtn"
+					onclick="refreshResults()">
+
+
+
+					<i class="fa-solid fa-rotate-right"></i> Refresh
+
+
+
+				</button>
+
+
+
+			</div>
+
+
+
+
+
+
+
+
+
+			<!-- RESULT TABLE -->
+
+
+			<section class="table-section">
+
+
+
+				<div class="table-header">
+
+
+					<h2>Assessment Results</h2>
+
+
+				</div>
+
+
+
+
+
+
+				<div class="table-container">
+
+
+					<table>
+
+
+						<thead>
+
+
+							<tr>
+
+								<th>Student</th>
+
+
+								<th>Assessment</th>
+
+
+								<th>Score</th>
+
+
+								<th>Percentage</th>
+
+
+								<th>Career Readiness</th>
+
+
+								<th>Recommended Career</th>
+
+
+								<th>Status</th>
+
+
+								<th>Submitted On</th>
+
+
+								<th>Actions</th>
+
+							</tr>
+
+
+						</thead>
+
+
+
+
+
+						<tbody id="resultTableBody">
+
+
+
+						</tbody>
+
+
+
+
+
+					</table>
+
+
+
+				</div>
+
+
+
+
+
+
+
+
+
+				<!-- EMPTY STATE -->
+
+
+				<div class="no-data" id="noResultData">
+
+
+					<i class="fa-solid fa-chart-column"></i>
+
+
+					<h3>No Results Found</h3>
+
+
+					<p>No assessment results are available.</p>
+
+
+				</div>
+
+<!-- =====================================================
+                    RESULT PAGINATION
+===================================================== -->
+
+<div
+    class="pagination-container"
+    id="resultPagination">
+
+
+    <!-- ===============================
+            PAGINATION INFORMATION
+    ================================ -->
+
+    <div
+        class="pagination-info"
+        id="resultPaginationInfo">
+
+        Showing 0 - 0 of 0 results
+
+    </div>
+
+
+    <!-- ===============================
+            PAGINATION BUTTONS
+    ================================ -->
+
+    <div
+        class="pagination-buttons"
+        id="resultPaginationButtons">
+
+        <!-- Dynamic Pagination -->
+
+    </div>
+
+
+</div>
+
+			</section>
+
+
+
+
+
+
+
+
+		</main>
+
+
+
+	</div>
+
+
+
+
+
+
+
+
+
+	<!-- =======================================================
+VIEW RESULT MODAL
+======================================================= -->
+
+
+	<div class="modal" id="viewResultModal">
+
+
+
+		<div class="large-modal">
+
+
+
+			<div class="modal-header">
+
+
+				<h2>Result Details</h2>
+
+
+				<span class="close" onclick="closeViewModal()"> &times; </span>
+
+
+			</div>
+
+
+
+
+
+
+
+			<div class="assessment-details">
+
+
+				<div class="detail-item">
+
+					<label> Student Name </label> <span id="viewStudentName"></span>
+
+				</div>
+
+
+
+				<div class="detail-item">
+
+					<label> Student Email </label> <span id="viewStudentEmail"></span>
+
+				</div>
+
+
+
+
+				<div class="detail-item">
+
+					<label> Assessment </label> <span id="viewAssessmentName"></span>
+
+				</div>
+
+
+
+
+
+				<div class="detail-item">
+
+					<label> Score </label> <span id="viewScore"></span>
+
+				</div>
+
+
+
+
+
+				<div class="detail-item">
+
+					<label> Total Marks </label> <span id="viewTotalMarks"></span>
+
+				</div>
+
+
+
+
+
+				<div class="detail-item">
+
+					<label> Percentage </label> <span id="viewPercentage"></span>
+
+				</div>
+
+
+
+
+
+				<div class="detail-item">
+
+					<label> Career Readiness </label> <span id="viewCareerReadiness"></span>
+
+				</div>
+
+
+
+
+
+				<div class="detail-item">
+
+					<label> Recommended Career </label> <span
+						id="viewRecommendedCareer"></span>
+
+				</div>
+
+
+
+
+
+				<div class="detail-item">
+
+					<label> Result Status </label> <span id="viewResultStatus"></span>
+
+				</div>
+
+
+
+
+
+				<div class="detail-item">
+
+					<label> Submitted At </label> <span id="viewSubmittedAt"></span>
+
+				</div>
+
+
+
+			</div>
+
+
+
+
+		</div>
+
+
+	</div>
+
+
+
+
+
+
+
+
+
+	<!-- =======================================================
+DELETE RESULT MODAL
+======================================================= -->
+
+
+	<div class="modal" id="deleteModal">
+
+
+
+		<div class="delete-modal">
+
+
+
+			<i class="fa-solid fa-trash-can"></i>
+
+
+
+
+			<h2>Delete Result</h2>
+
+
+
+
+			<p>Are you sure you want to delete this result?</p>
+
+
+
+
+
+
+			<div class="modal-buttons">
+
+
+
+
+
+				<button class="cancel-btn" onclick="closeDeleteModal()">
+
+
+					Cancel</button>
+
+
+
+
+
+
+
+				<button class="delete-confirm-btn" id="confirmDeleteBtn">
+
+					Delete</button>
+
+
+
+
+
+			</div>
+
+
+
+
+
+		</div>
+
+
+
+	</div>
+
+	<!-- EXPORT COMING SOON MODAL -->
+
+
+	<div class="modal" id="exportModal">
+
+
+		<div class="delete-modal">
+
+
+			<i class="fa-solid fa-file-export" style="color: #ff7a00"> </i>
+
+
+			<h2>Coming Soon</h2>
+
+
+			<p>Export Result feature will be available in the next update.</p>
+
+
+			<div class="modal-buttons">
+
+
+				<button class="cancel-btn" onclick="closeExportModal()">OK
+
+				</button>
+
+
+			</div>
+
+
+		</div>
+
+
+	</div>
+
+
+
+
+
+	<script src="../js/result.js"></script>
+
+
+
+</body>
+
+
+</html>

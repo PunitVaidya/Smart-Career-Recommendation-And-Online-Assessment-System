@@ -1,0 +1,672 @@
+/*=========================================================
+ STUDENT ASSESSMENT PAGE CSS
+ GIRIS TECH HUB
+=========================================================*/
+
+
+/*=========================================================
+ PAGE HEADER
+=========================================================*/
+
+.page-header{
+
+    margin-bottom:30px;
+
+}
+
+
+.page-header h1{
+
+    color:#233b8f;
+
+    font-size:36px;
+
+    margin-bottom:10px;
+
+}
+
+
+.page-header h1 i{
+
+    color:#ff7a00;
+
+    margin-right:12px;
+
+}
+
+
+.page-header p{
+
+    color:#666;
+
+    font-size:16px;
+
+}
+
+
+
+/*=========================================================
+ SEARCH BAR
+=========================================================*/
+
+
+.assessment-search{
+
+
+    width:100%;
+
+    height:55px;
+
+    background:white;
+
+    border-radius:18px;
+
+    display:flex;
+
+    align-items:center;
+
+    padding:0 25px;
+
+    gap:15px;
+
+    margin-bottom:35px;
+
+
+    box-shadow:
+
+    0 10px 25px rgba(0,0,0,.08);
+
+
+}
+
+
+
+.assessment-search i{
+
+
+    color:#233b8f;
+
+    font-size:20px;
+
+
+}
+
+
+
+.assessment-search input{
+
+
+    width:100%;
+
+    border:none;
+
+    outline:none;
+
+    font-size:16px;
+
+}
+
+
+
+
+/*=========================================================
+ STATISTICS
+=========================================================*/
+
+
+.assessment-stats{
+
+
+    display:grid;
+
+    grid-template-columns:
+
+    repeat(3,1fr);
+
+
+    gap:25px;
+
+    margin-bottom:40px;
+
+
+}
+
+
+
+.stat-card{
+
+
+    background:white;
+
+    padding:30px;
+
+    border-radius:20px;
+
+    text-align:center;
+
+
+    box-shadow:
+
+    0 10px 25px rgba(0,0,0,.08);
+
+
+}
+
+
+
+.stat-card h2{
+
+
+    color:#233b8f;
+
+    font-size:36px;
+
+    margin-bottom:8px;
+
+
+}
+
+
+
+.stat-card p{
+
+
+    color:#666;
+
+    font-size:16px;
+
+
+}
+
+
+
+
+
+/*=========================================================
+ ASSESSMENT CONTAINER
+=========================================================*/
+
+
+.assessment-container{
+
+
+    display:grid;
+
+    grid-template-columns:
+
+    repeat(3,1fr);
+
+
+    gap:30px;
+
+
+}
+
+
+
+
+
+
+/*=========================================================
+ ASSESSMENT CARD
+=========================================================*/
+
+
+.assessment-card{
+
+
+    background:white;
+
+
+    border-radius:22px;
+
+
+    padding:25px;
+
+
+    min-height:280px;
+
+
+    box-shadow:
+
+
+    0 10px 25px rgba(0,0,0,.08);
+
+
+
+    transition:.3s;
+
+
+
+    display:flex;
+
+    flex-direction:column;
+
+
+}
+
+
+
+.assessment-card:hover{
+
+
+    transform:translateY(-5px);
+
+
+    box-shadow:
+
+
+    0 15px 35px rgba(0,0,0,.15);
+
+
+}
+
+
+
+
+.assessment-card h2{
+
+
+    color:#233b8f;
+
+
+    font-size:24px;
+
+
+    margin-bottom:12px;
+
+
+}
+
+
+
+
+
+
+/*=========================================================
+ DESCRIPTION
+=========================================================*/
+
+
+.assessment-description{
+
+
+    color:#333;
+
+
+    font-size:15px;
+
+
+    min-height:50px;
+
+
+    margin-bottom:15px;
+
+
+}
+
+
+
+
+
+/*=========================================================
+ STATUS
+=========================================================*/
+
+
+.status-badge{
+
+
+    width:max-content;
+
+
+    padding:8px 18px;
+
+
+    border-radius:20px;
+
+
+    font-size:14px;
+
+
+    font-weight:600;
+
+
+    margin-top:10px;
+
+
+}
+
+
+
+.status-completed{
+
+
+    background:#233b8f;
+
+
+    color:white;
+
+
+}
+
+
+
+
+.status-pending{
+
+
+    background:#00b56a;
+
+
+    color:white;
+
+
+}
+
+
+
+
+
+.status-available{
+
+
+    background:#00b56a;
+
+
+    color:white;
+
+
+}
+
+
+
+
+
+
+
+/*=========================================================
+ BUTTON AREA
+=========================================================*/
+
+
+.assessment-actions{
+
+
+    margin-top:auto;
+
+
+    padding-top:25px;
+
+
+}
+
+
+
+.start-btn,
+
+
+.view-btn{
+
+
+    width:100%;
+
+
+    padding:14px;
+
+
+    border:none;
+
+
+    border-radius:12px;
+
+
+    font-size:16px;
+
+
+    cursor:pointer;
+
+
+    color:white;
+
+
+    transition:.3s;
+
+
+}
+
+
+
+
+
+
+.start-btn{
+
+
+    background:#233b8f;
+
+
+}
+
+
+
+.start-btn:hover{
+
+
+    background:#1b3178;
+
+
+}
+
+
+
+
+
+.view-btn{
+
+
+    background:#ff7a00;
+
+
+}
+
+
+
+.view-btn:hover{
+
+
+    background:#e96e00;
+
+
+}
+
+
+
+
+
+/*=========================================================
+ EMPTY MESSAGE
+=========================================================*/
+
+
+.empty-message{
+
+
+    background:white;
+
+
+    padding:40px;
+
+
+    border-radius:20px;
+
+
+    text-align:center;
+
+
+    color:#666;
+
+
+    font-size:18px;
+
+
+}
+
+/*=========================================================
+ PAGE LOADER
+=========================================================*/
+
+
+.page-loader{
+
+
+display:none;
+
+
+position:fixed;
+
+
+top:0;
+
+
+left:0;
+
+
+width:100%;
+
+
+height:100%;
+
+
+
+background:rgba(255,255,255,0.85);
+
+
+
+z-index:9999;
+
+
+
+align-items:center;
+
+
+justify-content:center;
+
+
+flex-direction:column;
+
+
+
+font-size:18px;
+
+
+font-weight:600;
+
+
+color:#233b8f;
+
+
+
+}
+
+
+
+
+.loader-circle{
+
+
+width:45px;
+
+
+height:45px;
+
+
+
+border-radius:50%;
+
+
+
+border:5px solid #ddd;
+
+
+
+border-top:5px solid #233b8f;
+
+
+
+animation:spin 1s linear infinite;
+
+
+
+margin-bottom:15px;
+
+
+
+}
+
+
+
+@keyframes spin{
+
+
+from{
+
+transform:rotate(0deg);
+
+}
+
+
+to{
+
+transform:rotate(360deg);
+
+}
+
+
+}
+
+
+
+
+
+
+/*=========================================================
+ RESPONSIVE
+=========================================================*/
+
+
+@media(max-width:1100px){
+
+
+.assessment-container{
+
+
+    grid-template-columns:
+
+    repeat(2,1fr);
+
+
+}
+
+
+}
+
+
+
+
+@media(max-width:800px){
+
+
+.assessment-stats,
+
+.assessment-container{
+
+
+    grid-template-columns:1fr;
+
+
+}
+
+
+
+}

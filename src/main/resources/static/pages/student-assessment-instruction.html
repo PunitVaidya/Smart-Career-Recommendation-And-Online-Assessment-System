@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<title>
+Assessment Instructions | Giris Tech Hub
+</title>
+
+
+<link rel="stylesheet"
+href="../css/student-dashboard.css">
+
+
+<link rel="stylesheet"
+href="../css/student-assessment-instruction.css">
+
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+
+</head>
+
+
+<body>
+
+
+<div class="dashboard-container">
+
+
+
+<!-- ================= SIDEBAR ================= -->
+
+<aside class="sidebar">
+
+
+<div>
+
+
+<div class="sidebar-header">
+
+
+<img src="../images/GthTransparent.png"
+class="logo">
+
+
+<p>
+
+Smart Career Recommendation
+<br>
+& Online Assessment System
+
+</p>
+
+
+</div>
+
+
+
+
+<div class="student-info">
+
+
+<h2 id="studentName">
+Student Name
+</h2>
+
+
+<p id="studentBranch">
+Branch
+</p>
+
+
+</div>
+
+
+
+
+
+<ul class="sidebar-menu">
+
+
+<li onclick="location.href='student-dashboard.html'">
+
+<i class="fa-solid fa-house"></i>
+
+<span>
+Dashboard
+</span>
+
+</li>
+
+
+
+
+<li onclick="location.href='student-profile.html'">
+
+<i class="fa-solid fa-user"></i>
+
+<span>
+Profile
+</span>
+
+</li>
+
+
+
+
+<li class="active">
+
+<i class="fa-solid fa-file-lines"></i>
+
+<span>
+Assessments
+</span>
+
+</li>
+
+
+
+
+<li onclick="location.href='student-results.html'">
+
+<i class="fa-solid fa-chart-column"></i>
+
+<span>
+Results
+</span>
+
+</li>
+
+
+
+
+<li onclick="location.href='student-career.html'">
+
+<i class="fa-solid fa-briefcase"></i>
+
+<span>
+Career Recommendation
+</span>
+
+</li>
+
+
+
+
+<li onclick="location.href='student-courses.html'">
+
+<i class="fa-solid fa-book"></i>
+
+<span>
+Courses
+</span>
+
+</li>
+
+
+</ul>
+
+
+</div>
+
+
+
+
+
+<div class="logout-btn">
+
+<i class="fa-solid fa-right-from-bracket"></i>
+
+<span>
+Logout
+</span>
+
+</div>
+
+
+
+</aside>
+
+
+
+
+
+
+<!-- ================= MAIN CONTENT ================= -->
+
+
+<main class="main-content">
+
+
+
+<div class="instruction-card">
+
+
+
+<h1>
+
+<i class="fa-solid fa-file-circle-check"></i>
+
+Assessment Instructions
+
+</h1>
+
+
+<p class="subtitle">
+
+Please read all instructions carefully before starting the examination.
+
+</p>
+
+
+
+
+<div class="assessment-info">
+
+
+<h2>
+Assessment Information
+</h2>
+
+
+
+<div class="info-row">
+
+<span>
+Assessment Name
+</span>
+
+<strong id="assessmentName">
+-
+</strong>
+
+</div>
+
+
+
+<div class="info-row">
+
+<span>
+Assessment Type
+</span>
+
+<strong id="assessmentType">
+-
+</strong>
+
+</div>
+
+
+
+<div class="info-row">
+
+<span>
+Duration
+</span>
+
+<strong id="duration">
+-
+</strong>
+
+</div>
+
+
+
+<div class="info-row">
+
+<span>
+Total Questions
+</span>
+
+<strong id="totalQuestions">
+-
+</strong>
+
+</div>
+
+
+
+<div class="info-row">
+
+<span>
+Total Marks
+</span>
+
+<strong id="totalMarks">
+-
+</strong>
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+<div class="rules">
+
+
+<h2>
+
+Examination Instructions
+
+</h2>
+
+
+
+<ul>
+
+
+<li>
+Read every question carefully before selecting your answer.
+</li>
+
+
+<li>
+Once timer starts, it cannot be paused.
+</li>
+
+
+<li>
+Do not refresh the browser during examination.
+</li>
+
+
+<li>
+Switching tabs may automatically submit your exam.
+</li>
+
+
+<li>
+Submit after completing all questions.
+</li>
+
+
+<li>
+Your score will be calculated after submission.
+</li>
+
+
+</ul>
+
+
+</div>
+
+
+
+
+<div class="agreement">
+
+
+<input type="checkbox"
+id="agree">
+
+
+<label>
+I have read and understood all the above instructions.
+</label>
+
+
+</div>
+
+
+
+
+
+<div class="action-buttons">
+
+
+<button
+class="back-btn"
+onclick="history.back()">
+
+<i class="fa fa-arrow-left"></i>
+
+Back
+
+</button>
+
+
+
+
+<button
+id="startExam"
+class="start-btn"
+disabled>
+
+
+<i class="fa fa-play"></i>
+
+Start Exam
+
+</button>
+
+
+
+</div>
+
+
+
+
+
+</div>
+
+
+
+</main>
+
+
+
+</div>
+
+
+
+<div id="loader" class="loader">
+
+
+<div class="spinner"></div>
+
+
+<p>
+Loading Assessment...
+</p>
+
+
+</div>
+
+<script src="../js/student-assessment-instruction.js"></script>
+
+
+</body>
+
+</html>
+

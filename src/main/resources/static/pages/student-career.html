@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Career Recommendation | Giris Tech Hub
+    </title>
+
+    <link rel="stylesheet"
+          href="../css/student-dashboard.css">
+
+    <link rel="stylesheet"
+          href="../css/student-career.css">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+
+<body>
+
+
+<div class="dashboard-container">
+
+
+<!-- COMMON SIDEBAR -->
+	<div id="studentSidebar"></div>
+<!-- =====================================================
+                       MAIN CONTENT
+===================================================== -->
+
+<main class="main-content">
+
+
+    <!-- =================================================
+                         PAGE HEADER
+    ================================================= -->
+
+    <section class="career-header">
+
+        <div>
+
+            <h1>
+
+                <i class="fa-solid fa-briefcase"></i>
+
+                Career Recommendation
+
+            </h1>
+
+            <p>
+                Discover careers that best match your skills,
+                interests and assessment performance.
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+                         SEARCH
+    ================================================= -->
+
+    <div class="career-search">
+
+        <i class="fa-solid fa-magnifying-glass"></i>
+
+        <input
+                type="text"
+                id="careerSearch"
+                placeholder="Search assessment or career...">
+
+    </div>
+
+
+
+    <!-- =================================================
+                    OVERALL + TOP CAREERS
+    ================================================= -->
+
+    <section class="career-overview">
+
+
+        <!-- =================================================
+                         OVERALL MATCH
+        ================================================= -->
+
+        <div class="overview-card overall-card">
+
+            <div class="card-heading">
+
+                <div>
+
+                    <span class="section-mini-label">
+                        YOUR CAREER INSIGHT
+                    </span>
+
+                    <h2>
+                        Overall Career Match
+                    </h2>
+
+                </div>
+
+
+                <div class="heading-icon">
+
+                    <i class="fa-solid fa-bullseye"></i>
+
+                </div>
+
+            </div>
+
+
+            <div class="overall-content">
+
+
+                <div class="career-circle"
+                     id="overallCircle">
+
+                    <div>
+
+                        <strong id="overallMatch">
+                            0%
+                        </strong>
+
+                        <span>
+                            Overall Match
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="overall-description">
+
+                    <span class="recommendation-label">
+                        BEST CAREER ALIGNMENT
+                    </span>
+
+                    <h3 id="overallTitle">
+                        Calculating...
+                    </h3>
+
+                    <p id="overallDescription">
+
+                        Your overall career recommendation
+                        is calculated from your completed
+                        assessments.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+                           TOP 5
+        ================================================= -->
+
+        <div class="overview-card">
+
+            <div class="card-heading">
+
+                <div>
+
+                    <span class="section-mini-label">
+                        PERSONALIZED
+                    </span>
+
+                    <h2>
+                        Top 5 Career Matches
+                    </h2>
+
+                </div>
+
+
+                <div class="heading-icon">
+
+                    <i class="fa-solid fa-ranking-star"></i>
+
+                </div>
+
+            </div>
+
+
+            <div id="topCareerList"
+                 class="top-career-list">
+
+                <div class="career-loading">
+
+                    <i class="fa-solid fa-spinner fa-spin"></i>
+
+                    Calculating careers...
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+               ASSESSMENT-WISE CAREER RESULTS
+    ================================================= -->
+
+    <section class="assessment-career-section">
+
+
+        <div class="section-title">
+
+            <div>
+
+                <span class="section-mini-label">
+                    ASSESSMENT ANALYSIS
+                </span>
+
+                <h2>
+                    Career According to Assessment Results
+                </h2>
+
+                <p>
+                    View your performance in each completed
+                    assessment and explore its career analysis.
+                </p>
+
+            </div>
+
+
+            <div class="assessment-count-badge">
+
+                <i class="fa-solid fa-file-circle-check"></i>
+
+                <span id="assessmentCount">
+                    0 Assessments
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div id="assessmentCareerContainer"
+             class="assessment-career-container">
+
+            <!-- Dynamic assessment cards -->
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =================================================
+                    CAREER DETAIL OVERLAY
+    ================================================= -->
+
+    <div id="careerDetailOverlay"
+         class="career-detail-overlay">
+
+
+        <div class="career-detail-modal">
+
+
+            <!-- =================================================
+                           DETAIL TOP BAR
+            ================================================= -->
+
+            <div class="detail-top-bar">
+
+
+                <button
+                        type="button"
+                        class="detail-back-button"
+                        id="detailBackButton">
+
+                    <i class="fa-solid fa-arrow-left"></i>
+
+                    <span>
+                        Back to Career Recommendations
+                    </span>
+
+                </button>
+
+
+                <button
+                        type="button"
+                        class="detail-cancel-button"
+                        id="detailCancelButton"
+                        aria-label="Close">
+
+                    <i class="fa-solid fa-xmark"></i>
+
+                </button>
+
+            </div>
+
+
+
+            <!-- =================================================
+                           DETAIL HEADER
+            ================================================= -->
+
+            <div class="detail-header">
+
+
+                <div class="detail-title-area">
+
+
+                    <div class="detail-assessment-icon">
+
+                        <i class="fa-solid fa-chart-column"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <span class="detail-label">
+                            ASSESSMENT FULL DETAIL
+                        </span>
+
+                        <h2 id="detailAssessmentName">
+                            Assessment
+                        </h2>
+
+                        <p id="detailAssessmentSubtitle">
+                            Detailed assessment performance
+                            and career analysis
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                        ASSESSMENT SUMMARY
+            ================================================= -->
+
+            <div class="detail-summary-grid">
+
+
+                <div class="detail-summary-card">
+
+
+                    <div class="summary-icon blue">
+
+                        <i class="fa-solid fa-star"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Score
+                        </span>
+
+                        <strong id="detailScore">
+                            0 / 0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="detail-summary-card">
+
+
+                    <div class="summary-icon orange">
+
+                        <i class="fa-solid fa-chart-pie"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Percentage
+                        </span>
+
+                        <strong id="detailPercentage">
+                            0%
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="detail-summary-card">
+
+
+                    <div class="summary-icon green">
+
+                        <i class="fa-solid fa-circle-check"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Result
+                        </span>
+
+                        <strong id="detailStatus">
+                            -
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- =================================================
+                       CAREER MATCHES
+            ================================================= -->
+
+            <div class="detail-career-area">
+
+
+                <div class="detail-section-heading">
+
+
+                    <div>
+
+                        <span>
+                            CAREER ANALYSIS
+                        </span>
+
+                        <h3>
+                            Career Matches From This Assessment
+                        </h3>
+
+                        <p>
+                            Select a career to view more information.
+                        </p>
+
+                    </div>
+
+
+                    <div class="detail-heading-icon">
+
+                        <i class="fa-solid fa-briefcase"></i>
+
+                    </div>
+
+                </div>
+
+
+                <div id="detailCareerMatches"
+                     class="detail-career-matches">
+
+                    <!-- Dynamic career rows -->
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- =================================================
+                    SELECTED CAREER EXPLANATION
+            ================================================= -->
+
+            <div id="selectedCareerExplanation"
+                 class="selected-career-explanation">
+
+
+                <div class="selected-career-header">
+
+
+                    <div>
+
+                        <span>
+                            CAREER INSIGHT
+                        </span>
+
+                        <h3 id="selectedCareerName">
+                            Career
+                        </h3>
+
+                    </div>
+
+
+                    <div id="selectedCareerPercentage"
+                         class="selected-career-percentage">
+
+                        0%
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="career-explanation-grid">
+
+
+                    <!-- WHY -->
+
+                    <div class="explanation-card">
+
+
+                        <div class="explanation-icon why">
+
+                            <i class="fa-solid fa-lightbulb"></i>
+
+                        </div>
+
+
+                        <div>
+
+                            <h4>
+                                Why this career?
+                            </h4>
+
+                            <p id="selectedCareerWhy">
+                                -
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- STRENGTH -->
+
+                    <div class="explanation-card">
+
+
+                        <div class="explanation-icon strength-icon">
+
+                            <i class="fa-solid fa-circle-check"></i>
+
+                        </div>
+
+
+                        <div>
+
+                            <h4>
+                                Your Strengths
+                            </h4>
+
+                            <p id="selectedCareerStrengths">
+                                -
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- IMPROVEMENT -->
+
+                    <div class="explanation-card">
+
+
+                        <div class="explanation-icon improvement-icon">
+
+                            <i class="fa-solid fa-arrow-trend-up"></i>
+
+                        </div>
+
+
+                        <div>
+
+                            <h4>
+                                Areas to Improve
+                            </h4>
+
+                            <p id="selectedCareerWeaknesses">
+                                -
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =================================================
+                         EMPTY / ERROR
+    ================================================= -->
+
+    <div id="careerMessage"
+         class="career-message"
+         style="display:none;">
+
+    </div>
+
+
+
+    <!-- =================================================
+                           LOADER
+    ================================================= -->
+
+    <div id="careerLoader"
+         class="career-loader">
+
+        <div class="loader-spinner"></div>
+
+        <p>
+            Loading your career recommendations...
+        </p>
+
+    </div>
+
+
+</main>
+
+</div>
+
+<script src="../js/student-common.js"></script>
+
+<script src="../js/student-career.js"></script>
+
+
+</body>
+
+</html>

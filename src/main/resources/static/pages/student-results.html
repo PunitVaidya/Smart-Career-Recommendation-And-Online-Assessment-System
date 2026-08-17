@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Student Results | Giris Tech Hub
+    </title>
+
+
+    <!-- COMMON DASHBOARD CSS -->
+
+    <link rel="stylesheet"
+          href="../css/student-dashboard.css">
+
+
+    <!-- RESULT PAGE CSS -->
+
+    <link rel="stylesheet"
+          href="../css/student-results.css">
+
+
+    <!-- FONT AWESOME -->
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+
+<body>
+
+
+<div class="dashboard-container">
+
+
+    <!-- COMMON SIDEBAR -->
+	<div id="studentSidebar"></div>
+
+    <!-- =====================================================
+                         MAIN CONTENT
+    ====================================================== -->
+
+    <main class="main-content">
+
+
+        <!-- =================================================
+                         RESULT LIST PAGE
+        ================================================== -->
+
+        <section id="resultListSection">
+
+
+            <!-- PAGE HEADER -->
+
+            <section class="page-header">
+
+                <h1>
+
+                    <i class="fa-solid fa-chart-column"></i>
+
+                    Assessment Results
+
+                </h1>
+
+
+                <p>
+                    View your assessment performance and detailed results.
+                </p>
+
+            </section>
+
+
+
+            <!-- SEARCH -->
+
+            <div class="result-search">
+
+                <i class="fa-solid fa-search"></i>
+
+                <input
+                    type="text"
+                    id="searchResult"
+                    placeholder="Search Assessment">
+
+            </div>
+
+
+
+            <!-- RESULT CONTAINER -->
+
+            <section>
+
+                <div id="resultContainer"
+                     class="result-container">
+
+                    <!-- Results loaded dynamically -->
+
+                </div>
+
+            </section>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+                     FULL RESULT SECTION
+        ================================================== -->
+
+        <section id="fullResultSection"
+                 class="full-result-section"
+                 style="display:none;">
+
+
+            <!-- BACK BUTTON -->
+
+            <button class="back-result-btn"
+                    onclick="closeFullResult()">
+
+                <i class="fa-solid fa-arrow-left"></i>
+
+                Back to Results
+
+            </button>
+
+
+            <!-- FULL RESULT HEADER -->
+
+            <div class="full-result-header">
+
+                <div class="full-result-icon">
+
+                    <i class="fa-solid fa-chart-column"></i>
+
+                </div>
+
+
+                <div>
+
+                    <h1 id="detailAssessmentName">
+                        Assessment Result
+                    </h1>
+
+                    <p id="detailAssessmentDescription">
+                        Detailed assessment performance
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- SUMMARY -->
+
+            <div class="result-summary-grid">
+
+
+                <!-- SCORE -->
+
+                <div class="detail-stat-card">
+
+                    <div class="detail-stat-icon">
+
+                        <i class="fa-solid fa-bullseye"></i>
+
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Score
+                        </span>
+
+                        <strong id="detailScore">
+                            -
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- PERCENTAGE -->
+
+                <div class="detail-stat-card">
+
+                    <div class="detail-stat-icon">
+
+                        <i class="fa-solid fa-percent"></i>
+
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Percentage
+                        </span>
+
+                        <strong id="detailPercentage">
+                            -
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- CORRECT -->
+
+                <div class="detail-stat-card">
+
+                    <div class="detail-stat-icon correct-icon">
+
+                        <i class="fa-solid fa-circle-check"></i>
+
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Correct
+                        </span>
+
+                        <strong id="detailCorrect">
+                            -
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- INCORRECT -->
+
+                <div class="detail-stat-card">
+
+                    <div class="detail-stat-icon incorrect-icon">
+
+                        <i class="fa-solid fa-circle-xmark"></i>
+
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Incorrect
+                        </span>
+
+                        <strong id="detailIncorrect">
+                            -
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- SKIPPED -->
+
+                <div class="detail-stat-card">
+
+                    <div class="detail-stat-icon skipped-icon">
+
+                        <i class="fa-solid fa-forward"></i>
+
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Skipped
+                        </span>
+
+                        <strong id="detailSkipped">
+                            -
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- TIME -->
+
+                <div class="detail-stat-card">
+
+                    <div class="detail-stat-icon">
+
+                        <i class="fa-solid fa-clock"></i>
+
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Time Taken
+                        </span>
+
+                        <strong id="detailTime">
+                            -
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- RESULT INFORMATION -->
+
+            <div class="result-information">
+
+
+                <div>
+
+                    <span>
+                        Status
+                    </span>
+
+                    <strong id="detailStatus">
+                        -
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        Submitted On
+                    </span>
+
+                    <strong id="detailSubmitted">
+                        -
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        Total Questions
+                    </span>
+
+                    <strong id="detailTotalQuestions">
+                        -
+                    </strong>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- QUESTION REVIEW -->
+
+            <div class="question-review-section">
+
+
+                <div class="section-title">
+
+                    <div>
+
+                        <i class="fa-solid fa-list-check"></i>
+
+                        <h2>
+                            Question Review
+                        </h2>
+
+                    </div>
+
+
+                    <span id="questionReviewCount">
+                        0 Questions
+                    </span>
+
+                </div>
+
+
+
+                <div id="questionReviewContainer">
+
+                    <!-- Questions loaded dynamically -->
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+                             LOADER
+        ================================================== -->
+
+        <div id="pageLoader"
+             class="page-loader">
+
+            <div class="loader-circle"></div>
+
+            <p>
+                Loading Results...
+            </p>
+
+        </div>
+
+
+    </main>
+
+
+</div>
+
+<!-- =========================================================
+                  COMMON STUDENT JAVASCRIPT
+========================================================= -->
+
+<script src="../js/student-common.js"></script>
+
+
+
+<script src="../js/student-results.js"></script>
+
+</body>
+
+</html>

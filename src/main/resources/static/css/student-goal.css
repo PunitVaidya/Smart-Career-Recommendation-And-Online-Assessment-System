@@ -1,0 +1,609 @@
+/*==========================================================
+                STUDENT GOAL PAGE
+==========================================================*/
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+:root{
+
+    --primary:#0F172A;
+    --secondary:#FF6B00;
+    --secondary-dark:#E65C00;
+    --background:#F8FAFC;
+    --white:#FFFFFF;
+    --border:#E2E8F0;
+    --text:#334155;
+    --text-light:#64748B;
+
+}
+
+*{
+
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:linear-gradient(135deg,#F8FAFC,#EEF4FF);
+
+    min-height:100vh;
+
+    color:var(--text);
+
+}
+
+
+/*==========================================================
+                MAIN CONTAINER
+==========================================================*/
+
+.goal-container{
+
+    width:100%;
+
+    max-width:1400px;
+
+    margin:auto;
+
+    padding:40px 30px 60px;
+
+}
+
+
+/*==========================================================
+                    TOP LOGO
+==========================================================*/
+
+.top-logo{
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    margin-bottom:40px;
+
+}
+
+.top-logo img{
+
+    width:400px;
+    
+
+    margin-bottom:18px;
+
+}
+
+.top-logo h2{
+
+    font-size:24px;
+
+    color:var(--primary);
+
+    text-align:center;
+
+    font-weight:700;
+
+    margin-bottom:10px;
+
+}
+
+.top-logo p{
+
+    color:var(--text-light);
+
+}
+
+
+/*==========================================================
+                WELCOME CARD
+==========================================================*/
+
+.welcome-card{
+
+    background:linear-gradient(135deg,#0F172A,#1E3A8A);
+
+    color:white;
+
+    border-radius:24px;
+
+    padding:50px;
+
+    text-align:center;
+
+    margin-bottom:50px;
+
+    box-shadow:0 20px 60px rgba(15,23,42,.15);
+
+}
+
+.welcome-badge{
+
+    display:inline-block;
+
+    background:rgba(255,255,255,.15);
+
+    padding:8px 20px;
+
+    border-radius:30px;
+
+    font-size:14px;
+
+    margin-bottom:20px;
+
+}
+
+.welcome-card h1{
+
+    font-size:42px;
+
+    font-weight:700;
+
+    margin-bottom:20px;
+
+}
+
+.welcome-card p{
+
+    width:70%;
+
+    margin:auto;
+
+    line-height:32px;
+
+    font-size:17px;
+
+    opacity:.95;
+
+}
+
+/*==========================================================
+                    GOAL SECTION
+==========================================================*/
+
+.goal-section{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:30px;
+
+    margin-bottom:50px;
+
+}
+
+
+/*==========================================================
+                    GOAL CARD
+==========================================================*/
+
+.goal-card{
+
+    background:var(--white);
+
+    border:2px solid transparent;
+
+    border-radius:22px;
+
+    padding:35px 30px;
+
+    cursor:pointer;
+
+    transition:.35s ease;
+
+    position:relative;
+
+    overflow:hidden;
+
+    box-shadow:0 10px 30px rgba(15,23,42,.06);
+
+}
+
+.goal-card:hover{
+
+    transform:translateY(-10px);
+
+    border-color:var(--secondary);
+
+    box-shadow:0 20px 45px rgba(15,23,42,.12);
+
+}
+
+
+/*==========================================================
+                SELECTED CARD
+==========================================================*/
+
+.goal-card.selected{
+
+    border-color:var(--secondary);
+
+    background:#FFF8F2;
+
+    box-shadow:0 18px 40px rgba(255,107,0,.18);
+
+}
+
+.goal-card.selected::after{
+
+    content:"✓ Selected";
+
+    position:absolute;
+
+    top:18px;
+
+    right:18px;
+
+    background:var(--secondary);
+
+    color:#fff;
+
+    padding:6px 12px;
+
+    border-radius:20px;
+
+    font-size:12px;
+
+    font-weight:600;
+
+}
+
+
+/*==========================================================
+                    ICON
+==========================================================*/
+
+.goal-icon{
+
+    width:78px;
+
+    height:78px;
+
+    border-radius:18px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    margin-bottom:25px;
+
+    font-size:32px;
+
+    color:white;
+
+}
+
+.goal-icon.placement{
+
+    background:linear-gradient(135deg,#2563EB,#1D4ED8);
+
+}
+
+.goal-icon.programming{
+
+    background:linear-gradient(135deg,#10B981,#059669);
+
+}
+
+.goal-icon.career{
+
+    background:linear-gradient(135deg,#F97316,#EA580C);
+
+}
+
+
+/*==========================================================
+                    TITLE
+==========================================================*/
+
+.goal-card h2{
+
+    font-size:24px;
+
+    color:var(--primary);
+
+    margin-bottom:15px;
+
+    font-weight:700;
+
+}
+
+
+/*==========================================================
+                DESCRIPTION
+==========================================================*/
+
+.goal-card p{
+
+    color:var(--text-light);
+
+    line-height:28px;
+
+    margin-bottom:25px;
+
+    font-size:15px;
+
+}
+
+
+/*==========================================================
+                    FEATURES
+==========================================================*/
+
+.goal-card ul{
+
+    list-style:none;
+
+}
+
+.goal-card ul li{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    margin-bottom:14px;
+
+    color:var(--text);
+
+    font-size:15px;
+
+}
+
+.goal-card ul li i{
+
+    color:#10B981;
+
+    font-size:15px;
+
+}
+
+/*==========================================================
+                ACTION SECTION
+==========================================================*/
+
+.action-section{
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    margin-top:20px;
+
+}
+
+.selection-message{
+
+    color:var(--text-light);
+
+    font-size:16px;
+
+    margin-bottom:25px;
+
+    text-align:center;
+
+}
+
+
+/*==========================================================
+                CONTINUE BUTTON
+==========================================================*/
+
+.continue-btn{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:12px;
+
+    padding:16px 40px;
+
+    border:none;
+
+    border-radius:14px;
+
+    background:var(--secondary);
+
+    color:white;
+
+    font-size:17px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+    min-width:240px;
+
+}
+
+.continue-btn:hover:not(:disabled){
+
+    background:var(--secondary-dark);
+
+    transform:translateY(-3px);
+
+    box-shadow:0 15px 30px rgba(255,107,0,.25);
+
+}
+
+.continue-btn:disabled{
+
+    background:#CBD5E1;
+
+    cursor:not-allowed;
+
+    transform:none;
+
+    box-shadow:none;
+
+}
+
+
+/*==========================================================
+                    FOOTER
+==========================================================*/
+
+.goal-footer{
+
+    margin-top:60px;
+
+    text-align:center;
+
+    color:var(--text-light);
+
+    font-size:14px;
+
+}
+
+
+/*==========================================================
+                RESPONSIVE
+==========================================================*/
+
+@media(max-width:1100px){
+
+    .goal-section{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .goal-container{
+
+        padding:25px;
+
+    }
+
+    .goal-section{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .welcome-card{
+
+        padding:35px 25px;
+
+    }
+
+    .welcome-card h1{
+
+        font-size:32px;
+
+    }
+
+    .welcome-card p{
+
+        width:100%;
+
+        font-size:15px;
+
+        line-height:28px;
+
+    }
+
+    .continue-btn{
+
+        width:100%;
+
+    }
+
+}
+
+@media(max-width:480px){
+
+    .top-logo img{
+
+        width:90px;
+
+    }
+
+    .top-logo h2{
+
+        font-size:20px;
+
+    }
+
+    .goal-card{
+
+        padding:28px 22px;
+
+    }
+
+    .goal-card h2{
+
+        font-size:21px;
+
+    }
+
+}
+
+
+/*==========================================================
+                SCROLLBAR
+==========================================================*/
+
+::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#EEF2F7;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:var(--secondary);
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:var(--secondary-dark);
+
+}
+
+
+/*==========================================================
+                TEXT SELECTION
+==========================================================*/
+
+::selection{
+
+    background:var(--secondary);
+
+    color:white;
+
+}

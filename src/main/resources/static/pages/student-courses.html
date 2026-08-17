@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Courses | Giri's Tech Hub
+    </title>
+
+
+    <!-- =====================================================
+         COMMON STUDENT DASHBOARD CSS
+    ====================================================== -->
+
+    <link rel="stylesheet"
+          href="../css/student-dashboard.css">
+
+
+    <!-- =====================================================
+         COURSES PAGE CSS
+    ====================================================== -->
+
+    <link rel="stylesheet"
+          href="../css/student-courses.css">
+
+
+    <!-- =====================================================
+         FONT AWESOME
+    ====================================================== -->
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+
+<body>
+
+
+<div class="dashboard-container">
+
+
+    <!-- COMMON SIDEBAR -->
+	<div id="studentSidebar"></div>
+    <!-- =====================================================
+                         MAIN CONTENT
+    ====================================================== -->
+
+    <main class="main-content">
+
+
+        <!-- =================================================
+                         HERO
+        ================================================== -->
+
+        <section class="course-hero">
+
+
+            <div class="hero-content">
+
+
+                <div class="hero-kicker">
+
+                    <span class="hero-kicker-dot"></span>
+
+                    PERSONALIZED LEARNING PATH
+
+                </div>
+
+
+                <h1>
+
+                    Turn Your
+                    <span id="heroCareerName">
+                        Career Goal
+                    </span>
+                    Into Real Skills.
+
+                </h1>
+
+
+                <p id="heroDescription">
+
+                    Your learning journey is personalized from
+                    your assessment performance and career recommendation.
+
+                </p>
+
+
+                <div class="hero-actions">
+
+
+                    <button
+                        type="button"
+                        class="hero-primary-btn"
+                        id="heroExploreBtn">
+
+                        <i class="fa-solid fa-rocket"></i>
+
+                        Start Learning Journey
+
+                        <i class="fa-solid fa-arrow-right arrow-icon"></i>
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="hero-secondary-btn"
+                        id="heroRoadmapBtn">
+
+                        <i class="fa-solid fa-route"></i>
+
+                        View Roadmap
+
+                    </button>
+
+
+                </div>
+
+
+                <div class="hero-trust-row">
+
+
+                    <div class="hero-trust-item">
+
+                        <i class="fa-solid fa-bullseye"></i>
+
+                        <span>
+                            Assessment Based
+                        </span>
+
+                    </div>
+
+
+                    <div class="hero-trust-divider"></div>
+
+
+                    <div class="hero-trust-item">
+
+                        <i class="fa-solid fa-route"></i>
+
+                        <span>
+                            Step-by-Step Roadmap
+                        </span>
+
+                    </div>
+
+
+                    <div class="hero-trust-divider"></div>
+
+
+                    <div class="hero-trust-item">
+
+                        <i class="fa-solid fa-laptop-code"></i>
+
+                        <span>
+                            Career-Focused Skills
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- HERO SCORE -->
+
+            <div class="hero-score-card">
+
+
+                <div class="hero-score-glow"></div>
+
+
+                <div class="hero-score-icon">
+
+                    <i class="fa-solid fa-bullseye"></i>
+
+                </div>
+
+
+                <span class="hero-score-label">
+                    YOUR CAREER MATCH
+                </span>
+
+
+                <strong id="heroMatch">
+                    0%
+                </strong>
+
+
+                <span class="hero-score-caption">
+                    Based on your latest assessment
+                </span>
+
+
+                <div class="hero-score-career"
+                     id="heroScoreCareer">
+
+                    Calculating...
+
+                </div>
+
+
+                <div class="hero-score-line">
+
+                    <span id="heroScoreProgress"></span>
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+                    PERSONALIZED CAREER SUMMARY
+        ================================================== -->
+
+        <section class="career-summary-card">
+
+
+            <div class="career-summary-left">
+
+
+                <div class="career-summary-icon">
+
+                    <i class="fa-solid fa-compass"></i>
+
+                </div>
+
+
+                <div>
+
+                    <span class="small-orange-label">
+                        YOUR RECOMMENDED CAREER
+                    </span>
+
+
+                    <h2 id="recommendedCareer">
+                        Calculating...
+                    </h2>
+
+
+                    <p id="recommendedCareerMessage">
+
+                        Loading your personalized learning direction...
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="career-summary-right">
+
+
+                <div class="summary-stat">
+
+                    <strong id="careerMatch">
+                        0%
+                    </strong>
+
+                    <span>
+                        Career Match
+                    </span>
+
+                </div>
+
+
+                <div class="summary-divider"></div>
+
+
+                <div class="summary-stat">
+
+                    <strong id="roadmapCount">
+                        0
+                    </strong>
+
+                    <span>
+                        Learning Steps
+                    </span>
+
+                </div>
+
+
+                <div class="summary-divider"></div>
+
+
+                <div class="summary-stat">
+
+                    <strong id="courseCount">
+                        0
+                    </strong>
+
+                    <span>
+                        Course Paths
+                    </span>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+                     LEARNING JOURNEY HEADER
+        ================================================== -->
+
+        <section class="learning-section-header">
+
+
+            <div>
+
+                <span class="small-orange-label">
+                    YOUR LEARNING JOURNEY
+                </span>
+
+
+                <h2>
+                    From Assessment to Career
+                </h2>
+
+
+                <p>
+                    Follow the recommended path and build the skills
+                    required for your target career.
+                </p>
+
+            </div>
+
+
+            <div class="learning-path-badge">
+
+                <i class="fa-solid fa-graduation-cap"></i>
+
+                Personalized for You
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+                         MAIN COURSE GRID
+        ================================================== -->
+
+        <div class="course-main-grid">
+
+
+            <!-- =================================================
+                           ROADMAP
+            ================================================== -->
+
+            <section class="roadmap-card"
+                     id="roadmapSection">
+
+
+                <div class="section-heading">
+
+
+                    <div class="heading-icon roadmap-icon">
+
+                        <i class="fa-solid fa-route"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <span class="heading-kicker">
+                            FREE LEARNING PATH
+                        </span>
+
+                        <h2>
+                            Your Career Roadmap
+                        </h2>
+
+                        <p>
+                            A structured path based on your assessment.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- DYNAMIC ROADMAP -->
+
+                <div id="roadmapContainer"
+                     class="roadmap-container">
+
+                    <div class="loading-content">
+
+                        <div class="mini-loader"></div>
+
+                        <p>
+                            Preparing your personalized roadmap...
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="roadmap-footer">
+
+                    <div class="roadmap-footer-icon">
+
+                        <i class="fa-solid fa-lightbulb"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <strong>
+                            Build skills in the right order
+                        </strong>
+
+                        <span>
+                            Start with fundamentals, strengthen your
+                            core skills and gradually move toward projects.
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+            </section>
+
+
+
+            <!-- =================================================
+                           PREMIUM COURSES
+            ================================================== -->
+
+            <section class="premium-card">
+
+
+                <div class="premium-heading">
+
+
+                    <div class="premium-title-area">
+
+
+                        <div class="heading-icon premium-icon">
+
+                            <i class="fa-solid fa-crown"></i>
+
+                        </div>
+
+
+                        <div>
+
+                            <span class="heading-kicker premium-kicker">
+                                CAREER-FOCUSED TRAINING
+                            </span>
+
+
+                            <h2>
+                                Premium Courses
+                            </h2>
+
+
+                            <p>
+                                Industry-focused learning for your
+                                recommended career.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <span class="premium-badge">
+
+                        <i class="fa-solid fa-star"></i>
+
+                        Recommended
+
+                    </span>
+
+                </div>
+
+
+
+                <!-- FEATURED COURSE -->
+
+                <div id="featuredCourse"
+                     class="featured-course">
+
+                    <!-- Dynamic -->
+
+                </div>
+
+
+
+                <!-- COURSE BENEFITS -->
+
+                <div class="premium-benefits">
+
+
+                    <div class="benefit-item">
+
+                        <div class="benefit-icon">
+
+                            <i class="fa-solid fa-user-tie"></i>
+
+                        </div>
+
+                        <strong>
+                            Expert Training
+                        </strong>
+
+                        <span>
+                            Career-focused guidance
+                        </span>
+
+                    </div>
+
+
+                    <div class="benefit-item">
+
+                        <div class="benefit-icon">
+
+                            <i class="fa-solid fa-code"></i>
+
+                        </div>
+
+                        <strong>
+                            Practical Projects
+                        </strong>
+
+                        <span>
+                            Learn by building
+                        </span>
+
+                    </div>
+
+
+                    <div class="benefit-item">
+
+                        <div class="benefit-icon">
+
+                            <i class="fa-solid fa-briefcase"></i>
+
+                        </div>
+
+                        <strong>
+                            Career Preparation
+                        </strong>
+
+                        <span>
+                            Prepare for opportunities
+                        </span>
+
+                    </div>
+
+
+                    <div class="benefit-item">
+
+                        <div class="benefit-icon">
+
+                            <i class="fa-solid fa-certificate"></i>
+
+                        </div>
+
+                        <strong>
+                            Skill Development
+                        </strong>
+
+                        <span>
+                            Build your profile
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- OTHER COURSES -->
+
+                <div class="other-courses-heading">
+
+                    <div>
+
+                        <h3>
+                            Explore More Learning Paths
+                        </h3>
+
+                        <span>
+                            Compare other career-focused options
+                        </span>
+
+                    </div>
+
+
+                    <i class="fa-solid fa-arrow-down"></i>
+
+                </div>
+
+
+                <div id="premiumCourseList"
+                     class="premium-course-list">
+
+                    <!-- Dynamic -->
+
+                </div>
+
+
+            </section>
+
+
+        </div>
+
+
+
+        <!-- =================================================
+                     WHY LEARNING PATH
+        ================================================== -->
+
+        <section class="why-learning-section">
+
+
+            <div class="why-learning-header">
+
+
+                <div>
+
+                    <span class="small-orange-label">
+                        WHY THIS LEARNING PATH?
+                    </span>
+
+                    <h2>
+                        Don't Just Choose a Course.
+                        Choose a Career Direction.
+                    </h2>
+
+                    <p>
+                        Your assessment gives you a direction.
+                        Your roadmap tells you what to learn next.
+                        The right training can help you turn those skills
+                        into practical career readiness.
+                    </p>
+
+                </div>
+
+
+                <div class="why-learning-icon">
+
+                    <i class="fa-solid fa-compass-drafting"></i>
+
+                </div>
+
+            </div>
+
+
+            <div class="why-learning-grid">
+
+
+                <div class="why-card">
+
+                    <span class="why-number">
+                        01
+                    </span>
+
+                    <i class="fa-solid fa-chart-pie"></i>
+
+                    <h3>
+                        Start With Your Assessment
+                    </h3>
+
+                    <p>
+                        Understand your current performance and
+                        identify the career direction recommended
+                        for you.
+                    </p>
+
+                </div>
+
+
+                <div class="why-card">
+
+                    <span class="why-number">
+                        02
+                    </span>
+
+                    <i class="fa-solid fa-route"></i>
+
+                    <h3>
+                        Follow Your Roadmap
+                    </h3>
+
+                    <p>
+                        Move through the learning stages in a
+                        structured sequence instead of learning randomly.
+                    </p>
+
+                </div>
+
+
+                <div class="why-card">
+
+                    <span class="why-number">
+                        03
+                    </span>
+
+                    <i class="fa-solid fa-laptop-code"></i>
+
+                    <h3>
+                        Build Practical Skills
+                    </h3>
+
+                    <p>
+                        Strengthen your knowledge through technologies,
+                        projects and career-focused learning.
+                    </p>
+
+                </div>
+
+
+                <div class="why-card">
+
+                    <span class="why-number">
+                        04
+                    </span>
+
+                    <i class="fa-solid fa-rocket"></i>
+
+                    <h3>
+                        Move Toward Your Goal
+                    </h3>
+
+                    <p>
+                        Keep improving your skills and prepare yourself
+                        for the next stage of your career journey.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+                       FINAL CTA
+        ================================================== -->
+
+        <section class="career-learning-banner">
+
+
+            <div class="career-learning-icon">
+
+                <i class="fa-solid fa-rocket"></i>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    READY FOR THE NEXT STEP?
+                </span>
+
+
+                <h3>
+                    Turn Your Recommendation Into Action.
+                </h3>
+
+
+                <p>
+                    Explore Giri's Tech Hub learning opportunities
+                    and continue building the skills for your career.
+                </p>
+
+            </div>
+
+
+            <button
+                id="officialWebsiteBtn"
+                class="official-btn">
+
+                Explore Giri's Tech Hub
+
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+            </button>
+
+        </section>
+
+
+    </main>
+
+</div>
+
+
+
+<!-- =====================================================
+                     PAGE LOADER
+====================================================== -->
+
+<div id="pageLoader"
+     class="page-loader">
+
+    <div class="loader-circle"></div>
+
+    <p>
+        Preparing your personalized learning path...
+    </p>
+
+</div>
+
+
+
+<!-- =====================================================
+                         POPUP
+====================================================== -->
+
+<div id="popupOverlay"
+     class="popup-overlay">
+
+
+    <div class="popup-box">
+
+
+        <div id="popupIcon"
+             class="popup-icon">
+
+            <i class="fa-solid fa-circle-info"></i>
+
+        </div>
+
+
+        <h3 id="popupTitle">
+            Notice
+        </h3>
+
+
+        <p id="popupMessage">
+            -
+        </p>
+
+
+        <button id="popupClose"
+                class="popup-close">
+
+            Continue
+
+        </button>
+
+
+    </div>
+
+</div>
+
+<script src="../js/student-common.js"></script>
+
+<script src="../js/student-courses.js"></script>
+
+</body>
+
+</html>

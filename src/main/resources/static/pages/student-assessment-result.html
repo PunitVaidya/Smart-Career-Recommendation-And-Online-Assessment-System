@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Assessment Result | Giris Tech Hub</title>
+
+    <link rel="stylesheet"
+          href="../css/student-assessment-result.css">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     STUDENT SIDEBAR
+===================================================== -->
+
+<aside class="student-sidebar">
+
+
+    <!-- LOGO -->
+
+    <div class="sidebar-logo">
+
+        <div class="logo-icon">
+
+            <i class="fa-solid fa-graduation-cap"></i>
+
+        </div>
+
+        <div class="logo-text">
+
+            <h2>Giris Tech Hub</h2>
+
+            <span>Student Portal</span>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- STUDENT PROFILE -->
+
+    <div class="sidebar-profile">
+
+        <div class="profile-avatar">
+
+            <i class="fa-solid fa-user"></i>
+
+        </div>
+
+        <div class="profile-info">
+
+            <h3 id="sidebarStudentName">
+                Student
+            </h3>
+
+            <span>
+                Student
+            </span>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- NAVIGATION -->
+
+    <nav class="sidebar-navigation">
+
+
+        <a href="student-dashboard.html"
+           class="sidebar-link">
+
+            <i class="fa-solid fa-house"></i>
+
+            <span>Dashboard</span>
+
+        </a>
+
+
+        <a href="student-profile.html"
+           class="sidebar-link">
+
+            <i class="fa-solid fa-user"></i>
+
+            <span>My Profile</span>
+
+        </a>
+
+
+        <a href="student-assessment.html"
+           class="sidebar-link">
+
+            <i class="fa-solid fa-clipboard-question"></i>
+
+            <span>Assessments</span>
+
+        </a>
+
+
+        <a href="student-results.html"
+           class="sidebar-link active">
+
+            <i class="fa-solid fa-chart-column"></i>
+
+            <span>Results</span>
+
+        </a>
+
+
+        <a href="student-courses.html"
+           class="sidebar-link">
+
+            <i class="fa-solid fa-book-open"></i>
+
+            <span>Courses</span>
+
+        </a>
+
+
+    </nav>
+
+
+
+    <!-- SIDEBAR FOOTER -->
+
+    <div class="sidebar-footer">
+
+        <button type="button"
+                onclick="logoutStudent()"
+                class="logout-btn">
+
+            <i class="fa-solid fa-right-from-bracket"></i>
+
+            <span>Logout</span>
+
+        </button>
+
+    </div>
+
+
+</aside>
+
+
+
+<!-- =====================================================
+     MAIN CONTENT
+===================================================== -->
+
+<main class="main-content">
+
+
+    <!-- =================================================
+         TOP HEADER
+    ================================================== -->
+
+    <header class="top-header">
+
+
+        <div>
+
+            <h1>
+                Assessment Result
+            </h1>
+
+            <p>
+                Review your assessment performance and progress
+            </p>
+
+        </div>
+
+
+
+        <div class="student-top-profile">
+
+
+            <div class="top-avatar">
+
+                <i class="fa-solid fa-user"></i>
+
+            </div>
+
+
+            <div>
+
+                <strong id="topStudentName">
+                    Student
+                </strong>
+
+                <span>
+                    Student
+                </span>
+
+            </div>
+
+
+        </div>
+
+
+    </header>
+
+
+
+    <!-- =================================================
+         LOADING
+    ================================================== -->
+
+    <section id="loadingSection"
+             class="loading-section">
+
+
+        <div class="loading-spinner">
+
+            <i class="fa-solid fa-spinner fa-spin"></i>
+
+        </div>
+
+
+        <p>
+            Loading assessment result...
+        </p>
+
+
+    </section>
+
+
+
+    <!-- =================================================
+         ERROR
+    ================================================== -->
+
+    <section id="errorSection"
+             class="error-section hidden">
+
+
+        <div class="error-icon">
+
+            <i class="fa-solid fa-circle-exclamation"></i>
+
+        </div>
+
+
+        <h2>
+            Unable to Load Result
+        </h2>
+
+
+        <p id="errorMessage">
+            Assessment result could not be loaded.
+        </p>
+
+
+        <div class="error-actions">
+
+
+            <button type="button"
+                    onclick="goBack()"
+                    class="secondary-btn">
+
+                <i class="fa-solid fa-arrow-left"></i>
+
+                Go Back
+
+            </button>
+
+
+
+            <button type="button"
+                    onclick="loadResult()"
+                    class="primary-btn">
+
+                <i class="fa-solid fa-rotate-right"></i>
+
+                Try Again
+
+            </button>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =================================================
+         RESULT CONTENT
+    ================================================== -->
+
+    <section id="resultSection"
+             class="result-section hidden">
+
+
+
+        <!-- =================================================
+             RESULT HERO
+        ================================================== -->
+
+        <div class="result-hero-card">
+
+
+            <div class="hero-left">
+
+
+                <div class="hero-icon">
+
+                    <i class="fa-solid fa-circle-check"></i>
+
+                </div>
+
+
+                <div class="hero-content">
+
+
+                    <span class="hero-label">
+
+                        Assessment Completed
+
+                    </span>
+
+
+                    <h2 id="resultAssessmentName">
+
+                        Assessment Result
+
+                    </h2>
+
+
+                    <p>
+
+                        Your assessment has been successfully submitted.
+
+                    </p>
+
+
+                    <span id="resultStatus"
+                          class="status-badge">
+
+                        SUBMITTED
+
+                    </span>
+
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- PERCENTAGE -->
+
+            <div class="percentage-circle">
+
+
+                <div class="percentage-inner">
+
+
+                    <strong id="percentageCircleValue">
+                        0%
+                    </strong>
+
+
+                    <span>
+                        Overall
+                    </span>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- =================================================
+             SCORE SUMMARY
+        ================================================== -->
+
+        <div class="score-card">
+
+
+            <div class="score-card-header">
+
+
+                <div>
+
+                    <h2>
+                        Your Performance
+                    </h2>
+
+                    <p>
+                        Overall assessment performance
+                    </p>
+
+                </div>
+
+
+                <div class="score-icon">
+
+                    <i class="fa-solid fa-chart-line"></i>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- MAIN SCORE -->
+
+            <div class="result-summary">
+
+
+                <!-- SCORE -->
+
+                <div class="result-item score-item">
+
+
+                    <div class="result-item-icon">
+
+                        <i class="fa-solid fa-star"></i>
+
+                    </div>
+
+
+                    <div class="result-item-content">
+
+                        <span>
+                            Your Score
+                        </span>
+
+
+                        <strong id="scoreValue">
+                            0
+                        </strong>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- TOTAL MARKS -->
+
+                <div class="result-item total-item">
+
+
+                    <div class="result-item-icon">
+
+                        <i class="fa-solid fa-list-check"></i>
+
+                    </div>
+
+
+                    <div class="result-item-content">
+
+                        <span>
+                            Total Marks
+                        </span>
+
+
+                        <strong id="totalMarksValue">
+                            0
+                        </strong>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- PERCENTAGE -->
+
+                <div class="result-item percentage-item">
+
+
+                    <div class="result-item-icon">
+
+                        <i class="fa-solid fa-percent"></i>
+
+                    </div>
+
+
+                    <div class="result-item-content">
+
+                        <span>
+                            Percentage
+                        </span>
+
+
+                        <strong id="percentageValue">
+                            0.00%
+                        </strong>
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- =================================================
+                 CORRECT / INCORRECT / SKIPPED
+            ================================================== -->
+
+            <div class="question-result-summary">
+
+
+                <!-- CORRECT -->
+
+                <div class="question-result-item correct-result">
+
+
+                    <div class="question-result-icon">
+
+                        <i class="fa-solid fa-circle-check"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Correct
+                        </span>
+
+
+                        <strong id="correctCountValue">
+                            0
+                        </strong>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- INCORRECT -->
+
+                <div class="question-result-item incorrect-result">
+
+
+                    <div class="question-result-icon">
+
+                        <i class="fa-solid fa-circle-xmark"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Incorrect
+                        </span>
+
+
+                        <strong id="incorrectCountValue">
+                            0
+                        </strong>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- SKIPPED -->
+
+                <div class="question-result-item skipped-result">
+
+
+                    <div class="question-result-icon">
+
+                        <i class="fa-solid fa-circle-minus"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Skipped
+                        </span>
+
+
+                        <strong id="skippedCountValue">
+                            0
+                        </strong>
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- =================================================
+                 PERFORMANCE BAR
+            ================================================== -->
+
+            <div class="performance-section">
+
+
+                <div class="performance-header">
+
+
+                    <span>
+                        Overall Performance
+                    </span>
+
+
+                    <strong id="performancePercentage">
+                        0%
+                    </strong>
+
+
+                </div>
+
+
+                <div class="progress-bar">
+
+                    <div id="progressFill"
+                         class="progress-fill">
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- =================================================
+             PERFORMANCE MESSAGE
+        ================================================== -->
+
+        <div class="performance-message-card">
+
+
+            <div class="performance-message-icon">
+
+                <i id="performanceMessageIcon"
+                   class="fa-solid fa-lightbulb">
+
+                </i>
+
+            </div>
+
+
+            <div>
+
+                <h3 id="performanceTitle">
+
+                    Keep Learning
+
+                </h3>
+
+
+                <p id="performanceMessage">
+
+                    Your assessment result is ready.
+                    Continue learning and improving your skills.
+
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- =================================================
+             ATTEMPT INFORMATION
+        ================================================== -->
+
+        <div class="attempt-card">
+
+
+            <h2>
+
+                <i class="fa-solid fa-circle-info"></i>
+
+                Attempt Information
+
+            </h2>
+
+
+
+            <div class="attempt-grid">
+
+
+                <!-- ATTEMPT ID -->
+
+                <div class="attempt-info">
+
+                    <span>
+                        Attempt ID
+                    </span>
+
+                    <strong id="attemptIdValue">
+                        -
+                    </strong>
+
+                </div>
+
+
+
+                <!-- STUDENT ID -->
+
+                <div class="attempt-info">
+
+                    <span>
+                        Student ID
+                    </span>
+
+                    <strong id="studentIdValue">
+                        -
+                    </strong>
+
+                </div>
+
+
+
+                <!-- ASSESSMENT ID -->
+
+                <div class="attempt-info">
+
+                    <span>
+                        Assessment ID
+                    </span>
+
+                    <strong id="assessmentIdValue">
+                        -
+                    </strong>
+
+                </div>
+
+
+
+                <!-- ATTEMPT NUMBER -->
+
+                <div class="attempt-info">
+
+                    <span>
+                        Attempt Number
+                    </span>
+
+                    <strong id="attemptNumberValue">
+                        1
+                    </strong>
+
+                </div>
+
+
+
+                <!-- START TIME -->
+
+                <div class="attempt-info">
+
+                    <span>
+                        Started At
+                    </span>
+
+                    <strong id="startTimeValue">
+                        -
+                    </strong>
+
+                </div>
+
+
+
+                <!-- END TIME -->
+
+                <div class="attempt-info">
+
+                    <span>
+                        Submitted At
+                    </span>
+
+                    <strong id="endTimeValue">
+                        -
+                    </strong>
+
+                </div>
+
+
+
+                <!-- STATUS -->
+
+                <div class="attempt-info">
+
+                    <span>
+                        Status
+                    </span>
+
+                    <strong id="attemptStatusValue">
+                        SUBMITTED
+                    </strong>
+
+                </div>
+
+
+
+                <!-- QUESTIONS -->
+
+                <div class="attempt-info">
+
+                    <span>
+                        Questions Attempted
+                    </span>
+
+                    <strong id="attemptedCountValue">
+                        0 / 0
+                    </strong>
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- =================================================
+             ACTIONS
+        ================================================== -->
+
+        <div class="result-actions">
+
+
+            <button type="button"
+                    class="secondary-btn"
+                    onclick="goBack()">
+
+                <i class="fa-solid fa-arrow-left"></i>
+
+                Back
+
+            </button>
+
+
+
+            <button type="button"
+                    class="results-btn"
+                    onclick="goToResults()">
+
+                <i class="fa-solid fa-chart-column"></i>
+
+                My Results
+
+            </button>
+
+
+
+            <button type="button"
+                    class="dashboard-btn"
+                    onclick="goToDashboard()">
+
+                <i class="fa-solid fa-house"></i>
+
+                Back to Dashboard
+
+            </button>
+
+
+        </div>
+
+
+    </section>
+
+
+</main>
+
+
+
+<script src="../js/student-assessment-result.js"></script>
+
+
+</body>
+
+</html>

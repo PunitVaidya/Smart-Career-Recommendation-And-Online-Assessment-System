@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Admin Dashboard | Giris Tech Hub</title>
+
+<link rel="stylesheet" href="../css/admin-common.css">
+<link rel="stylesheet" href="../css/admin-dashboard.css">
+
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+<body>
+
+	<div class="dashboard">
+
+		<!-- =======================
+            SIDEBAR
+    ======================== -->
+
+		<aside class="sidebar">
+
+			<div class="sidebar-header">
+
+				<img src="../images/GthTransparent.png" class="logo">
+
+
+				<p>Smart Career Recommendation & Online Assessment System</p>
+
+			</div>
+
+			<ul class="sidebar-menu">
+
+				<li onclick="window.location.href='admin-dashboard.html'"><i
+					class="fa-solid fa-house"></i> <span>Dashboard</span></li>
+
+				<li onclick="window.location.href='student.html'"><i
+					class="fa-solid fa-user-graduate"></i> <span>Students</span></li>
+
+				<li onclick="window.location.href='assessment.html'"><i
+					class="fa-solid fa-file-lines"></i> <span>Assessments</span></li>
+
+				<li onclick="window.location.href='question.html'"><i
+					class="fa-solid fa-circle-question"></i> <span>Questions</span></li>
+
+				<li onclick="window.location.href='career-management.html'"><i
+					class="fa-solid fa-briefcase"></i> <span>Career</span></li>
+
+				<li onclick="window.location.href='course.html'"><i
+					class="fa-solid fa-book-open"></i> <span>Courses</span></li>
+
+				<li onclick="window.location.href='result.html'"><i
+					class="fa-solid fa-chart-column"></i> <span>Results</span></li>
+
+			</ul>
+
+
+			<div class="logout-btn">
+    <i class="fa-solid fa-right-from-bracket"></i>
+    <span>Logout</span>
+</div>
+
+		</aside>
+
+
+		<!-- =======================
+            MAIN CONTENT
+    ======================== -->
+
+		<main class="main-content">
+
+			<header class="header">
+
+				<div>
+
+					<h1>Dashboard</h1>
+
+					<p>Manage Students, Assessments, Questions, Careers and
+						Courses.</p>
+
+				</div>
+
+
+
+
+			</header>
+
+			<!-- =======================
+                DASHBOARD CARDS
+        ======================== -->
+
+			<section class="dashboard-cards">
+
+				<!-- Students -->
+
+				<div class="card">
+
+					<div class="card-top">
+
+						<div class="card-icon students">
+
+							<i class="fa-solid fa-user-graduate"></i>
+
+						</div>
+
+					</div>
+
+					<h2 id="totalStudents">0</h2>
+
+					<p>Total Students</p>
+
+				</div>
+
+
+				<!-- Admins -->
+
+				<div class="card">
+
+					<div class="card-top">
+
+						<div class="card-icon admins">
+
+							<i class="fa-solid fa-user-shield"></i>
+
+						</div>
+
+					</div>
+
+					<h2 id="totalAdmins">0</h2>
+
+					<p>Total Admins</p>
+
+				</div>
+
+
+				<!-- Assessments -->
+
+				<div class="card">
+
+					<div class="card-top">
+
+						<div class="card-icon assessment">
+
+							<i class="fa-solid fa-file-lines"></i>
+
+						</div>
+
+					</div>
+
+					<h2 id="totalAssessments">0</h2>
+
+					<p>Total Assessments</p>
+
+				</div>
+
+
+				<!-- Questions -->
+
+				<div class="card">
+
+					<div class="card-top">
+
+						<div class="card-icon question">
+
+							<i class="fa-solid fa-circle-question"></i>
+
+						</div>
+
+					</div>
+
+					<h2 id="totalQuestions">0</h2>
+
+					<p>Total Questions</p>
+
+				</div>
+
+
+				<!-- Careers -->
+
+				<div class="card">
+
+					<div class="card-top">
+
+						<div class="card-icon career">
+
+							<i class="fa-solid fa-briefcase"></i>
+
+						</div>
+
+					</div>
+
+					<h2 id="totalCareers">0</h2>
+
+					<p>Career Paths</p>
+
+				</div>
+
+
+				<!-- Courses -->
+
+				<div class="card">
+
+					<div class="card-top">
+
+						<div class="card-icon course">
+
+							<i class="fa-solid fa-book-open"></i>
+
+						</div>
+
+					</div>
+
+					<h2 id="totalCourses">0</h2>
+
+					<p>Total Courses</p>
+
+				</div>
+
+
+				<!-- Attempts -->
+
+				<div class="card">
+
+					<div class="card-top">
+
+						<div class="card-icon attempts">
+
+							<i class="fa-solid fa-chart-column"></i>
+
+						</div>
+
+					</div>
+
+					<h2 id="totalAttempts">0</h2>
+
+					<p>Assessment Attempts</p>
+
+				</div>
+
+
+				<!-- Recommendations -->
+
+				<div class="card">
+
+					<div class="card-top">
+
+						<div class="card-icon recommendation">
+
+							<i class="fa-solid fa-bullseye"></i>
+
+						</div>
+
+					</div>
+
+					<h2 id="totalRecommendations">0</h2>
+
+					<p>Career Recommendations</p>
+
+				</div>
+
+			</section>
+
+			<!-- =======================
+            LATEST REGISTERED STUDENTS
+        ======================== -->
+
+			<section class="table-section">
+
+				<div class="table-header">
+
+					<h2>Latest Registered Students</h2>
+
+					<button class="view-all-btn">View All</button>
+
+				</div>
+
+				<div class="table-container">
+
+					<table>
+
+						<thead>
+
+							<tr>
+
+								<th>ID</th>
+
+								<th>Student Name</th>
+
+								<th>Email</th>
+
+								<th>Status</th>
+
+								<th>Registered On</th>
+
+							</tr>
+
+						</thead>
+
+						<tbody id="recentStudents">
+
+							<!-- Dynamic Data -->
+
+						</tbody>
+
+					</table>
+
+				</div>
+
+				<div id="noDataMessage" class="no-data">
+
+    <i class="fa-solid fa-circle-info"></i>
+
+    <p>No Student Records Found.</p>
+
+</div>
+
+<!-- ==================================================
+                STUDENT PAGINATION
+================================================== -->
+
+<div
+    class="pagination-container"
+    id="studentPagination">
+
+    <!-- ===============================
+            PAGINATION INFORMATION
+    ================================ -->
+
+    <div
+        class="pagination-info"
+        id="paginationInfo">
+
+        Showing 0 - 0 of 0 students
+
+    </div>
+
+
+    <!-- ===============================
+            PAGINATION BUTTONS
+    ================================ -->
+
+    <div
+        class="pagination-buttons"
+        id="studentPaginationButtons">
+
+        <!-- Generated dynamically -->
+
+    </div>
+
+</div>
+
+			</section>
+
+		</main>
+
+	</div>
+
+
+	<!-- =======================
+        JAVASCRIPT
+======================== -->
+
+	<script src="../js/admin-dashboard.js"></script>
+</body>
+
+</html>

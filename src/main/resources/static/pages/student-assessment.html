@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+
+<head>
+
+
+<meta charset="UTF-8">
+
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+
+<title>
+Student Assessments | Giris Tech Hub
+</title>
+
+
+
+<!-- COMMON STUDENT DASHBOARD CSS -->
+
+<link rel="stylesheet"
+href="../css/student-dashboard.css">
+
+
+
+<!-- ASSESSMENT PAGE CSS -->
+
+<link rel="stylesheet"
+href="../css/student-assessment.css">
+
+
+
+<!-- FONT AWESOME -->
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+
+</head>
+
+
+
+<body>
+
+
+
+<div class="dashboard-container">
+
+
+
+<!-- COMMON SIDEBAR -->
+	<div id="studentSidebar"></div>
+<!-- =================================================
+                    MAIN CONTENT
+================================================== -->
+
+
+<main class="main-content">
+
+
+
+
+
+
+<section class="page-header">
+
+
+<h1>
+
+
+<i class="fa-solid fa-file-lines"></i>
+
+
+Student Assessments
+
+
+</h1>
+
+
+
+<p>
+
+View and start your available assessments.
+
+</p>
+
+
+</section>
+
+
+
+
+
+
+
+
+<!-- SEARCH -->
+
+
+<div class="assessment-search">
+
+
+<i class="fa-solid fa-search"></i>
+
+
+<input 
+type="text"
+id="searchAssessment"
+placeholder="Search Assessment">
+
+
+</div>
+
+
+
+
+
+
+
+
+<!-- STATISTICS -->
+
+
+<section class="assessment-stats">
+
+
+
+<div class="stat-card">
+
+
+<h2 id="availableCount">
+0
+</h2>
+
+
+<p>
+Available
+</p>
+
+
+</div>
+
+
+
+
+
+
+<div class="stat-card">
+
+
+<h2 id="pendingCount">
+0
+</h2>
+
+
+<p>
+Pending
+</p>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="stat-card">
+
+
+<h2 id="completedCount">
+0
+</h2>
+
+
+<p>
+Completed
+</p>
+
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- =================================================
+                ASSESSMENT LIST
+================================================== -->
+
+
+<section>
+
+
+<div id="assessmentContainer"
+class="assessment-container">
+
+
+<!-- Assessment cards will load dynamically -->
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+<!-- =================================================
+                PAGE LOADER
+================================================== -->
+
+
+<div id="pageLoader"
+class="page-loader">
+
+
+<div class="loader-circle"></div>
+
+
+<p>
+Loading Assessments...
+</p>
+
+
+</div>
+
+
+
+
+
+
+
+</main>
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+<script src="../js/student-common.js"></script>
+
+<script src="../js/student-assessment.js"></script>
+
+
+
+</body>
+
+
+</html>

@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Online Assessment | Giri's Tech Hub</title>
+
+    <link rel="stylesheet"
+          href="../css/student-assessment-attempt.css">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="exam-container">
+
+    <!-- =====================================================
+         FIXED HEADER
+    ====================================================== -->
+
+    <header class="exam-header">
+
+        <!-- LOGO -->
+
+        <div class="brand-section">
+
+            <img
+                src="../images/logo_with_backgroung.png"
+                alt="Giri's Tech Hub"
+                class="exam-logo">
+
+        </div>
+
+        <!-- STUDENT + ASSESSMENT -->
+
+        <div class="student-details">
+
+            <h2 id="studentName">
+                Student Name
+            </h2>
+
+            <p>
+
+                <i class="fa-solid fa-file-lines"></i>
+
+                <span id="assessmentName">
+                    Assessment Name
+                </span>
+
+            </p>
+
+        </div>
+
+        <!-- TIMER -->
+
+        <div
+            class="timer-box"
+            id="timerBox">
+
+            <span id="timerLabel">
+                Time Remaining
+            </span>
+
+            <h2 id="timer">
+                00:00
+            </h2>
+
+        </div>
+
+    </header>
+
+    <!-- =====================================================
+         EXAM MAIN
+    ====================================================== -->
+
+    <main class="exam-main">
+
+        <!-- =================================================
+             QUESTION AREA
+        ================================================== -->
+
+        <section class="question-area">
+
+            <div class="question-card">
+
+                <!-- QUESTION NUMBER -->
+
+                <div class="question-title">
+
+                    <span class="question-label">
+                        Question
+                    </span>
+
+                    <span id="questionNumber">
+                        1
+                    </span>
+
+                </div>
+
+                <!-- QUESTION -->
+
+                <h2 id="questionText">
+                    Loading Question...
+                </h2>
+
+                <!-- OPTIONS -->
+
+                <div
+                    id="optionsContainer"
+                    class="options-container">
+                </div>
+
+                <!-- CLEAR ANSWER -->
+
+                <button
+                    class="clear-answer"
+                    type="button"
+                    onclick="clearAnswer()">
+
+                    <i class="fa-solid fa-xmark"></i>
+
+                    Clear Answer
+
+                </button>
+
+            </div>
+
+            <!-- NAVIGATION -->
+
+            <div class="navigation-buttons">
+
+                <button
+                    id="previousBtn"
+                    type="button"
+                    onclick="previousQuestion()">
+
+                    <i class="fa-solid fa-arrow-left"></i>
+
+                    Previous
+
+                </button>
+
+                <button
+                    id="nextBtn"
+                    type="button"
+                    onclick="nextQuestion()">
+
+                    Next
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </button>
+
+                <button
+                    id="submitBtn"
+                    type="button"
+                    onclick="submitExam()">
+
+                    <i class="fa-solid fa-check"></i>
+
+                    Submit Test
+
+                </button>
+
+            </div>
+
+        </section>
+
+        <!-- =================================================
+             QUESTION SIDEBAR
+        ================================================== -->
+
+        <aside class="question-sidebar">
+
+            <!-- LEGEND -->
+
+            <div class="question-legend">
+
+                <div class="legend-item">
+
+                    <span class="legend-circle answered">
+                    </span>
+
+                    <span>
+                        Answered
+                    </span>
+
+                </div>
+
+                <div class="legend-item">
+
+                    <span class="legend-circle current">
+                    </span>
+
+                    <span>
+                        Current
+                    </span>
+
+                </div>
+
+                <div class="legend-item">
+
+                    <span class="legend-circle unanswered">
+                    </span>
+
+                    <span>
+                        Not Answered
+                    </span>
+
+                </div>
+
+            </div>
+
+            <!-- TITLE -->
+
+            <div class="sidebar-title">
+
+                <i class="fa-solid fa-list-check"></i>
+
+                <span>
+                    Questions
+                </span>
+
+            </div>
+
+            <!-- QUESTION NUMBERS -->
+
+            <div
+                id="questionNumbers"
+                class="question-numbers">
+            </div>
+
+        </aside>
+
+    </main>
+
+    <!-- =====================================================
+         ASSESSMENT RESULT
+    ====================================================== -->
+
+    <section
+        id="assessmentResult"
+        class="assessment-result hidden">
+
+        <div class="result-card">
+
+            <!-- =================================================
+                 RESULT HEADER
+            ================================================== -->
+
+            <div class="result-header">
+
+                <div class="result-icon">
+
+                    <i class="fa-solid fa-check"></i>
+
+                </div>
+
+                <div class="result-heading">
+
+                    <h1>
+                        Assessment Completed
+                    </h1>
+
+                    <span
+                        id="resultStatus"
+                        class="result-status">
+
+                        SUBMITTED
+
+                    </span>
+
+                    <p>
+                        Your assessment has been successfully submitted.
+                    </p>
+
+                </div>
+
+                <!-- SCORE CIRCLE -->
+
+                <div
+                    class="score-circle"
+                    id="scoreCircle">
+
+                    <div>
+
+                        <strong id="circlePercentage">
+                            0.00%
+                        </strong>
+
+                        <span>
+                            Overall Score
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- =================================================
+                 RESULT SUMMARY
+            ================================================== -->
+
+            <div class="result-summary">
+
+                <div class="result-item score-card">
+
+                    <span>
+                        Score
+                    </span>
+
+                    <strong id="resultScore">
+                        0
+                    </strong>
+
+                </div>
+
+                <div class="result-item marks-card">
+
+                    <span>
+                        Total Marks
+                    </span>
+
+                    <strong id="resultTotalMarks">
+                        0
+                    </strong>
+
+                </div>
+
+                <div class="result-item time-card">
+
+                    <span>
+                        Time Taken
+                    </span>
+
+                    <strong id="timeTaken">
+                        00 min 00 sec
+                    </strong>
+
+                </div>
+
+            </div>
+
+            <!-- =================================================
+                 ANSWER STATISTICS
+            ================================================== -->
+
+            <div class="answer-statistics">
+
+                <div class="statistics-card correct-card">
+
+                    <div class="statistics-icon">
+
+                        <i class="fa-solid fa-check"></i>
+
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Correct
+                        </span>
+
+                        <strong id="correctCount">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+                <div class="statistics-card incorrect-card">
+
+                    <div class="statistics-icon">
+
+                        <i class="fa-solid fa-xmark"></i>
+
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Incorrect
+                        </span>
+
+                        <strong id="incorrectCount">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+                <div class="statistics-card skipped-card">
+
+                    <div class="statistics-icon">
+
+                        <i class="fa-solid fa-minus"></i>
+
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Skipped
+                        </span>
+
+                        <strong id="skippedCount">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- =================================================
+                 OVERALL PERFORMANCE
+            ================================================== -->
+
+            <div class="performance-section">
+
+                <div class="performance-heading">
+
+                    <h3>
+                        Overall Performance
+                    </h3>
+
+                    <strong id="performancePercentage">
+                        0.00%
+                    </strong>
+
+                </div>
+
+                <div class="progress-track">
+
+                    <div
+                        id="performanceProgress"
+                        class="progress-fill">
+                    </div>
+
+                </div>
+
+                <div class="performance-message">
+
+                    <p id="performanceMessage">
+                        Keep learning and improving your skills.
+                    </p>
+
+                    <i class="fa-regular fa-lightbulb"></i>
+
+                </div>
+
+            </div>
+
+            <!-- =================================================
+                 CAREER RECOMMENDATION
+            ================================================== -->
+
+            <section class="career-recommendation-card">
+
+                <!-- HEADER -->
+
+                <div class="career-recommendation-header">
+
+                    <div class="career-title-wrapper">
+
+                        <div class="career-small-icon">
+
+                            <i class="fa-solid fa-briefcase"></i>
+
+                        </div>
+
+                        <div>
+
+                            <span class="recommendation-label">
+                                CAREER RECOMMENDATION
+                            </span>
+
+                            <h2>
+                                Your Recommended Career
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+                    <!-- MATCH -->
+
+                    <div class="career-match">
+
+                        <strong id="careerMatch">
+                            —
+                        </strong>
+
+                        <span>
+                            Match
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <!-- BODY -->
+
+                <div class="career-recommendation-body">
+
+                    <div class="career-main-icon">
+
+                        <i
+                            id="careerIcon"
+                            class="fa-solid fa-briefcase">
+                        </i>
+
+                    </div>
+
+                    <div class="career-content">
+
+                        <h3 id="careerName">
+                            Loading Career Recommendation...
+                        </h3>
+
+                        <p id="careerDescription">
+
+                            Your assessment performance is being
+                            analysed to identify the career path
+                            that best matches your strengths.
+
+                        </p>
+
+                        <div
+                            id="careerReasons"
+                            class="career-reasons">
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- FOOTER -->
+
+                <div class="career-recommendation-footer">
+
+                    <div>
+
+                        <i class="fa-solid fa-chart-line"></i>
+
+                        <span>
+                            Recommendation based on your assessment performance
+                        </span>
+
+                    </div>
+
+                    <button
+                        type="button"
+                        id="viewCareerBtn"
+                        onclick="viewCareerDetails()">
+
+                        View Career Details
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </button>
+
+                </div>
+
+            </section>
+
+            <!-- =================================================
+                 FINAL ACTION BUTTONS
+            ================================================== -->
+
+            <div class="result-actions">
+
+                <button
+                    type="button"
+                    class="secondary-btn"
+                    onclick="goToStudentResults()">
+
+                    <i class="fa-solid fa-chart-column"></i>
+
+                    View All Results
+
+                </button>
+
+                <button
+                    type="button"
+                    class="primary-btn"
+                    onclick="goToStudentDashboard()">
+
+                    <i class="fa-solid fa-house"></i>
+
+                    Back to Dashboard
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- =====================================================
+         CUSTOM POPUP
+    ====================================================== -->
+
+    <div
+        id="popupOverlay"
+        class="popup-overlay hidden">
+
+        <div
+            id="popupBox"
+            class="popup-box">
+
+            <button
+                type="button"
+                class="popup-close"
+                onclick="closePopup()">
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+            <div
+                id="popupIcon"
+                class="popup-icon">
+
+                <i
+                    id="popupIconElement"
+                    class="fa-solid fa-circle-exclamation">
+                </i>
+
+            </div>
+
+            <h2 id="popupTitle">
+                Message
+            </h2>
+
+            <p id="popupMessage">
+                Message
+            </p>
+
+            <div
+                id="popupActions"
+                class="popup-actions">
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- =====================================================
+     JAVASCRIPT
+====================================================== -->
+
+<script
+    src="../js/student-assessment-attempt.js">
+</script>
+
+</body>
+
+</html>
